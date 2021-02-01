@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="project.css">
 
-    <title>Login</title>
+    <title>Signup</title>
 </head>
 
 <body>
@@ -51,10 +51,10 @@
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="col col">
-                            <span class="text">Login</span>
+                            <span class="text">Request Association</span>
                         </div>
                     </div>
-                    <form method="post" action="login.php">
+                    <form method="post" action="signup.php">
                     <div class="row">
                         <div class="col">
                             <div class="my-5">
@@ -62,21 +62,26 @@
                                     aria-label="username example">
                                 <input name="password" id="password" class="textinput form-control my-4" type="text" placeholder="PASSWORD"
                                     aria-label="password example">
+                                <input name="compName" id="compName" class="textinput form-control my-4" type="text" placeholder="Company Name"
+                                    aria-label="username example">
+                                <input name="compDescription" id="compDescription" class="textinput form-control my-4" type="text" placeholder="Description"
+                                    aria-label="username example">
+                                <input name="location" id="location" class="textinput form-control my-4" type="text" placeholder="Location"
+                                    aria-label="username example">
+                                <input name="website" id="website" class="textinput form-control my-4" type="text" placeholder="Website"
+                                    aria-label="username example">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button type="submit" name="login-btn" id="login-btn" class="button btn align-self-center">Login</button>
+                            <button type="submit" name="reg_company" id="reg_company" class="button btn align-self-center">Send Request</button>
                         </div>
                     </div>
                     </form>
                     <div class="row">
                         <div class="col">
-                            <br>
-                            <p>For companies that require association:
-                            <a href="">Request Association</a>.
-                            </p>
+                        
                         </div>
                     </div>
                 </div>
