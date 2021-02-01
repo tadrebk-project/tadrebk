@@ -27,7 +27,8 @@ create table CompanyRep(
         repID int NOT NULL,
         compID int NOT NULL,
         primary key(userID),
-        foreign key(compID) references Company(compID) ON DELETE CASCADE);
+        foreign key(compID) references Company(compID) ON DELETE CASCADE,
+	foreign key(userID) references User1(userID) ON DELETE CASCADE);
 
 create table MainRep(
         userID int NOT NULL,
@@ -49,14 +50,16 @@ create table Student(
         MID int NOT NULL,
         primary key(studentID),
         foreign key(MID) references Major(MID) ON DELETE CASCADE,
-        foreign key(compID) references Company(compID));
+        foreign key(compID) references Company(compID),
+	foreign key(userID) references User1(userID) ON DELETE CASCADE);
 
 create table Instructor(
-        IID int NOT NULL,
+        userID int NOT NULL,
         name varchar(40) NOT NULL, 
         MID int NOT NULL,
-        primary key(IID),
-        foreign key(MID) references Major(MID) ON DELETE CASCADE);
+        primary key(userID),
+        foreign key(MID) references Major(MID) ON DELETE CASCADE,
+	foreign key(userID) references User1(userID) ON DELETE CASCADE);
 
 create table PerformanceFeedback(
         PFID int NOT NULL,
