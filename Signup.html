@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="project.css">
 
-    <title>Login</title>
+    <title>Request Association</title>
 </head>
 
 <body>
@@ -36,11 +36,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col d-flex justify-content-center">
-                            <span class="text">Login</span>
+                            <span class="text">Request Association</span>
                         </div>
                     </div>
 
-                    <form method="post" action="login.php">
+                    <form method="post" action="signup.php">
 
                         <div class="row">
                             <div class="col">
@@ -49,50 +49,26 @@
                                         placeholder="USERNAME" aria-label="username example">
                                     <input name="password" id="password" class="textinput form-control my-4"
                                         type="password" placeholder="PASSWORD" aria-label="password example">
+                                    <input name="compName" id="compName" class="textinput form-control my-4" type="text"
+                                        placeholder="Company Name" aria-label="username example">
+                                    <input name="compDescription" id="compDescription"
+                                        class="textinput form-control my-4" type="text" placeholder="Description"
+                                        aria-label="username example">
+                                    <input name="location" id="location" class="textinput form-control my-4" type="text"
+                                        placeholder="Location" aria-label="username example">
+                                    <input name="website" id="website" class="textinput form-control my-4" type="text"
+                                        placeholder="Website" aria-label="username example">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col d-flex justify-content-center">
-                                <button type="submit" name="login-btn" id="login-btn"
-                                    class="btn btn-primary align-self-center">Login</button>
-
-
-                                <!--for wrong credentials -->
-                                <!--data-toggle="modal" data-target="#myLoginModal"-->
-                                <div class="modal" id="myLoginModal">
-                                    <div class="modal-dialog modal-sm">
-                                        <div class="modal-content">
-
-                                            <!-- Modal Header -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Wrong credentials</h4>
-                                                <button type="button" class="close"
-                                                    data-dismiss="modal">&times;</button>
-                                            </div>
-
-                                            <!-- Modal body -->
-                                            <div class="modal-body">
-                                                your username or password is incorrect
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
+                                <button type="submit" name="reg_company" id="reg_company"
+                                    class="btn btn-primary align-self-center">Send Request</button>
                             </div>
                         </div>
 
                     </form>
-
-                    <div class="row">
-                        <div class="col d-flex justify-content-center">
-                            <p class="my-3">For companies that require association,
-                                <a href="Signup.html">Request Association</a>.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
