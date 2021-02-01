@@ -1,0 +1,133 @@
+create database Tadreabk;
+use Tadreabk;
+
+create table Major(
+        MID int NOT NULL,
+        name varchar(30) NOT NULL,
+        primary key(MID));
+
+create table User1(
+        userID int NOT NULL,
+        username varchar(20) NOT NULL,
+        password varchar(20) NOT NULL,
+        type varchar(20) NOT NULL,
+        primary key(userID));
+
+create table Company(
+        compID int NOT NULL,
+        name varchar(50) NOT NULL,
+	description varchar(200) NOT NULL,
+        location varchar(200) NOT NULL,
+        website varchar(100) NOT NULL,
+        status varchar(30) NOT NULL,
+        primary key(compID));
+
+create table CompanyRep(
+        userID int NOT NULL,
+        repID int NOT NULL,
+        compID int NOT NULL,
+        primary key(userID),
+        foreign key(compID) references Company(compID) ON DELETE CASCADE);
+
+create table MainRep(
+        userID int NOT NULL,
+        repID int NOT NULL,
+        compID int NOT NULL,
+        primary key(userID),
+        foreign key(compID) references Company(compID) ON DELETE CASCADE);
+
+create table Student(
+        userID int NOT NULL,
+        studentID int NOT NULL,
+        name varchar(40) NOT NULL,
+        email varchar(40),
+        phoneNum int,
+        gpa double,
+        picRef varchar(100),
+        CVFileRef varchar(100),
+        compID int,
+        MID int NOT NULL,
+        primary key(studentID),
+        foreign key(MID) references Major(MID) ON DELETE CASCADE,
+        foreign key(compID) references Company(compID));
+
+create table Instructor(
+        IID int NOT NULL,
+        name varchar(40) NOT NULL, 
+        MID int NOT NULL,
+        primary key(IID),
+        foreign key(MID) references Major(MID) ON DELETE CASCADE);
+
+create table PerformanceFeedback(
+        PFID int NOT NULL,
+        details varchar(300) NOT NULL,
+        date date NOT NULL,
+        studentID int NOT NULL,
+        compID int NOT NULL,
+        primary key(PFID),
+        foreign key(studentID) references Student(studentID) ON DELETE CASCADE);
+
+create table ProgressReport(
+        RID int NOT NULL,
+        fileRef varchar(100) NOT NULL,
+        date date NOT NULL,
+        studentID int NOT NULL,
+        primary key(RID),
+        foreign key(studentID) references Student(studentID) ON DELETE CASCADE);
+
+
+create table Application(
+        appID int NOT NULL,
+        name varchar(50) NOT NULL,
+        description varchar(300) NOT NULL,
+        reqGPA double NOT NULL,
+        compID int NOT NULL,
+        primary key(appID),
+        foreign key(compID) references Company(compID) ON DELETE CASCADE);
+
+
+create table Review(
+        RID int NOT NULL,
+        text varchar(300) NOT NULL,
+        date date NOT NULL,
+        compID int NOT NULL,
+        studentID int NOT NULL,
+        primary key(RID),
+        foreign key(studentID) references Student(studentID) ON DELETE CASCADE,
+        foreign key(compID) references Company(compID) ON DELETE CASCADE);
+
+create table Event1(
+        eventID int NOT NULL,
+        name varchar(30) NOT NULL,
+        description varchar(300) NOT NULL,
+        date date NOT NULL,
+        time time NOT NULL,
+        compID int NOT NULL,
+        primary key(eventID),
+        foreign key(compID) references Company(compID) ON DELETE CASCADE);
+
+create table Announcement(
+        annID int NOT NULL,
+        title varchar(30) NOT NULL,
+        details varchar(300) NOT NULL,
+        date date NOT NULL,
+        compID int NOT NULL,
+        primary key(annID),
+        foreign key(compID) references Company(compID) ON DELETE CASCADE);
+
+create table StudentRequest(
+        appID int NOT NULL,
+        studentID int NOT NULL,
+        date date NOT NULL,
+        status varchar(30) NOT NULL,
+        primary key(appID,studentID),
+        foreign key(appID) references Application(appID) ON DELETE CASCADE,
+        foreign key(studentID) references Student(studentID) ON DELETE CASCADE);
+
+create table RequiredMajors(
+        appID int NOT NULL,
+        MID int NOT NULL,
+        primary key(appID,MID),
+        foreign key(MID) references Major(MID) ON DELETE CASCADE,
+        foreign key(appID) references Application(appID) ON DELETE CASCADE);
+
