@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 require "conn.php";
 
 if (isset($_POST['login-btn'])) {
@@ -8,23 +8,26 @@ if (isset($_POST['login-btn'])) {
 
   $mysql_qry = "select * from user1 where username = '$username' and password = '$password'";
   $result = mysqli_query($conn ,$mysql_qry);
+
   if(mysqli_num_rows($result) == 1){
       $user = mysqli_fetch_assoc($result);
   	  if($user['type'] === "student"){
-        //$_SESSION['userid'] = $user['id'];
+        $_SESSION['userid'] = $user['userID'];
         header('location: index.html');
+
       } else if ($user['type'] === "representative"){
-        //$_SESSION['userid'] = $user['id'];
+        $_SESSION['userid'] = $user['userID'];
         header('location: representative.php');
+
       } else if ($user['type'] === "admin"){
-        //$_SESSION['userid'] = $user['id'];
+        $_SESSION['userid'] = $user['userID'];
         header('location: admin.php');
+
       } else if ($user['type'] === "instructor"){
-        //$_SESSION['userid'] = $user['id'];
+        $_SESSION['userid'] = $user['userID'];
         header('location: instructor.php');
       }
     
-
 
   }
   else {
