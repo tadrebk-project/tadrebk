@@ -2,19 +2,19 @@ create database Tadreabk;
 use Tadreabk;
 
 create table Major(
-        MID int NOT NULL,
+        MID int NOT NULL AUTO_INCREMENT,
         name varchar(30) NOT NULL,
         primary key(MID));
 
 create table User1(
-        userID int NOT NULL,
+        userID int NOT NULL AUTO_INCREMENT,
         username varchar(20) NOT NULL,
         password varchar(20) NOT NULL,
         type varchar(20) NOT NULL,
         primary key(userID));
 
 create table Company(
-        compID int NOT NULL,
+        compID int NOT NULL AUTO_INCREMENT,
         name varchar(50) NOT NULL,
 	description varchar(200) NOT NULL,
         location varchar(200) NOT NULL,
@@ -24,18 +24,19 @@ create table Company(
 
 create table CompanyRep(
         userID int NOT NULL,
-        repID int NOT NULL,
+        repID int NOT NULL AUTO_INCREMENT,
         compID int NOT NULL,
-        primary key(userID),
+        primary key(repID),
         foreign key(compID) references Company(compID) ON DELETE CASCADE,
 	foreign key(userID) references User1(userID) ON DELETE CASCADE);
 
 create table MainRep(
         userID int NOT NULL,
-        repID int NOT NULL,
+        repID int NOT NULL AUTO_INCREMENT,
         compID int NOT NULL,
-        primary key(userID),
-        foreign key(compID) references Company(compID) ON DELETE CASCADE);
+        primary key(repID),
+        foreign key(compID) references Company(compID) ON DELETE CASCADE,
+	foreign key(userID) references User1(userID) ON DELETE CASCADE);
 
 create table Student(
         userID int NOT NULL,
@@ -62,7 +63,7 @@ create table Instructor(
 	foreign key(userID) references User1(userID) ON DELETE CASCADE);
 
 create table PerformanceFeedback(
-        PFID int NOT NULL,
+        PFID int NOT NULL AUTO_INCREMENT,
         details varchar(300) NOT NULL,
         date date NOT NULL,
         studentID int NOT NULL,
@@ -71,7 +72,7 @@ create table PerformanceFeedback(
         foreign key(studentID) references Student(studentID) ON DELETE CASCADE);
 
 create table ProgressReport(
-        RID int NOT NULL,
+        RID int NOT NULL AUTO_INCREMENT,
         fileRef varchar(100) NOT NULL,
         date date NOT NULL,
         studentID int NOT NULL,
@@ -80,7 +81,7 @@ create table ProgressReport(
 
 
 create table Application(
-        appID int NOT NULL,
+        appID int NOT NULL AUTO_INCREMENT,
         name varchar(50) NOT NULL,
         description varchar(300) NOT NULL,
         reqGPA double NOT NULL,
@@ -90,7 +91,7 @@ create table Application(
 
 
 create table Review(
-        RID int NOT NULL,
+        RID int NOT NULL AUTO_INCREMENT,
         text varchar(300) NOT NULL,
         date date NOT NULL,
         compID int NOT NULL,
@@ -100,7 +101,7 @@ create table Review(
         foreign key(compID) references Company(compID) ON DELETE CASCADE);
 
 create table Event1(
-        eventID int NOT NULL,
+        eventID int NOT NULL AUTO_INCREMENT,
         name varchar(30) NOT NULL,
         description varchar(300) NOT NULL,
         date date NOT NULL,
@@ -110,7 +111,7 @@ create table Event1(
         foreign key(compID) references Company(compID) ON DELETE CASCADE);
 
 create table Announcement(
-        annID int NOT NULL,
+        annID int NOT NULL AUTO_INCREMENT,
         title varchar(30) NOT NULL,
         details varchar(300) NOT NULL,
         date date NOT NULL,
