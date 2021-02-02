@@ -30,9 +30,9 @@ if (isset($_POST['reg_company'])) {
   if ($user) { // if user exists
 
     if ($user['username'] === $username) {
-      $error= "You alredy a member, sign in instead!";
+      $error= "Username is already taken!";
       echo "<script type='text/javascript'>alert('$error');</script>";
-      echo "<script type='text/javascript'>window.location.href = 'sign.html';</script>";
+      echo "<script type='text/javascript'>window.location.href = 'Signup.html';</script>";
 
     }
   }
