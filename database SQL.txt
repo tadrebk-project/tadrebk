@@ -1,3 +1,4 @@
+/kkkkk
 create database Tadreabk;
 use Tadreabk;
 
@@ -31,7 +32,7 @@ create table CompanyRep(
         primary key(repID),
         foreign key(compID) references Company(compID) ON DELETE CASCADE,
 	foreign key(userID) references User1(userID) ON DELETE CASCADE);
-//ddd
+
 create table MainRep(
         userID int NOT NULL,
         repID int NOT NULL AUTO_INCREMENT,
