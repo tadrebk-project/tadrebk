@@ -19,18 +19,22 @@ if (isset($_POST['login-btn'])) {
         $student = mysqli_fetch_assoc($result2);
         $_SESSION['studentid'] = $student['studentID'];
         $_SESSION['userid'] = $user['userID'];
+        $_SESSION['type'] = $user['type'];
         header('location: index.html');
 
       } else if ($user['type'] === "representative"){
         $_SESSION['userid'] = $user['userID'];
+        $_SESSION['type'] = $user['type'];
         header('location: representative.php');
 
       } else if ($user['type'] === "admin"){
         $_SESSION['userid'] = $user['userID'];
+        $_SESSION['type'] = $user['type'];
         header('location: admin.php');
 
       } else if ($user['type'] === "instructor"){
         $_SESSION['userid'] = $user['userID'];
+        $_SESSION['type'] = $user['type'];
         header('location: instructor.php');
       }
     
