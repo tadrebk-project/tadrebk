@@ -5,6 +5,7 @@ create table Major(
         MID int NOT NULL AUTO_INCREMENT,
         name varchar(30) NOT NULL,
         primary key(MID));
+        ,jbkjbvkh
          
 
 create table User1(
