@@ -11,7 +11,13 @@ if (isset($_POST['login-btn'])) {
 
   if(mysqli_num_rows($result) == 1){
       $user = mysqli_fetch_assoc($result);
+
   	  if($user['type'] === "student"){
+        $temp_userID = $user['userID'];
+        $mysql_qry2 = "select * from student where userID = '$temp_userID'";
+        $result2 = mysqli_query($conn ,$mysql_qry2);
+        $student = mysqli_fetch_assoc($result2);
+        $_SESSION['studentid'] = $student['studentID'];
         $_SESSION['userid'] = $user['userID'];
         header('location: index.html');
 
