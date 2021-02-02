@@ -1,4 +1,5 @@
 //mmoTest
+//khbhkbbhjbb
 
 create database Tadreabk;
 use Tadreabk;
