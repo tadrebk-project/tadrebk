@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['userid'])) {
+    header('location: Login.html');
+}
+?>
 
 <html lang="en">
 
@@ -15,6 +21,7 @@
 
     <link rel="stylesheet" href="project.css">
 
+    <link rel="icon" type="image/png" href="resources/Tadreabk favicon.png" />
     <title>Login</title>
 </head>
 
@@ -25,12 +32,20 @@
     <nav class="navbar navbar-light" style="background-color: #ffffff;">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="resources/Tadreebk.png" alt="" width="175" height="44">
+                <img src="resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
         </div>
     </nav>
 
-    Hello, <?php echo $_SESSION['type'] ?>.
+    <div class=" d-flex justify-content-center Center-Container">
+        <div class="card align-self-center mx-3" style="width: 30rem;">
+            <div class="card-body d-flex flex-column justify-content-center">
+                <p class="text">Hello, <?php echo $_SESSION['type'] ?>. </p>
+                <br>
+                <a class="btn btn-primary" href="logout.php">Logout</a>
+            </div>
+        </div>
+    </div>
 
 </body>
 
