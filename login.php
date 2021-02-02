@@ -20,22 +20,22 @@ if (isset($_POST['login-btn'])) {
         $_SESSION['studentid'] = $student['studentID'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: index.html');
+        header('location: index.php');
 
       } else if ($user['type'] === "representative"){
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: representative.php');
+        header('location: index.php');
 
       } else if ($user['type'] === "admin"){
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: admin.php');
+        header('location: index.php');
 
       } else if ($user['type'] === "instructor"){
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: instructor.php');
+        header('location: index.php');
       }
     
 
