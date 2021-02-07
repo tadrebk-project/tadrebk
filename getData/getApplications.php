@@ -9,11 +9,11 @@ if($result=mysqli_query($conn, $query)){
         //(here table)
         while($row=mysqli_fetch_array($result)){
             $str2 ="";
-            $query2 = "SELECT * FROM requiredmajors where appID='".$row['appID']."'";
+            $query2 = "SELECT name from major where MID in (SELECT MID from requiredmajors where appID = '".$row['appID']."')";
             if($result2=mysqli_query($conn, $query2)){
                 if(mysqli_num_rows($result2)>0){ 
                     while($row2=mysqli_fetch_array($result2)){
-                        $str2 .= $row2["MID"];
+                        $str2 .= $row2["name"].", ";
                     }
                 }
             }
