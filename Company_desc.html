@@ -45,35 +45,79 @@
     <!-- reviews container -->
     <div class="container-sm company-reviews">
         <div class="row">
-            <div class="col-7 col-md-9 col-lg-9">
-                <h3>Reviews</h3>
-            </div>
-            <div class="col-5 col-md-3 col-lg-3">
-                <button class="btn btn-primary">Write a review</button>
-            </div>
-        </div>
-        <hr>
-        <!-- students reivews -->
-        <div class="row align-items-center">
-            <div class="col-3 col-md-2 col-lg-1">
-                <img src="resources/profile-icon.png" alt="" width="70" height="70">
-            </div>
-            <div class="col-2 col-md-2 col-lg-2">
-                <b>mohammad</b> 
-                <br>
-                <b>12/12/2021</b>
-            </div>  
-        </div>
-        <div class="row">
-            <div class="col-md-2 col-lg-1"></div>
-            <div class="col-12 col-md-10 col-lg-11">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nam cum eligendi cumque eum nesciunt quaerat quod accusantium perferendis possimus vero dolorem unde placeat nemo deleniti dicta et reiciendis, fugiat amet temporibus consequatur consequuntur dignissimos. Provident iure eius iusto possimus!
-            </div>
-        </div>
-        <hr>
-        
-    </div>
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#Reviews" role="button" aria-expanded="false" aria-controls="Reviews">Reviews</a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#EventAndAnnouncment" aria-expanded="false" aria-controls="EventAndAnnouncment">Event and announcment</button>
+              </p>
+              <div class="row">
+                <div class="col">
+                  <div class="collapse multi-collapse" id="Reviews">
+                    <div class="card card-body">
+                        <div class="row">
+                        <div class="col-7 col-md-9 col-lg-9">
+                            <h3>Reviews</h3>
+                        </div>
+                        <div class="col-5 col-md-3 col-lg-3">
+                            <button class="btn btn-primary" data-bs-toggle="collapse" href="#writeReview" role="button" aria-expanded="false" aria-controls="writeReview">Write a review</button>
+                        </div>
+                    </div>
 
+                            <div class="collapse multi-collapse" id="writeReview">
+                                    <br>
+                                    <div class="row">
+                                <textarea class="form-control" id="writeReview" rows="3"></textarea>
+                                <div class="col">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                                </div>
+                              </div>
+                              </div>
+                    <hr>
+                    <!-- students reivews -->
+                    <div class="row align-items-center">
+                        <div class="col-3 col-md-2 col-lg-1">
+                            <img src="resources/profile-icon.png" alt="" width="70" height="70">
+                        </div>
+                        <div class="col-2 col-md-2 col-lg-2">
+                            <b>mohammad</b> 
+                            <br>
+                            <b>12/12/2021</b>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-lg-1"></div>
+                        <div class="col-12 col-md-10 col-lg-11">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nam cum eligendi cumque eum nesciunt quaerat quod accusantium perferendis possimus vero dolorem unde placeat nemo deleniti dicta et reiciendis, fugiat amet temporibus consequatur consequuntur dignissimos. Provident iure eius iusto possimus!
+                        </div>
+                    </div>
+                    <hr>
+                    
+                </div>
+                                </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="collapse multi-collapse" id="EventAndAnnouncment">
+                    <div class="card card-body">
+                        Announcment: Aramco is glad to open thier summer training oppurtunites <br>
+                        Event : Aramco is presenting in KFUPM 
+                    </div><br>
+                    <div class="card card-body">
+                    Announcment: Aramco is glad to open thier summer training oppurtunites <br>
+                    Event : Aramco is presenting in KFUPM 
+                    </div><br>
+                    <div class="card card-body">
+                         Announcment: Aramco is glad to open thier summer training oppurtunites <br>
+                         Event : Aramco is presenting in KFUPM 
+                    </div>            
+                  </div>
+                </div>
+              </div>
+           
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
