@@ -1,5 +1,5 @@
 <?php 
-//require "loginStatus.php";
+require "loginStatus.php";
 require "conn.php";
 
 $query = "SELECT * FROM Company where status = 'available'";
