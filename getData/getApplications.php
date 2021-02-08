@@ -23,8 +23,6 @@ if($result=mysqli_query($conn, $query)){
         echo $str;
     }
 }
-// "   select name from major where MID = 
-//     (select MID from requiredmajors where appID='".$row['appID']."')"
 ?>
 
 
