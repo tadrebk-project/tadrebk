@@ -13,10 +13,10 @@ if($result=mysqli_query($conn, $query)){
         while($row=mysqli_fetch_array($result)){
             //$str .= "<tr><td>".$row['text']."</td><td>".$row['date']."</td><td>".$row['studentID']."</td>";
             $str .= "<div class='row align-items-center'>
-            <div class='col-3 col-md-2 col-lg-1'>
+            <div class='col-3 col-md-2 col-lg-3'>
                 <img src='resources/profile-icon.png' alt='' width='70' height='70'>
             </div>
-            <div class='col-2 col-md-2 col-lg-2'>
+            <div class='col-2 col-md-2 col-lg-3'>
                 <b>".$row['name']."</b> 
                 <br>
                 <b>".$row['date']."</b>
