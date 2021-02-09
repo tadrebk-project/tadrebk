@@ -9,7 +9,23 @@ if($result=mysqli_query($conn, $query)){
         //(here table)
         $str ="<table>";
         while($row=mysqli_fetch_array($result)){
-            $str .= "<tr><td>".$row['name']."</td><td>".$row['location']."</td><td>".$row['website']."</td><td><a href = 'company.php/?compid=".$row['compID']."'>visit</a></td></tr>";
+            $str .= "<div class='card my-1'>
+            <div class='card-body'>
+                <div class='row row-cols-3'>
+                    <div class='col'>
+                        <p class='my-0'>".$row['name']."</p>
+                    </div>
+                    <div class='col'>
+                        <p class='my-0'>".$row['location']."</p>
+                    </div>
+                    <div class='col'>
+                        <div class='container d-flex justify-content-center'>
+                            <a href='Company_desc.php/?compID=".$row['compID']."' class='btn btn-primary py-0'>View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>";
         }
         $str .="</table>";
         echo $str;
