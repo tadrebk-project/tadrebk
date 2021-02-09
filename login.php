@@ -20,7 +20,7 @@ if (isset($_POST['login-btn'])) {
         $_SESSION['studentid'] = $student['studentID'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: index.php');
+        header('location: studentHome.php');
 
       } else if ($user['type'] === "representative"){
         $_SESSION['userid'] = $user['userID'];
