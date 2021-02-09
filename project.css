@@ -34,28 +34,24 @@ a {
     background-color: #0f5ecd;
 }
 
+.btn-outline-primary{
+    margin: 1rem;
+    border-color:#172457;
+    color: #172457;
+    border-radius: 20px;
+}
+.btn-outline-primary:hover{
+    background-color: #172457;
+}
+.btn-outline-primary.active,
+.btn-outline-primary:active {
+    background-color: #172457;
+}
+
 
 .Center-Container {
     position: relative;
     height: 80%;
 }
 
-/* company description page */
-.company-container{
-    background-color: #ffffff;
-    position: relative;
-    top: 10%;
-    padding: 30px;
-}
 
-.company-reviews{
-    background-color: #ffffff;
-    position: relative;
-    top: 13%;
-    padding: 30px;
-}
-
-.user-review{
-    margin-left: 2px;
-    margin-top: 15px;
-}
