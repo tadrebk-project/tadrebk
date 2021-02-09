@@ -32,6 +32,9 @@ if($result=mysqli_query($conn, $query)){
         
         echo $str;
     }
+    else {
+        echo "There are no companies associated..";
+    }
 }
 
 ?>

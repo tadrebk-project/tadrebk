@@ -19,6 +19,9 @@ if($result=mysqli_query($conn, $query)){
         $str .="";
         echo $str;
     }
+    else {
+        echo "There are no announcements..";
+    }
 }
 
 ?>
