@@ -1,8 +1,10 @@
 <?php 
-require "loginStatus.php";
+if (!isset($_SESSION['userid'])) {
+    header('location: ../Login.html');
+}
 require "conn.php";
 
-$query = "SELECT * FROM Company where status = 'available' and compID = $_GET['compID']";
+$query = "SELECT * FROM Company where status = 'available' and compID = ".$_GET['compID'];
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
