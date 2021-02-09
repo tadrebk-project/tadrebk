@@ -1,5 +1,7 @@
 <?php 
-require "loginStatus.php";
+if (!isset($_SESSION['userid'])) {
+    header('location: ../Login.html');
+}
 require "conn.php";
 
 $query = "SELECT * FROM Company where status = 'available'";
@@ -20,7 +22,7 @@ if($result=mysqli_query($conn, $query)){
                     </div>
                     <div class='col'>
                         <div class='container d-flex justify-content-center'>
-                            <a href='Company_desc.php/?compID=".$row['compID']."' class='btn btn-primary py-0'>View</a>
+                            <a href='Company_desc.php?compID=".$row['compID']."' class='btn btn-primary py-0'>View</a>
                         </div>
                     </div>
                 </div>
