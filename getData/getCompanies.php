@@ -7,7 +7,7 @@ $query = "SELECT * FROM Company where status = 'available'";
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
         //(here table)
-        $str ="<table>";
+        $str = ""
         while($row=mysqli_fetch_array($result)){
             $str .= "<div class='card my-1'>
             <div class='card-body'>
@@ -27,11 +27,9 @@ if($result=mysqli_query($conn, $query)){
             </div>
         </div>";
         }
-        $str .="</table>";
+        
         echo $str;
     }
 }
 
 ?>
-
-
