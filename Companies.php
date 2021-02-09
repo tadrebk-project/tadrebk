@@ -127,45 +127,7 @@ if (!isset($_SESSION['userid'])) {
                     </div>
                 </div>
 
-                <!---->
-                <div class="card my-1">
-                    <div class="card-body">
-                        <div class="row row-cols-3">
-                            <div class="col">
-                                <p class="my-0">Company one</p>
-                            </div>
-                            <div class="col">
-                                <p class="my-0">Location one</p>
-                            </div>
-                            <div class="col">
-                                <div class="container d-flex justify-content-center">
-                                    <a href="#" class="btn btn-primary py-0" href="#">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!---->
-
-                <!---->
-                <div class="card my-1">
-                    <div class="card-body">
-                        <div class="row row-cols-3">
-                            <div class="col">
-                                <p class="my-0">Company two</p>
-                            </div>
-                            <div class="col">
-                                <p class="my-0">Location two</p>
-                            </div>
-                            <div class="col">
-                                <div class="container d-flex justify-content-center">
-                                    <a href="#" class="btn btn-primary py-0" href="#">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!---->
+                <?php include "getData/getcompanies.php"; ?>
 
             </div>
         </div>
