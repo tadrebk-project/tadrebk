@@ -20,6 +20,9 @@ if (!isset($_SESSION['userid'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="project.css">
+
     <link rel="stylesheet" href="project.css">
 
     <link rel="icon" type="image/png" href="resources/Tadreabk favicon.png"/>
@@ -29,13 +32,35 @@ if (!isset($_SESSION['userid'])) {
 <body>
 
     <!-- Just an image -->
-    <nav class="navbar navbar-light" style="background-color: #ffffff;">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
             <a class="navbar-brand" href="studentHome.php">
                 <img src="resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
+            <div class="container d-flex mx-auto flex-column">
+                <nav class="nav nav-masthead justify-content-center float-md">
+                    <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
+                    <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
+                    <a class="nav-link btn btn-outline-primary" href="#">Requests</a>
+                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
+                </nav>
+            </div>
+            <nav class="d-flex mx-auto">
+                <div class="container" style="width: 270px; margin-left: 1rem;">
+                    <!--
+                    <a class="btn btn-outline-primary mx-2" href="#">
+                        <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
+                    </a>
+                    -->
+                    <a class="btn btn-outline-primary mx-2 " href="logout.php">
+                        <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
+                    </a>
+                </div>
+            </nav>
         </div>
     </nav>
+
     <!-- company description -->
     <?php include "getData/getCompanyDesc.php"; ?>
     <!-- reviews container -->
