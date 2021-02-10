@@ -69,6 +69,10 @@ a {
     padding: 30px;
 }
 
+.reviews-container{
+    width: 100%;
+}
+
 .user-review{
     margin-left: 2px;
     margin-top: 15px;

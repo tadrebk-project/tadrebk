@@ -16,7 +16,7 @@ if($result=mysqli_query($conn, $query)){
             <div class='col-3 col-md-2 col-lg-1'>
                 <img src='resources/profile-icon.png' alt='' width='70' height='70'>
             </div>
-            <div class='col-2 col-md-2 col-lg-3'>
+            <div class='col-9 col-md-2 col-lg-3'>
                 <b>".$row['name']."</b> 
                 <br>
                 <b>".$row['date']."</b>
