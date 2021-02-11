@@ -16,8 +16,7 @@ if (!isset($_SESSION['userid'])) {
     <!-- Bootstrap CSS -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="project.css">
 
@@ -42,7 +41,7 @@ if (!isset($_SESSION['userid'])) {
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
-                <div class="container" style="width: 270px; margin-left: 1rem;">
+                <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
                     <!--
                     <a class="btn btn-outline-primary mx-2" href="#">
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
@@ -99,8 +98,7 @@ if (!isset($_SESSION['userid'])) {
                 </div>
                 <div class="d-flex align-items-center">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="search" aria-label="search"
-                            aria-describedby="button-addon2">
+                        <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2">
                             <i class="bi bi-search d-flex justify-content-center align-items-center"></i>
                         </button>
@@ -120,7 +118,7 @@ if (!isset($_SESSION['userid'])) {
                             </div>
                             <div class="col">
                                 <div class="container d-flex justify-content-center">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -137,9 +135,7 @@ if (!isset($_SESSION['userid'])) {
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 </body>
 

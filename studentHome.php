@@ -44,7 +44,7 @@ if (!isset($_SESSION['userid'])) {
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
-                <div class="container" style="width: 270px; margin-left: 1rem;">
+            <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
                     <!--
                     <a class="btn btn-outline-primary mx-2" href="#">
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
