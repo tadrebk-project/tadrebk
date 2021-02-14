@@ -151,7 +151,45 @@ if (!isset($_SESSION['userid'])) {
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                         </div>
+                                        
+                            </div>
+                            <div class="col">
+                                    <div class='card my-1'>
+                                        <div class='card-body'>
+                                            <div class='row row-cols-3'>
+                                                <div class='col'>
+                                                    <p class='my-0'>Aramco</p>
+                                                </div>
+                                                <div class='col'>
+                                                    <p class='my-0'>Dhaharan City</p>
+                                                </div>
+                                                <div class='col'>
+                                                    <!-- put if statment here if pending it will be orange if approved it will be green-->
+                                                  
+                                                      <!-- instead of rand(0,99) put the status here -->
+                                                  <?php
+                                                    $colour = 'green';
+                                                    $status = 'Rejected';
+                                                    if($status == 'Pending') {
+                                                        $colour = 'orange';
+                                                    }
+                                                    elseif($status == 'Approved'){
+                                                        $colour = 'green';
+                                                    }
+                                                    elseif($status == 'Rejected'){
+                                                        $colour = 'red';
+                                                    }
+                                                    ?>
+                                                    <div style="color:<?=$colour?>;">
+                                                        <?=$status?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
                             </div>
                         </div>
                     </div>
