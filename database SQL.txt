@@ -88,6 +88,7 @@ create table Application(
         description varchar(300) NOT NULL,
         reqGPA double NOT NULL,
         compID int NOT NULL,
+	trainingType varchar(30) NOT NULL,
         primary key(appID),
         foreign key(compID) references Company(compID) ON DELETE CASCADE);
 
