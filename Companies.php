@@ -19,7 +19,7 @@ if (!isset($_SESSION['userid'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="project.css">
-
+    <script src="resources/searchCompanies.js"></script>
     <link rel="icon" type="image/png" href="resources/Tadreabk favicon.png" />
     <title>Companies</title>
 </head>
@@ -98,7 +98,7 @@ if (!isset($_SESSION['userid'])) {
                 </div>
                 <div class="d-flex align-items-center">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+                        <input id="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2">
                             <i class="bi bi-search d-flex justify-content-center align-items-center"></i>
                         </button>
@@ -124,9 +124,9 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                     </div>
                 </div>
-
-                <?php include "getData/getcompanies.php"; ?>
-
+                <div id="companiesList">
+                    <?php include "getData/getcompanies.php"; ?>
+                </div>
             </div>
         </div>
     </div>
