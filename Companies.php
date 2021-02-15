@@ -26,7 +26,6 @@ if (!isset($_SESSION['userid'])) {
 
 <body>
 
-
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
             <a class="navbar-brand" href="studentHome.php">
@@ -55,82 +54,83 @@ if (!isset($_SESSION['userid'])) {
         </div>
     </nav>
 
-    <div style="float:left; width: 25%; height: 100%; color: #ffffff; background-color: #172457;">
-        <div class="Container mx-auto my-5">
-            <div class="d-flex justify-content-center">
-                <span class="text">Filters <i class="bi bi-funnel-fill"></i></span>
-            </div>
-            <div class="my-5">
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Major</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Location</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Training</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">CO-OP</option>
-                        <option value="2">Summer</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="float:left; width: 75%; height: 100%;">
-        <div class="Container mx-5 my-5">
-            <div class="Container d-flex justify-content-between">
-                <div>
-                    <p class="text">Companies</p>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="input-group">
-                        <input id="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                            <i class="bi bi-search d-flex justify-content-center align-items-center"></i>
-                        </button>
+    <div>
+        <div class="row g-0" style="min-height: calc(100vh - 90px);">
+            <div class="col-12 col-sm-3" style="color: #ffffff; background-color: #172457;">
+                <div class="mx-auto my-5">
+                    <div class="d-flex justify-content-center">
+                        <span class="text">Filters <i class="bi bi-funnel-fill"></i></span>
                     </div>
-                </div>
-            </div>
-            <div class="container">
-
-                <div class="card my-3">
-                    <div class="card-body">
-                        <div class="row row-cols-3">
-                            <div class="col">
-                                Company
-                            </div>
-                            <div class="col">
-                                Location
-                            </div>
-                            <div class="col">
-                                <div class="container d-flex justify-content-center">
-
-                                </div>
-                            </div>
+                    <div class="my-5">
+                        <div class="m-3 d-flex justify-content-between">
+                            <span class="align-middle">Major</span>
+                            <select class="form-select" aria-label="Default select example" style="width: 10rem;">
+                                <option selected>select</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="m-3 d-flex justify-content-between">
+                            <span class="align-middle">Location</span>
+                            <select class="form-select" aria-label="Default select example" style="width: 10rem;">
+                                <option selected>select</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="m-3 d-flex justify-content-between">
+                            <span class="align-middle">Training</span>
+                            <select class="form-select" aria-label="Default select example" style="width: 10rem;">
+                                <option selected>select</option>
+                                <option value="1">CO-OP</option>
+                                <option value="2">Summer</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-                <div id="companiesList">
-                    <?php include "getData/getcompanies.php"; ?>
+            </div>
+            <div class="col-12 col-sm-9">
+                <div class="m-2 m-sm-5">
+                    <div class="container d-flex justify-content-between">
+                        <div class="mx-2 mx-sm-0">
+                            <p class="text">Companies</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="input-group">
+                                <input id="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                    <i class="bi bi-search d-flex justify-content-center align-items-center"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <div class="row row-cols-3">
+                                    <div class="col">
+                                        Company
+                                    </div>
+                                    <div class="col">
+                                        Location
+                                    </div>
+                                    <div class="col">
+                                        <div class="container d-flex justify-content-center">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="companiesList">
+                            <?php include "getData/getcompanies.php"; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 
 
 
