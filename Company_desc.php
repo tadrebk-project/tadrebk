@@ -37,7 +37,7 @@ if (!isset($_SESSION['userid'])) {
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
                     <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Requests</a>
+                    <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
                     <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
                 </nav>
             </div>

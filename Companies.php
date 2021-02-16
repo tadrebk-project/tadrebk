@@ -35,7 +35,7 @@ if (!isset($_SESSION['userid'])) {
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
                     <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Requests</a>
+                    <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
                     <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
                 </nav>
             </div>
@@ -76,7 +76,7 @@ if (!isset($_SESSION['userid'])) {
                                 <option value="Dammam">Dammam</option>
                                 <option value="Jeddah">Jeddah</option>
                                 <option value="Makkah">Makkah</option>
-                                <option value="Riyadh">Riyadh</option>                              
+                                <option value="Riyadh">Riyadh</option>
                             </select>
                         </div>
                         <div class="m-3 d-flex justify-content-between">
