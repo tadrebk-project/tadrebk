@@ -54,43 +54,8 @@ if (!isset($_SESSION['userid'])) {
         </div>
     </nav>
 
-    <div style="float:left; width: 25%; height: 100%; color: #ffffff; background-color: #172457;">
-        <div class="Container mx-auto my-5">
-            <div class="d-flex justify-content-center">
-                <span class="text">Filters <i class="bi bi-funnel-fill"></i></span>
-            </div>
-            <div class="my-5">
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Major</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Location</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Training</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">CO-OP</option>
-                        <option value="2">Summer</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="float:left; width: 75%; height: 100%;">
-        <div class="Container mx-5 my-5">
+    <div class="container mx-auto" style=" width: 80%; height: 100%;">
+        <div class="Container mx-5 my-5 raw ">
             <div class="Container d-flex justify-content-between">
                 <div>
                     <p class="text">Request Status</p>
@@ -108,7 +73,7 @@ if (!isset($_SESSION['userid'])) {
 
                 <div class="card my-3">
                     <div class="card-body">
-                        <div class="row row-cols-3">
+                        <div class="row row-cols-5">
                             <div class="col">
                                 Company
                             </div>
@@ -118,11 +83,65 @@ if (!isset($_SESSION['userid'])) {
                             <div class="col">
                                 Status
                             </div>
+                            <div class="col">
+                                Request
+                            </div>
                         </div>
                             <div class="col">
                                     <div class='card my-1'>
                                         <div class='card-body'>
-                                            <div class='row row-cols-3'>
+                                            <div class='row row-cols-5'>
+                                                <div class='col'>
+                                                    <p class='my-0'>Aramco</p>
+                                                </div>
+                                                <div class='col'>
+                                                    <p class='my-0'>Dhaharan City</p>
+                                                </div>
+                                                <div class='col'>
+                                                    <!-- put if statment here if pending it will be orange if approved it will be green-->
+                                                  
+                                                      <!-- instead of rand(0,99) put the status here -->
+                                                  <?php
+                                                    $colour = 'green';
+                                                    $status = 'Approved';
+                                                    $str = "";
+                                                    if($status == 'Pending') {
+                                                        $colour = 'orange';
+                                                        $str .= "    <div style='color: $colour'>
+                                                        $status 
+                                                           </div>  </div>";
+                                                    }
+                                                    elseif($status == 'Approved'){
+                                                        $colour = 'green';
+                                                        $str .= "    <div style='color: $colour'>
+                                                        $status 
+                                                    </div>
+                                                    </div>
+                                                    <div class='col'>
+                                                        <button class='btn btn-primary'>Accept</button>
+                                                        </div>
+                                                        <div class='col'>
+                                                        <button class='btn btn-primary'>Reject</button>
+                                                        </div>  "; 
+                                                    }
+                                                    elseif($status == 'Rejected'){
+                                                        $colour = 'red';
+                                                        $str .= "    <div style='color: $colour'>
+                                                        $status 
+                                                           </div>  </div>";
+                                                    }
+
+                                                    echo $str;
+                                                    ?>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                            </div>
+                            <div class="col">
+                                    <div class='card my-1'>
+                                        <div class='card-body'>
+                                            <div class='row row-cols-5'>
                                                 <div class='col'>
                                                     <p class='my-0'>Aramco</p>
                                                 </div>
@@ -136,59 +155,40 @@ if (!isset($_SESSION['userid'])) {
                                                   <?php
                                                     $colour = 'green';
                                                     $status = 'Pending';
+                                                    $str = "";
                                                     if($status == 'Pending') {
                                                         $colour = 'orange';
+                                                        $str .= "    <div style='color: $colour'>
+                                                        $status 
+                                                           </div>  </div>";
                                                     }
                                                     elseif($status == 'Approved'){
                                                         $colour = 'green';
+                                                        $str .= "    <div style='color: $colour'>
+                                                        $status 
+                                                    </div>
+                                                    </div>
+                                                    <div class='col'>
+                                                        <button class='btn btn-primary'>Accept</button>
+                                                        </div>
+                                                        <div class='col'>
+                                                        <button class='btn btn-primary'>Reject</button>
+                                                        </div>  "; 
                                                     }
                                                     elseif($status == 'Rejected'){
                                                         $colour = 'red';
+                                                        $str .= "    <div style='color: $colour'>
+                                                        $status 
+                                                           </div>  </div>";
                                                     }
+
+                                                    echo $str;
                                                     ?>
-                                                    <div style="color:<?=$colour?>;">
-                                                        <?=$status?>
-                                                    </div>
-                                                </div>
                                             </div>
                                             
                                         </div>
                                         
                             </div>
-                            <div class="col">
-                                    <div class='card my-1'>
-                                        <div class='card-body'>
-                                            <div class='row row-cols-3'>
-                                                <div class='col'>
-                                                    <p class='my-0'>Aramco</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>Dhaharan City</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <!-- put if statment here if pending it will be orange if approved it will be green-->
-                                                  
-                                                      <!-- instead of rand(0,99) put the status here -->
-                                                  <?php
-                                                    $colour = 'green';
-                                                    $status = 'Rejected';
-                                                    if($status == 'Pending') {
-                                                        $colour = 'orange';
-                                                    }
-                                                    elseif($status == 'Approved'){
-                                                        $colour = 'green';
-                                                    }
-                                                    elseif($status == 'Rejected'){
-                                                        $colour = 'red';
-                                                    }
-                                                    ?>
-                                                    <div style="color:<?=$colour?>;">
-                                                        <?=$status?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
                                         
                             </div>
                         </div>
