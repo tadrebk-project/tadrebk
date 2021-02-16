@@ -17,7 +17,7 @@ if($result=mysqli_query($conn, $query)){
                     <h2>".$row['name']."</h2>
                 </div>
                 <div class='col-2 col-md-2'>
-                <button class='btn btn-primary align-self-center'>Request</button>
+                <button class='btn btn-primary align-self-center' onclick='window.location.href=".'"applications.php?compID='.$_GET['compID'].'"'."'>View Applications</button>
                 </div>
             </div>
             <br>
