@@ -14,7 +14,7 @@ if(isset($_GET['compID'])){
                 $str2 ="";
                 $query2 = "SELECT name from major where MID in (SELECT MID from requiredmajors where appID = '".$row['appID']."')";
                 if($result2=mysqli_query($conn, $query2)){
-                    if(mysqli_num_rows($result2)>0){ 
+                    if(mysqli_num_rows($result2)>0){
                         while($row2=mysqli_fetch_array($result2)){
                             $str2 .= $row2["name"].", ";
                         }
@@ -31,7 +31,9 @@ if(isset($_GET['compID'])){
                         <p>".$row['description']."</p>
                     </div>
                     <div class='col-3 col-md-2' style='display: flex; align-items: center; justify-content: center;'>
-                        <button class='btn btn-primary'>Request</button>
+                    <form action='getData/insertRequest.php? appID= ".$row['appID']." 'method='post'>
+                            <button type='submit' class='btn btn-primary' id='add_request' name='add_request'>Request</button>
+                    </form>
                     </div>
                 </div>
                 <hr>
@@ -45,7 +47,7 @@ if(isset($_GET['compID'])){
             </div>";
             }
             echo $str;
-            
+
         }
         else {
             echo "No applications available...";
@@ -59,5 +61,3 @@ else{
 
 
 ?>
-
-
