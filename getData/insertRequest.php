@@ -18,5 +18,5 @@ if (isset($_POST['add_request'])) {
 }
 
 mysqli_close($conn);
-header('location: ../applications.php');
+header('location: ../applications.php?compID='.$_GET['compID']);
 ?>
