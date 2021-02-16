@@ -70,7 +70,7 @@ if (!isset($_SESSION['userid'])) {
                 </a>
             </div>
             <div class="col">
-                <a href="#" class="text-decoration-none">
+                <a href="ViewRequestStatus.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text">Requests</p>
