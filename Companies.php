@@ -64,28 +64,27 @@ if (!isset($_SESSION['userid'])) {
                     <div class="my-5">
                         <div class="m-3 d-flex justify-content-between">
                             <span class="align-middle">Major</span>
-                            <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                                <option selected>select</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select id="majorSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
+                                <option selected value="">select</option>
+                                <?php include "getData/getMajors.php" ?>
                             </select>
                         </div>
                         <div class="m-3 d-flex justify-content-between">
                             <span class="align-middle">Location</span>
-                            <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                                <option selected>select</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select id="locationSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
+                                <option selected value="">select</option>
+                                <option value="Riyadh">Dammam</option>
+                                <option value="Jeddah">Jeddah</option>
+                                <option value="Makkah">Makkah</option>
+                                <option value="Riyadh">Riyadh</option>                              
                             </select>
                         </div>
                         <div class="m-3 d-flex justify-content-between">
                             <span class="align-middle">Training</span>
-                            <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                                <option selected>select</option>
-                                <option value="1">CO-OP</option>
-                                <option value="2">Summer</option>
+                            <select id="trainingTypeSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
+                                <option selected value="">select</option>
+                                <option value="COOP">CO-OP</option>
+                                <option value="summer">Summer Training</option>
                             </select>
                         </div>
                     </div>
