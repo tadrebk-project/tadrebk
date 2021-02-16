@@ -18,8 +18,8 @@ $studentID = $_SESSION['studentid'];
 $qry1 = "DELETE FROM `studentrequest` where studentID = ".$studentID.";";
 mysqli_query($conn, $qry1);
 
-$qry2 = "UPDATE Student 
-SET 
+$qry2 = "UPDATE Student
+SET
     compID = ".$compID."
 WHERE
     studentID = ".$studentID.";";
@@ -33,6 +33,6 @@ if(isset($_POST['rejectTraining'])){
 
 
 mysqli_close($conn);
-header('location: ../studentHome.php');
+header('location: ../ViewRequestStatus.php');
 
 ?>
