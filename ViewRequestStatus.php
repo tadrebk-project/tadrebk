@@ -37,7 +37,7 @@ if (!isset($_SESSION['userid'])) {
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
                     <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
                     <a class="nav-link btn btn-outline-primary active" href="ViewRequestStatus.php">Requests</a>
-                    <a class="nav-link btn btn-outline-primary" aria-current="page" href="#">Companies</a>
+                    <a class="nav-link btn btn-outline-primary" aria-current="page" href="Companies.php">Companies</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
@@ -88,9 +88,9 @@ if (!isset($_SESSION['userid'])) {
                                 Request
                             </div>
                         </div>
-                            
+
                             <?php include "getData/getRequestStatus.php"; ?>
-                                        
+
                             </div>
                         </div>
                     </div>
