@@ -73,10 +73,11 @@ if (!isset($_SESSION['userid'])) {
                             <span class="align-middle">Location</span>
                             <select id="locationSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
                                 <option selected value="">select</option>
+                                <option value="Riyadh">Riyadh</option>
                                 <option value="Dammam">Dammam</option>
                                 <option value="Jeddah">Jeddah</option>
                                 <option value="Makkah">Makkah</option>
-                                <option value="Riyadh">Riyadh</option>                              
+                                <option value="Dhahran">Dhahran</option>                       
                             </select>
                         </div>
                         <div class="m-3 d-flex justify-content-between">
