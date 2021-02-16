@@ -15,6 +15,7 @@ if (!isset($_SESSION['userid'])) {
     <!-- Bootstrap CSS -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="resources/approveTraining.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="project.css">
@@ -78,7 +79,7 @@ if (!isset($_SESSION['userid'])) {
                                 Company
                             </div>
                             <div class="col">
-                                Location
+                                Application
                             </div>
                             <div class="col">
                                 Status
@@ -87,108 +88,8 @@ if (!isset($_SESSION['userid'])) {
                                 Request
                             </div>
                         </div>
-                            <div class="col">
-                                    <div class='card my-1'>
-                                        <div class='card-body'>
-                                            <div class='row row-cols-5'>
-                                                <div class='col'>
-                                                    <p class='my-0'>Aramco</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>Dhaharan City</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <!-- put if statment here if pending it will be orange if approved it will be green-->
-                                                  
-                                                      <!-- instead of rand(0,99) put the status here -->
-                                                  <?php
-                                                    $colour = 'green';
-                                                    $status = 'Approved';
-                                                    $str = "";
-                                                    if($status == 'Pending') {
-                                                        $colour = 'orange';
-                                                        $str .= "    <div style='color: $colour'>
-                                                        $status 
-                                                           </div>  </div>";
-                                                    }
-                                                    elseif($status == 'Approved'){
-                                                        $colour = 'green';
-                                                        $str .= "    <div style='color: $colour'>
-                                                        $status 
-                                                    </div>
-                                                    </div>
-                                                    <div class='col'>
-                                                        <button class='btn btn-primary'>Accept</button>
-                                                        </div>
-                                                        <div class='col'>
-                                                        <button class='btn btn-primary'>Reject</button>
-                                                        </div>  "; 
-                                                    }
-                                                    elseif($status == 'Rejected'){
-                                                        $colour = 'red';
-                                                        $str .= "    <div style='color: $colour'>
-                                                        $status 
-                                                           </div>  </div>";
-                                                    }
-
-                                                    echo $str;
-                                                    ?>
-                                            </div>
-                                            
-                                        </div>
-                                        
-                            </div>
-                            <div class="col">
-                                    <div class='card my-1'>
-                                        <div class='card-body'>
-                                            <div class='row row-cols-5'>
-                                                <div class='col'>
-                                                    <p class='my-0'>Aramco</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>Dhaharan City</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <!-- put if statment here if pending it will be orange if approved it will be green-->
-                                                  
-                                                      <!-- instead of rand(0,99) put the status here -->
-                                                  <?php
-                                                    $colour = 'green';
-                                                    $status = 'Pending';
-                                                    $str = "";
-                                                    if($status == 'Pending') {
-                                                        $colour = 'orange';
-                                                        $str .= "    <div style='color: $colour'>
-                                                        $status 
-                                                           </div>  </div>";
-                                                    }
-                                                    elseif($status == 'Approved'){
-                                                        $colour = 'green';
-                                                        $str .= "    <div style='color: $colour'>
-                                                        $status 
-                                                    </div>
-                                                    </div>
-                                                    <div class='col'>
-                                                        <button class='btn btn-primary'>Accept</button>
-                                                        </div>
-                                                        <div class='col'>
-                                                        <button class='btn btn-primary'>Reject</button>
-                                                        </div>  "; 
-                                                    }
-                                                    elseif($status == 'Rejected'){
-                                                        $colour = 'red';
-                                                        $str .= "    <div style='color: $colour'>
-                                                        $status 
-                                                           </div>  </div>";
-                                                    }
-
-                                                    echo $str;
-                                                    ?>
-                                            </div>
-                                            
-                                        </div>
-                                        
-                            </div>
+                            
+                            <?php include "getData/getRequestStatus.php"; ?>
                                         
                             </div>
                         </div>
