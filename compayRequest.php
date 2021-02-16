@@ -9,21 +9,19 @@ if (!isset($_SESSION['userid'])) {
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="project.css">
 
     <link rel="stylesheet" href="project.css">
+
     <link rel="icon" type="image/png" href="resources/Tadreabk favicon.png" />
     <title>Company</title>
 </head>
@@ -44,7 +42,7 @@ if (!isset($_SESSION['userid'])) {
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
-                <div class="container" style="width: 270px; margin-left: 1rem;">
+                <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
                     <!--
                     <a class="btn btn-outline-primary mx-2" href="#">
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
