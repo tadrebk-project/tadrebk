@@ -31,7 +31,7 @@ if(isset($_GET['compID'])){
                         <p>".$row['description']."</p>
                     </div>
                     <div class='col-3 col-md-2' style='display: flex; align-items: center; justify-content: center;'>
-                    <form action='getData/insertRequest.php? appID= ".$row['appID']." 'method='post'>
+                    <form action='getData/insertRequest.php?appID= ".$row['appID']."&compID=".$_GET['compID']."' method='post'>
                             <button type='submit' class='btn btn-primary' id='add_request' name='add_request'>Request</button>
                     </form>
                     </div>
