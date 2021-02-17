@@ -64,7 +64,7 @@ if($result=mysqli_query($conn, $query)){
                     </div>
                 </div>
                 
-                    ".$str2.$str3."
+                    ".$str3.$str2."
                 
             </div>
         </div>";
