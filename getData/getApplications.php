@@ -11,6 +11,13 @@ if(isset($_GET['compID'])){
             //(here table)
             $str = "";
             while($row=mysqli_fetch_array($result)){
+                $trainingType = "";
+                if($row['trainingType']=='summer'){
+                    $trainingType = "Summer Training";
+                }
+                elseif($row['trainingType']=='COOP'){
+                    $trainingType = "CO-OP";
+                }
                 $str2 ="";
                 $query2 = "SELECT name from major where MID in (SELECT MID from requiredmajors where appID = '".$row['appID']."')";
                 if($result2=mysqli_query($conn, $query2)){
@@ -39,6 +46,7 @@ if(isset($_GET['compID'])){
                 <hr>
                 <div class='row'>
                     <div class='col'>
+                        <h5>Training Type: ".$trainingType."</h5>
                         <h5>Required Majors:</h5>
                         <p>".$str2."</p>
                         <h5>Required GPA: ".$row['reqGPA']."</h5>
