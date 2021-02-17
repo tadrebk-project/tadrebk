@@ -71,7 +71,7 @@ if(mysqli_num_rows($result) > 0)
                 </div>
             </div>
             
-                ".$str2.$str3."
+                ".$str3.$str2."
             
         </div>
     </div>";
