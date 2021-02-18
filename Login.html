@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="student/project.css">
+
+    <link rel="icon" type="image/png" href="general_resources/Tadreabk favicon.png"/>
+    <title>Login</title>
+</head>
+
+<body>
+
+
+    <!-- Just an image -->
+    <nav class="navbar navbar-light" style="background-color: #ffffff;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="general_resources/Tadreabk logo.png" alt="" width="270" height="50">
+            </a>
+        </div>
+    </nav>
+
+    <div class="d-flex justify-content-center Center-Container">
+        <div class="card align-self-center mx-3" style="width: 30rem;">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <span class="text">Login</span>
+                        </div>
+                    </div>
+
+                    <form method="post" action="general_backend/loginBackend.php">
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="my-5">
+                                    <input name="username" id="username" class="textinput form-control my-4" type="text"
+                                        placeholder="USERNAME" aria-label="username example">
+                                    <input name="password" id="password" class="textinput form-control my-4"
+                                        type="password" placeholder="PASSWORD" aria-label="password example">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-center">
+                                <button type="submit" name="login-btn" id="login-btn"
+                                    class="btn btn-primary align-self-center">Login</button>
+
+
+                                <!--for wrong credentials -->
+                                <!--data-toggle="modal" data-target="#myLoginModal"-->
+                                <div class="modal" id="myLoginModal">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Wrong credentials</h4>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                your username or password is incorrect
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <p class="my-3">For companies that require association,
+                                <u><a href="signup.html">Request Association</a></u>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
