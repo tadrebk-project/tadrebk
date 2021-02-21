@@ -25,7 +25,7 @@ else{
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="project.css">
 
-    <link rel="icon" type="image/png" href="resources/Tadreabk favicon.png" />
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
     <title>Request Status</title>
     <script src="resources/to/jquery.js"></script>
 <script src="resources/to/popper.js"></script>
@@ -39,7 +39,7 @@ else{
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
             <a class="navbar-brand" href="studentHome.php">
-                <img src="resources/Tadreabk logo.png" alt="" width="270" height="50">
+                <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
@@ -56,7 +56,7 @@ else{
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
                     </a>
                     -->
-                    <a class="btn btn-outline-primary mx-2 " href="logout.php">
+                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
