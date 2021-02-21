@@ -1,0 +1,75 @@
+body, html {
+    width: 100%;
+    height:100%;
+    max-width: 100%;
+    color: #172457;
+    background-color: #E6E6E6;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+a {
+    color: #172457;
+}
+
+.text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.textinput {
+    color: #172457;
+    background-color: #e4e7ef;
+    width: 100%;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #172457;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background-color: #0f5ecd;
+}
+
+.btn-outline-primary{
+    margin: 1rem;
+    border-color:#172457;
+    color: #172457;
+    border-radius: 20px;
+}
+.btn-outline-primary:hover{
+    background-color: #172457;
+}
+.btn-outline-primary.active,
+.btn-outline-primary:active {
+    background-color: #172457;
+}
+
+.app{
+    background-color: #ffffff;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+
+.con{
+    position: relative;
+    top: 10%;
+    padding: 20px;
+}
+
+@media (min-width: 1000px) {
+
+    .con{
+        position: relative;
+        top: 15%;
+        width: 60%;
+    }
+}
+
+#select{
+    width: 80%;
+}
