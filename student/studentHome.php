@@ -1,7 +1,13 @@
 <?php
-session_start();
-if (!isset($_SESSION['userid'])) {
-    header('location: Login.html');
+//to check if the file that includes this code is two level far from the required page or one level. 
+if(file_exists("../general_backend/sessionStart.php")){
+    require "../general_backend/sessionStart.php";
+}
+elseif (file_exists("../../general_backend/sessionStart.php")){
+    require "../../general_backend/sessionStart.php";
+}
+else{
+    require "general_backend/sessionStart.php";
 }
 ?>
 
@@ -22,7 +28,7 @@ if (!isset($_SESSION['userid'])) {
 
     <link rel="stylesheet" href="project.css">
 
-    <link rel="icon" type="image/png" href="resources/Tadreabk favicon.png" />
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
     <title>Home</title>
 </head>
 
@@ -33,13 +39,13 @@ if (!isset($_SESSION['userid'])) {
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="resources/Tadreabk logo.png" alt="" width="270" height="50">
+                <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Home</a>
                     <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Requests</a>
+                    <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
                     <a class="nav-link btn btn-outline-primary" href="Companies.php">Companies</a>
                 </nav>
             </div>
@@ -50,7 +56,7 @@ if (!isset($_SESSION['userid'])) {
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
                     </a>
                     -->
-                    <a class="btn btn-outline-primary mx-2 " href="logout.php">
+                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
@@ -70,7 +76,7 @@ if (!isset($_SESSION['userid'])) {
                 </a>
             </div>
             <div class="col">
-                <a href="#" class="text-decoration-none">
+                <a href="ViewRequestStatus.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text">Requests</p>

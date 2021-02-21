@@ -1,10 +1,15 @@
 <?php
-session_start();
-if (!isset($_SESSION['userid'])) {
-    header('location: Login.html');
+//to check if the file that includes this code is two level far from the required page or one level. 
+if(file_exists("../general_backend/sessionStart.php")){
+    require "../general_backend/sessionStart.php";
+}
+elseif (file_exists("../../general_backend/sessionStart.php")){
+    require "../../general_backend/sessionStart.php";
+}
+else{
+    require "general_backend/sessionStart.php";
 }
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -16,12 +21,13 @@ if (!isset($_SESSION['userid'])) {
     <!-- Bootstrap CSS -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="resources/approveTraining.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="project.css">
 
-    <link rel="icon" type="image/png" href="resources/Tadreabk favicon.png" />
-    <title>Companies</title>
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
+    <title>Request Status</title>
 </head>
 
 <body>
@@ -30,14 +36,14 @@ if (!isset($_SESSION['userid'])) {
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
             <a class="navbar-brand" href="studentHome.php">
-                <img src="resources/Tadreabk logo.png" alt="" width="270" height="50">
+                <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
                     <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Requests</a>
-                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
+                    <a class="nav-link btn btn-outline-primary active" href="ViewRequestStatus.php">Requests</a>
+                    <a class="nav-link btn btn-outline-primary" aria-current="page" href="Companies.php">Companies</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
@@ -47,7 +53,7 @@ if (!isset($_SESSION['userid'])) {
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
                     </a>
                     -->
-                    <a class="btn btn-outline-primary mx-2 " href="logout.php">
+                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
@@ -55,46 +61,11 @@ if (!isset($_SESSION['userid'])) {
         </div>
     </nav>
 
-    <div style="float:left; width: 25%; height: 100%; color: #ffffff; background-color: #172457;">
-        <div class="Container mx-auto my-5">
-            <div class="d-flex justify-content-center">
-                <span class="text">Filters <i class="bi bi-funnel-fill"></i></span>
-            </div>
-            <div class="my-5">
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Major</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Location</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Training</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">CO-OP</option>
-                        <option value="2">Summer</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="float:left; width: 75%; height: 100%;">
-        <div class="Container mx-5 my-5">
+    <div class="container mx-auto" style=" width: 80%; height: 100%;">
+        <div class="Container mx-5 my-5 raw ">
             <div class="Container d-flex justify-content-between">
                 <div>
-                    <p class="text">Companies</p>
+                    <p class="text">Request Status</p>
                 </div>
                 <div class="d-flex align-items-center">
                     <div class="input-group">
@@ -109,24 +80,27 @@ if (!isset($_SESSION['userid'])) {
 
                 <div class="card my-3">
                     <div class="card-body">
-                        <div class="row row-cols-3">
+                        <div class="row row-cols-5">
                             <div class="col">
                                 Company
                             </div>
                             <div class="col">
-                                Location
+                                Application
                             </div>
                             <div class="col">
-                                <div class="container d-flex justify-content-center">
+                                Status
+                            </div>
+                            <div class="col">
+                                Request
+                            </div>
+                        </div>
 
-                                </div>
+                            <?php include "backend/getRequestStatus.php"; ?>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <?php include "getData/getcompanies.php"; ?>
-
             </div>
         </div>
     </div>

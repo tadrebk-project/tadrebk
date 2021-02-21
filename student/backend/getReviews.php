@@ -1,8 +1,17 @@
 <?php 
-if (!isset($_SESSION['userid'])) {
-    header('location: ../Login.html');
+//to check if the file that includes this code is two level far from the required page or one level. 
+if(file_exists("../general_backend/sessionStart.php")){
+    require "../general_backend/sessionStart.php";
+    require "../general_backend/conn.php";
 }
-require "conn.php";
+elseif (file_exists("../../general_backend/sessionStart.php")){
+    require "../../general_backend/sessionStart.php";
+    require "../../general_backend/conn.php";
+}
+else{
+    require "general_backend/sessionStart.php";
+    require "general_backend/conn.php";
+}
 
 $query = "select r.*, s.name from review r join student s on r.studentID = s.studentID where r.compID = ".$_GET['compID'];
 
@@ -37,5 +46,5 @@ if($result=mysqli_query($conn, $query)){
         echo "There are no reviews..";
     }
 }
-
+mysqli_close($conn);
 ?>

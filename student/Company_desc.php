@@ -1,7 +1,13 @@
 <?php
-session_start();
-if (!isset($_SESSION['userid'])) {
-    header('location: Login.html');
+//to check if the file that includes this code is two level far from the required page or one level. 
+if(file_exists("../general_backend/sessionStart.php")){
+    require "../general_backend/sessionStart.php";
+}
+elseif (file_exists("../../general_backend/sessionStart.php")){
+    require "../../general_backend/sessionStart.php";
+}
+else{
+    require "general_backend/sessionStart.php";
 }
 ?>
 
@@ -20,7 +26,7 @@ if (!isset($_SESSION['userid'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="project.css">
 
-    <link rel="icon" type="image/png" href="resources/Tadreabk favicon.png" />
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
     <title>Companies</title>
 </head>
 
@@ -31,13 +37,13 @@ if (!isset($_SESSION['userid'])) {
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
             <a class="navbar-brand" href="studentHome.php">
-                <img src="resources/Tadreabk logo.png" alt="" width="270" height="50">
+                <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
                     <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Requests</a>
+                    <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
                     <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
                 </nav>
             </div>
@@ -48,7 +54,7 @@ if (!isset($_SESSION['userid'])) {
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
                     </a>
                     -->
-                    <a class="btn btn-outline-primary mx-2 " href="logout.php">
+                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
@@ -57,7 +63,7 @@ if (!isset($_SESSION['userid'])) {
     </nav>
 
     <!-- company description -->
-    <?php include "getData/getCompanyDesc.php"; ?>
+    <?php include "backend/getCompanyDesc.php"; ?>
     <!-- reviews container -->
     <div class="container company-reviews">
         <div class="row">
@@ -82,7 +88,7 @@ if (!isset($_SESSION['userid'])) {
                             <div class="collapse multi-collapse" id="writeReview">
                                 <br>
                                 <div class="row">
-                                    <form action="getData/writeReview.php?compID=<?php echo $_GET['compID'] ?>" method="post">
+                                    <form action="backend/writeReview.php?compID=<?php echo $_GET['compID'] ?>" method="post">
                                         <textarea class="form-control" id="reviewText" name="reviewText" rows="3"></textarea>
                                         <div class="col">
                                             <button type="submit" class="btn btn-primary" id="add_review" name="add_review">Submit</button>
@@ -93,7 +99,7 @@ if (!isset($_SESSION['userid'])) {
                     </div>
                     <hr>
                     <!-- students reivews -->
-                    <?php include "getData/getReviews.php"; ?>
+                    <?php include "backend/getReviews.php"; ?>
 
 
                 </div>
@@ -102,12 +108,12 @@ if (!isset($_SESSION['userid'])) {
     </div>
     <div class="col">
         <div class="collapse multi-collapse" id="Event">
-            <?php include "getData/getEvents.php"; ?>
+            <?php include "backend/getEvents.php"; ?>
         </div>
     </div>
     <div class="col">
         <div class="collapse multi-collapse" id="Announcment">
-            <?php include "getData/getAnnouncements.php"; ?>
+            <?php include "backend/getAnnouncements.php"; ?>
         </div>
     </div>
     </div>

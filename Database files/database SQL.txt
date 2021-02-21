@@ -18,7 +18,7 @@ create table User1(
 create table Company(
         compID int NOT NULL AUTO_INCREMENT,
         name varchar(50) NOT NULL,
-	description varchar(200) NOT NULL,
+	description varchar(1000) NOT NULL,
         location varchar(200) NOT NULL,
         website varchar(100) NOT NULL,
         status varchar(30) NOT NULL,
@@ -66,7 +66,7 @@ create table Instructor(
 
 create table PerformanceFeedback(
         PFID int NOT NULL AUTO_INCREMENT,
-        details varchar(300) NOT NULL,
+        details varchar(1000) NOT NULL,
         date date NOT NULL,
         studentID int NOT NULL,
         compID int NOT NULL,
@@ -75,7 +75,7 @@ create table PerformanceFeedback(
 
 create table ProgressReport(
         RID int NOT NULL AUTO_INCREMENT,
-        fileRef varchar(100) NOT NULL,
+        fileRef varchar(200) NOT NULL,
         date date NOT NULL,
         studentID int NOT NULL,
         primary key(RID),
@@ -85,16 +85,17 @@ create table ProgressReport(
 create table Application(
         appID int NOT NULL AUTO_INCREMENT,
         name varchar(50) NOT NULL,
-        description varchar(300) NOT NULL,
+        description varchar(1000) NOT NULL,
         reqGPA double NOT NULL,
         compID int NOT NULL,
+	trainingType varchar(50) NOT NULL,
         primary key(appID),
         foreign key(compID) references Company(compID) ON DELETE CASCADE);
 
 
 create table Review(
         RID int NOT NULL AUTO_INCREMENT,
-        text varchar(300) NOT NULL,
+        text varchar(400) NOT NULL,
         date date NOT NULL,
         compID int NOT NULL,
         studentID int NOT NULL,
@@ -105,7 +106,7 @@ create table Review(
 create table Event1(
         eventID int NOT NULL AUTO_INCREMENT,
         name varchar(30) NOT NULL,
-        description varchar(300) NOT NULL,
+        description varchar(1000) NOT NULL,
         date date NOT NULL,
         time time NOT NULL,
         compID int NOT NULL,
@@ -115,7 +116,7 @@ create table Event1(
 create table Announcement(
         annID int NOT NULL AUTO_INCREMENT,
         title varchar(30) NOT NULL,
-        details varchar(300) NOT NULL,
+        details varchar(1000) NOT NULL,
         date date NOT NULL,
         compID int NOT NULL,
         primary key(annID),
@@ -125,7 +126,7 @@ create table StudentRequest(
         appID int NOT NULL,
         studentID int NOT NULL,
         date date NOT NULL,
-        status varchar(30) NOT NULL,
+        status varchar(100) NOT NULL,
         primary key(appID,studentID),
         foreign key(appID) references Application(appID) ON DELETE CASCADE,
         foreign key(studentID) references Student(studentID) ON DELETE CASCADE);

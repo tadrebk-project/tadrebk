@@ -20,22 +20,22 @@ if (isset($_POST['login-btn'])) {
         $_SESSION['studentid'] = $student['studentID'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: studentHome.php');
+        header('location: ../student/studentHome.php');
 
       } else if ($user['type'] === "representative"){
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: index.php');
+        header('location: ../company/companyHome.php');
 
       } else if ($user['type'] === "admin"){
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: index.php');
+        header('location: ../admin/adminHome.php');
 
       } else if ($user['type'] === "instructor"){
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: index.php');
+        header('location: ../instructor/instructorHome.php');
       }
     
 
@@ -43,7 +43,7 @@ if (isset($_POST['login-btn'])) {
   else {
       $error= "Wrong Credintials! Try Again";
       echo "<script type='text/javascript'>alert('$error');</script>";
-      echo "<script type='text/javascript'>window.location.href = 'Login.html';</script>";
+      echo "<script type='text/javascript'>window.location.href = '../Login.html';</script>";
   }
 }
 
