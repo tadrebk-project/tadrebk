@@ -23,6 +23,12 @@ if (isset($_POST['login-btn'])) {
         header('location: ../student/studentHome.php');
 
       } else if ($user['type'] === "representative"){
+        $temp_userID = $user['userID'];
+        $mysql_qry2 = "select * from companyrep where userID = '$temp_userID'";
+        $result2 = mysqli_query($conn ,$mysql_qry2);
+        $rep = mysqli_fetch_assoc($result2);
+        $_SESSION['compID'] = $rep['compID'];
+        $_SESSION['repID'] = $rep['repID'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
         header('location: ../company/companyHome.php');
