@@ -64,7 +64,7 @@ else{
         </div>
     </nav>
 
-    <div class="Container mx-auto my-5" style="width: 75%;">
+    <div class="container mx-auto my-5" style="width: 75%;">
         <div class="row row-cols-1 row-cols-md-3 g-5">
             <div class="col">
                 <a href="#" class="text-decoration-none">
