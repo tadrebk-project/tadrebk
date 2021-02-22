@@ -24,6 +24,7 @@ else{
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="project.css">
+    <script src="resources/filterStudents.js"></script>
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
     <title>Request Status</title>
@@ -72,28 +73,18 @@ else{
             <div class="my-5">
                 <div class="Container mx-3 my-3 d-flex justify-content-between">
                     <span class="align-middle">Major</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select id="majorSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
+                        <option selected value="">select</option>
+                        <?php include "backend/getMajors.php"; ?>
                     </select>
                 </div>
                 <div class="Container mx-3 my-3 d-flex justify-content-between">
                     <span class="align-middle">GPA</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
+                    <select id="gpaSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
+                        <option selected value="0">select</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">Training Type</span>
-                    <select class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected>select</option>
-                        <option value="1">CO-OP</option>
-                        <option value="2">Summer</option>
                     </select>
                 </div>
             </div>
@@ -141,70 +132,10 @@ else{
                                 
                             </div>
                         </div>
-                            <div class="col">
-                                    <div class='card my-1'>
-                                        <div class='card-body'>
-                                            <div class='row'>
-                                                <div class='col'>
-                                                    <p class='my-0'>Mahmoud</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>Software Eng</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>3.00</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0' href="#"> CV.PDF </p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>Summer Training</p>
-                                                </div>
-                                                <div class='col'>
-                                                <button class='btn btn-primary'>Approve</button>
-                                                </div>
-                                                <div class='col'>
-                                                <button class='btn btn-primary'>Reject</button>
-                                                </div>
-                                                
-                                            </div>
-                                            
-                                        </div>
-
-                                        
+                            <div class="col" id="requestsList">
+                                <?php include "backend/getRequests.php"; ?>     
                             </div>
 
-                            <div class='card my-1'>
-                                        <div class='card-body'>
-                                            <div class='row'>
-                                                <div class='col'>
-                                                    <p class='my-0'>Mahmoud Alalouni</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>Software Engeneering</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>2.54</p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0' href="#"> CV.PDF </p>
-                                                </div>
-                                                <div class='col'>
-                                                    <p class='my-0'>CO-OP</p>
-                                                </div>
-                                                <div class='col'>
-                                                <button class='btn btn-primary'>Approve</button>
-                                                </div>
-                                                <div class='col'>
-                                                <button class='btn btn-primary'>Reject</button>
-                                                </div>
-                                                
-                                            </div>
-                                            
-                                        </div>
-
-                                        
-                            </div>
                         </div>
                     </div>
                 </div>
