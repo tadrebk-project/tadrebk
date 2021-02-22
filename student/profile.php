@@ -52,7 +52,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
                     </a>
                     -->
-                    <a class="btn btn-outline-primary mx-2 " href="logout.php">
+                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
@@ -65,15 +65,15 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div class="col-12 col-lg-3 my-4">
                 <div class="card">
                     <div class="card-body">
-                        <form action="">
+                        <form action="backend/updateProfileImage.php" method="post" enctype="multipart/form-data">
                             <div class="mx-auto d-block" id="profile-container">
-                                <img id="profileImage" src="../general_resources/abstract-user.svg" class="rounded-circle" alt="Profile Photo" height="250px" width="250px">
+                                <img id="profileImage" src="../profileImages/<?php echo $picRef; ?>" class="rounded-circle" alt="Profile Photo" height="250px" width="250px">
                                 <div id="ChangeImageOverlay">
                                     <i class="bi bi-arrow-up-circle"></i>
                                     <div>Change Image</div>
                                 </div>
                             </div>
-                            <input class="visually-hidden" id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture accept="image/*" />
+                            <input class="visually-hidden" id="imageUpload" type="file" name="imageUpload" placeholder="Photo" required="" capture accept="image/*" />
                             <script>
                                 $("#ChangeImageOverlay").click(function(e) {
                                     $("#imageUpload").click();
@@ -87,6 +87,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                         reader.onload = function(e) {
                                             //set the image data as source
                                             $('#profileImage').attr('src', e.target.result);
+                                            $("#updateImage").click();
                                         }
                                         reader.readAsDataURL(imageFile);
                                     }
@@ -95,6 +96,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     previewProfileImage(this);
                                 });
                             </script>
+                            <input id="updateImage" name="updateImage" type="submit" hidden>
                         </form>
                         <div class="my-3">
                             <p style="font-size: 3rem;">
@@ -151,27 +153,38 @@ if (file_exists("../general_backend/sessionStart.php")) {
                             </div>
                         </div>
                         <div class="row">
-                            <form action="">
+                            <form action="backend/uploadCV.php" method="post" enctype="multipart/form-data">
                                 <div class="col d-flex justify-content-between">
-                                    <a id="file-upload-filename" class="align-self-center" href="">CV_name.pdf</a>
+                                    <?php 
+                                        if($CVFileRef =="#"){
+                                            echo "Upload your CV...";
+                                        }
+                                        else{
+                                            $CVLink = "../cv/".$CVFileRef;
+                                            $CVLink = "<a id='file-upload-filename' class='align-self-center' href='".$CVLink."'>".$CVFileRef."</a>";
+                                            echo $CVLink;
+                                        }
+                                    ?>
                                     <button type="button" id="CVUploadButton" class="btn btn-primary">Upload</button>
-                                    <input class="visually-hidden" id="CVUpload" type="file" name="profile_CV" placeholder="CV" required="" capture accept=".pdf" />
+                                    <input class="visually-hidden" id="CVUpload" type="file" name="CVUpload" placeholder="CV" required="" capture accept=".pdf" />
                                     <script>
                                         $("#CVUploadButton").click(function(e) {
                                             $("#CVUpload").click();
                                         });
                                         var input = document.getElementById('CVUpload');
-                                        var infoArea = document.getElementById('file-upload-filename');
+                                        //var infoArea = document.getElementById('file-upload-filename');
                                         input.addEventListener('change', showFileName);
 
                                         function showFileName(event) {
                                             // the change event gives us the input it occurred in
                                             var input = event.srcElement;
                                             var fileName = input.files[0].name;
-                                            infoArea.textContent = fileName;
+                                            //infoArea.textContent = fileName;
+                                            $("#CVSend").click();
                                         }
                                     </script>
                                 </div>
+                                <input type="submit" id="CVSend" name="CVSend" hidden>
                             </form>
                         </div>
                     </div>
