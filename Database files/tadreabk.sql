@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2021 at 08:20 PM
+-- Generation Time: Feb 22, 2021 at 08:54 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -104,6 +104,13 @@ CREATE TABLE `companyrep` (
   `compID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `companyrep`
+--
+
+INSERT INTO `companyrep` (`userID`, `repID`, `compID`) VALUES
+(10, 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -189,6 +196,7 @@ CREATE TABLE `performancefeedback` (
 
 CREATE TABLE `progressreport` (
   `RID` int(11) NOT NULL,
+  `summary` varchar(500) NOT NULL,
   `fileRef` varchar(200) NOT NULL,
   `date` date NOT NULL,
   `studentID` int(11) NOT NULL
@@ -244,7 +252,9 @@ CREATE TABLE `review` (
 
 INSERT INTO `review` (`RID`, `text`, `date`, `compID`, `studentID`) VALUES
 (1, 'I have been working at Mobily full-time for more than 10 years\r\n\r\nPros\r\n\r\nstable income, benefits and commissions\r\n\r\nCons\r\n\r\ncompany became so much demanding and sets intangible goals and no more promotions', '2021-02-16', 2, 15200),
-(2, 'STC is a really bad employer. I, as a KFUPM software engineer, am offended by their incompetence to deliver a valid training program. They caused me to fail the course.', '2021-02-16', 1, 15200);
+(2, 'STC is a really bad employer. I, as a KFUPM software engineer, am offended by their incompetence to deliver a valid training program. They caused me to fail the course.', '2021-02-16', 1, 15200),
+(3, 'Hello', '2021-02-18', 4, 15200),
+(4, 'hekkk', '2021-02-19', 1, 15200);
 
 -- --------------------------------------------------------
 
@@ -270,7 +280,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`userID`, `studentID`, `name`, `email`, `phoneNum`, `gpa`, `picRef`, `CVFileRef`, `compID`, `MID`) VALUES
-(2, 15200, 'Mohammad Hassan', 'moh222@gmail.com', 547599999, 3.1, NULL, NULL, NULL, 1),
+(2, 15200, 'Mohammad Fahd', 'moh11@gmail.com', 540502442, 3.1, NULL, NULL, 5, 1),
 (9, 16001, 'Ibrahim Rakoon', 'ibrahimRakoon@Flagoon.com', 57281999, 2, NULL, NULL, NULL, 6);
 
 -- --------------------------------------------------------
@@ -285,6 +295,15 @@ CREATE TABLE `studentrequest` (
   `date` date NOT NULL,
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `studentrequest`
+--
+
+INSERT INTO `studentrequest` (`appID`, `studentID`, `date`, `status`) VALUES
+(1, 16001, '2021-02-18', 'Pending'),
+(6, 16001, '2021-02-18', 'Pending'),
+(8, 16001, '2021-02-17', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -305,7 +324,8 @@ CREATE TABLE `user1` (
 
 INSERT INTO `user1` (`userID`, `username`, `password`, `type`) VALUES
 (2, 'mohammad1', '123', 'student'),
-(9, 'ibrahim', '123', 'student');
+(9, 'ibrahim', '123', 'student'),
+(10, 'stc', '123', 'representative');
 
 --
 -- Indexes for dumped tables
@@ -444,7 +464,7 @@ ALTER TABLE `company`
 -- AUTO_INCREMENT for table `companyrep`
 --
 ALTER TABLE `companyrep`
-  MODIFY `repID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `repID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `event1`
@@ -480,13 +500,13 @@ ALTER TABLE `progressreport`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user1`
 --
 ALTER TABLE `user1`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
