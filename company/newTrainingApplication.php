@@ -1,4 +1,5 @@
 <?php 
+        // this is how to get the majors
         if(isset($_POST['submit'])){
             if(!empty($_POST['majors'])) {
                 foreach($_POST['majors'] as $selected){
@@ -7,7 +8,7 @@
               } else {
                 echo 'Please select the value.';
               }
-          }
+        }
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,10 +74,10 @@
             <br>
             <!-- Multiple Select -->
             <div class="form-group row">
-                <label class="col-sm-2">
+                <label class="col-12 col-lg-3">
                     Select reqired majors: 
                 </label>
-                <div class="col-sm-9">
+                <div class="col-12 col-lg-9">
                     <select multiple="multiple" id="select" name="majors[]">
                         <?php include "backend/getMajors.php"; ?>
                     </select>
@@ -85,18 +86,17 @@
             <!-- GPA -->
             <br>
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-4 col-sm-3">
                 <label for="GPA" class="form-label">Required GPA:</label>
                 </div>
-                <div class="col-sm-1">
+                <div class="col-3 col-sm-2">
                 <input type="text" class="form-control" id="TrainingName" placeholder="">
                 </div>
             </div>
             <br><br>
             <div class="row justify-content-evenly" >
                 <div class="col-2">
-                    <button type="submit" class='btn btn-primary align-self-center'>Create</button>
-                    <input type="submit" name="submit" vlaue="Choose options">
+                    <input type="submit" name="submit" class='btn btn-primary align-self-center'></input>
                 </div>
                 <div class="col-1">
                     <button class='btn btn-primary align-self-center'>Cancle</button>
