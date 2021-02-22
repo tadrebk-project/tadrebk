@@ -17,12 +17,22 @@ $query = "SELECT * FROM student where studentID=".$_SESSION['studentid'];
 $name = "";
 $phone = "";
 $email = "";
+$picRef = "";
+$CVFileRef = "";
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
         while($row=mysqli_fetch_array($result)){
             $name = $row["name"];
             $phone = "0".$row["phoneNum"];
             $email = $row["email"];
+            $picRef = $row["picRef"];
+            if($picRef==NULL){
+                $picRef ="abstract-user.svg";
+            }
+            $CVFileRef = $row["CVFileRef"];
+            if($CVFileRef==NULL){
+                $CVFileRef ="#";
+            }
         }
     }
     else {
