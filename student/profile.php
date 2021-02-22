@@ -30,6 +30,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
 </head>
 
 <body>
+    <?php include "backend/getProfile.php"; ?>
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
@@ -97,7 +98,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         </form>
                         <div class="my-3">
                             <p style="font-size: 3rem;">
-                                Saleh Almaqwashy
+                                <?php echo $name; ?>
                             </p>
                         </div>
 
@@ -111,18 +112,18 @@ if (file_exists("../general_backend/sessionStart.php")) {
                             <p style="font-size: 1.2rem;">Info</p>
                             <button type="button" class="btn btn-primary" onclick="toggleEnable('InputName'),toggleEnable('InputPhone'),toggleEnable('InputEmail')">Edit</button>
                         </div>
-                        <form>
+                        <form action="backend/updateProfile.php" method="post">
                             <div class="mb-3">
                                 <label for="InputName" class="form-label">Name</label>
-                                <input type="text" placeholder="Firstname Lastname" value="Saleh Almaqwashy" class="form-control" id="InputName" disabled>
+                                <input type="text" name="name" placeholder="Firstname Lastname" value="<?php echo $name; ?>" class="form-control" id="InputName" disabled required>
                             </div>
                             <div class="mb-3">
                                 <label for="InputPhone" class="form-label">Phone number</label>
-                                <input type="tel" placeholder="+966XXXXXXXXX" value="+966505555555" class="form-control" id="InputPhone" pattern="[+][0-9]{3}[0-9]{9}" disabled>
+                                <input type="tel" name="phone" placeholder="05XXXXXXXX" value="<?php echo $phone; ?>" class="form-control" id="InputPhone" pattern="[0][5][0-9]{8}" disabled required>
                             </div>
                             <div class="mb-3">
                                 <label for="InputEmail" class="form-label">Email</label>
-                                <input type="email" placeholder="email@domain.com" value="Saleh@domain.com" class="form-control" id="InputEmail" aria-describedby="emailHelp" disabled>
+                                <input type="email" name="email" placeholder="email@domain.com" value="<?php echo $email; ?>" class="form-control" id="InputEmail" aria-describedby="emailHelp" disabled required>
                             </div>
                             <script>
                                 function toggleEnable(id) {
@@ -137,7 +138,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     }
                                 }
                             </script>
-                            <button type="submit" class="btn btn-primary" style="float: right;">Save</button>
+                            <button id="update_profile" name="update_profile" type="submit" class="btn btn-primary" style="float: right;">Save</button>
                             <button type="reset" class="btn btn-primary mx-1" style="float: right;">Cancel</button>
                         </form>
                     </div>

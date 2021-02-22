@@ -53,7 +53,7 @@
 
     <div class="container con" style="background-color: white;">
         <form action="" method="post">
-            <p class="text text-center">Create a new application</p>
+           <p class="text text-center">Create a new application</p>
             <br>
             <!-- training name -->
             <div class="mb-3">
