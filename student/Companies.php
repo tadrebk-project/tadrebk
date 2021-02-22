@@ -40,7 +40,7 @@ else{
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
+                    <a class="nav-link btn btn-outline-primary" href="profile.php">Profile</a>
                     <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
                     <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
                 </nav>

@@ -91,3 +91,46 @@ a {
     margin-top: 20px;
     padding-top: 20px;
 }
+
+#ChangeImageOverlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
+}
+
+#profile-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+#profile-container:hover #ChangeImageOverlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dashed-border{
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #dee2e6
+}

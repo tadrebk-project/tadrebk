@@ -44,7 +44,7 @@ else{
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
+                    <a class="nav-link btn btn-outline-primary" href="profile.php">Profile</a>
                     <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
                     <a class="nav-link btn btn-outline-primary" href="Companies.php">Companies</a>
                 </nav>
@@ -89,6 +89,15 @@ else{
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text">Companies</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="progress_report.php" class="text-decoration-none">
+                    <div class="card" style="height: 20rem;">
+                        <div class="card-body d-flex align-items-end">
+                            <p class="text">Progress Report</p>
                         </div>
                     </div>
                 </a>
