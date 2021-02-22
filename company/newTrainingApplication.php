@@ -1,3 +1,14 @@
+<?php 
+        if(isset($_POST['submit'])){
+            if(!empty($_POST['majors'])) {
+                foreach($_POST['majors'] as $selected){
+                  echo '  ' . $selected;
+                }          
+              } else {
+                echo 'Please select the value.';
+              }
+          }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,57 +52,57 @@
     </nav>
 
     <div class="container con" style="background-color: white;">
-        <p class="text text-center">Create a new application</p>
-        <br>
-        <!-- training name -->
-        <div class="mb-3">
-            <label for="TrainingName" class="form-label">Training name</label>
-            <input type="text" class="form-control" id="TrainingName" placeholder="Name here">
-        </div>
-        <!-- training type -->
-        <div class="mb-3">
-            <label for="TrainingName" class="form-label">Training type</label>
-            <input type="text" class="form-control" id="TrainingName" placeholder="Type here">
-        </div>
-        <!-- training description -->
-        <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Training description</label>
-            <textarea class="form-control" placeholder="Description here" id="TrainingDescription"></textarea>
-        </div>
-        <br>
-        <!-- Multiple Select -->
-        <div class="form-group row">
-            <label class="col-sm-2">
-                Select reqired majors: 
-            </label>
-            <div class="col-sm-9">
-                <select multiple="multiple" id="select">
-                    <option value="1">software engineering</option>
-                    <option value="2">computer science</option>
-                    <option value="3">accounting</option>
-                    <option value="4">electrical engineering</option>
-                </select>
+        <form action="" method="post">
+            <p class="text text-center">Create a new application</p>
+            <br>
+            <!-- training name -->
+            <div class="mb-3">
+                <label for="TrainingName" class="form-label">Training name</label>
+                <input type="text" class="form-control" id="TrainingName" placeholder="Name here">
             </div>
-        </div>
-        <!-- GPA -->
-        <br>
-        <div class="row">
-            <div class="col-sm-2">
-            <label for="GPA" class="form-label">Required GPA:</label>
+            <!-- training type -->
+            <div class="mb-3">
+                <label for="TrainingName" class="form-label">Training type</label>
+                <input type="text" class="form-control" id="TrainingName" placeholder="Type here">
             </div>
-            <div class="col-sm-1">
-            <input type="text" class="form-control" id="TrainingName" placeholder="">
+            <!-- training description -->
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Training description</label>
+                <textarea class="form-control" placeholder="Description here" id="TrainingDescription"></textarea>
             </div>
-        </div>
-        <br><br>
-        <div class="row justify-content-evenly" >
-            <div class="col-2">
-                <button class='btn btn-primary align-self-center'>Create</button>
+            <br>
+            <!-- Multiple Select -->
+            <div class="form-group row">
+                <label class="col-sm-2">
+                    Select reqired majors: 
+                </label>
+                <div class="col-sm-9">
+                    <select multiple="multiple" id="select" name="majors[]">
+                        <?php include "backend/getMajors.php"; ?>
+                    </select>
+                </div>
             </div>
-            <div class="col-1">
-                <button class='btn btn-primary align-self-center'>Cancle</button>
+            <!-- GPA -->
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                <label for="GPA" class="form-label">Required GPA:</label>
+                </div>
+                <div class="col-sm-1">
+                <input type="text" class="form-control" id="TrainingName" placeholder="">
+                </div>
             </div>
-        </div>
+            <br><br>
+            <div class="row justify-content-evenly" >
+                <div class="col-2">
+                    <button type="submit" class='btn btn-primary align-self-center'>Create</button>
+                    <input type="submit" name="submit" vlaue="Choose options">
+                </div>
+                <div class="col-1">
+                    <button class='btn btn-primary align-self-center'>Cancle</button>
+                </div>
+            </div>
+        </form>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
@@ -100,6 +111,8 @@
         $(function() {
             $('select').multipleSelect()
         })
+
+
     </script>
 </body>
 
