@@ -98,7 +98,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         </form>
                         <div class="my-3">
                             <p style="font-size: 3rem;">
-                                Saleh Almaqwashy
+                                <?php echo $name; ?>
                             </p>
                         </div>
 
