@@ -17,6 +17,16 @@ if (isset($_POST['updateImage'])) {
 
     $studentID = $_SESSION['studentid'];
 
+    $query = "SELECT * FROM student where studentID=".$_SESSION['studentid'];
+    $picRef = "";
+    $result=mysqli_query($conn, $query);
+    mysqli_num_rows($result);
+    $row=mysqli_fetch_array($result);
+    $picRef = $row['picRef'];
+    if(!$picRef==NULL){
+        unlink("../../profileImages/".$picRef);
+    }
+
     $newImageName = time()."_".$_FILES['imageUpload']['name']; 
     $target =  "../../profileImages/".$newImageName;
     $tmpName =  $_FILES['imageUpload']['tmp_name'];
