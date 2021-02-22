@@ -66,10 +66,7 @@
             </label>
             <div class="col-sm-9">
                 <select multiple="multiple" id="select">
-                    <option value="1">software engineering</option>
-                    <option value="2">computer science</option>
-                    <option value="3">accounting</option>
-                    <option value="4">electrical engineering</option>
+                    <?php include "backend/getMajors.php"; ?>
                 </select>
             </div>
         </div>
