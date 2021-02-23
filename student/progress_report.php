@@ -68,15 +68,15 @@ else{
             <div class="card-body">
                 <div class="mx-3">
                     <p class="text">Progress Report</p>
-                    <form lang="en">
+                    <form action="backend/uploadProgressReport.php" method="post" enctype="multipart/form-data" lang="en">
                         <div class="mb-3">
                             <label for="inputDescription" class="form-label">Description</label>
-                            <textarea class="form-control" id="inputDescription" rows="4"></textarea>
+                            <textarea class="form-control" id="inputDescription" name="inputDescription" rows="4"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="inputAttachment" class="form-label">Attachment</label>
                             <input class="form-control visually-hidden" type="file" id="inputAttachment"
-                                name="progressReport" placeholder="progress report" required="" capture accept=".pdf">
+                                name="inputAttachment" placeholder="progress report" required="" capture accept=".pdf">
                             <div class="dashed-border p-1 d-flex justify-content-between">
                                 <p id="file-upload-filename" class="text-muted m-0 align-self-center">Attach file</p>
                                 <button type="button" id="AttachmentButton" class="btn btn-primary">Browse</button>
@@ -100,7 +100,7 @@ else{
                                 }
                             </script>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="float: right;">Upload</button>
+                        <button type="submit" id="progressReportSend" name="progressReportSend" class="btn btn-primary" style="float: right;">Upload</button>
                     </form>
                 </div>
             </div>
