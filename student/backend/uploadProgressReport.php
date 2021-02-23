@@ -35,7 +35,7 @@ if (isset($_POST['progressReportSend'])) {
   
 }
 mysqli_close($conn);
-
-header('location: ../progress_report.php');
+echo "<script>alert('Successfully uploaded');
+        window.location.href='../progress_report.php';</script>";
 
 ?>
