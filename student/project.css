@@ -134,3 +134,15 @@ a {
     border-radius: 3px;
     border-color: #dee2e6
 }
+
+.hide{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .1s, visibility .1s;
+}
+
+.container-selector:hover .hide{
+    visibility: visible;
+    opacity: 1;
+    
+}

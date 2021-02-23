@@ -110,9 +110,12 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div class="col-12 col-lg-9 my-4">
                 <div class="card">
                     <div class="card-body">
-                        <div class="container-fluid p-0 d-flex justify-content-between">
+                    <div class="container-fluid p-0 d-flex justify-content-between container-selector">
                             <p style="font-size: 1.2rem;">Info</p>
-                            <button type="button" class="btn btn-primary" onclick="toggleEnable('InputName'),toggleEnable('InputPhone'),toggleEnable('InputEmail')">Edit</button>
+                            <button type="button" class="btn btn-outline-primary m-0 hide" id="editButton"
+                                onclick="toggleEnable()" style="height: 30px;">
+                                <i class="bi bi-pencil-square d-flex justify-content-center align-items-center"></i>
+                            </button>
                         </div>
                         <form action="backend/updateProfile.php" method="post">
                             <div class="mb-3">
@@ -128,20 +131,35 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <input type="email" name="email" placeholder="email@domain.com" value="<?php echo $email; ?>" class="form-control" id="InputEmail" aria-describedby="emailHelp" disabled required>
                             </div>
                             <script>
-                                function toggleEnable(id) {
-                                    var textbox = document.getElementById(id);
-
-                                    if (textbox.disabled) {
-                                        document.getElementById(id).disabled = false;
-
+                                var enable = false;
+                                function toggleEnable() {
+                                    enable = !enable;
+                                    if (enable) {
+                                        document.getElementById("InputName").disabled = false;
+                                        document.getElementById("InputPhone").disabled = false;
+                                        document.getElementById("InputEmail").disabled = false;
+                                        document.getElementById('editButton').style.display = "none";
+                                        document.getElementById('saveButton').style.visibility='visible';
+                                        document.getElementById('saveButton').style.opacity=1;
+                                        document.getElementById('cancelButton').style.visibility='visible';
+                                        document.getElementById('cancelButton').style.opacity=1;
                                     } else {
-                                        document.getElementById(id).disabled = true;
+                                        document.getElementById("InputName").disabled = true;
+                                        document.getElementById("InputPhone").disabled = true;
+                                        document.getElementById("InputEmail").disabled = true;
+                                        document.getElementById('editButton').style.display = "inline-block";
+                                        document.getElementById('saveButton').style.visibility='hidden';
+                                        document.getElementById('saveButton').style.opacity=0;
+                                        document.getElementById('cancelButton').style.visibility='hidden';
+                                        document.getElementById('cancelButton').style.opacity=0;
                                         // code here
                                     }
                                 }
                             </script>
-                            <button id="update_profile" name="update_profile" type="submit" class="btn btn-primary" style="float: right;">Save</button>
-                            <button type="reset" class="btn btn-primary mx-1" style="float: right;">Cancel</button>
+                            <button type="submit" class="btn btn-primary hide" id="saveButton" name="saveButton"
+                                style="float: right;">Save</button>
+                            <button type="reset" class="btn btn-primary mx-1 hide" id="cancelButton"
+                                style="float: right;" onclick="toggleEnable()">Cancel</button>
                         </form>
                     </div>
                 </div>
