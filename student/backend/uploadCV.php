@@ -17,6 +17,16 @@ if (isset($_POST['CVSend'])) {
 
     $studentID = $_SESSION['studentid'];
 
+    $query = "SELECT * FROM student where studentID=".$_SESSION['studentid'];
+    $picRef = "";
+    $result=mysqli_query($conn, $query);
+    mysqli_num_rows($result);
+    $row=mysqli_fetch_array($result);
+    $picRef = $row['CVFileRef'];
+    if(!$picRef==NULL){
+        unlink("../../cv/".$picRef);
+    }
+
     $newFileName = time()."_".$_FILES['CVUpload']['name']; 
     $target =  "../../cv/".$newFileName;
     $tmpName =  $_FILES['CVUpload']['tmp_name'];
