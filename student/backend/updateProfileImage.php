@@ -27,7 +27,7 @@ if (isset($_POST['updateImage'])) {
         unlink("../../profileImages/".$picRef);
     }
 
-    $newImageName = time()."_".$_FILES['imageUpload']['name']; 
+    $newImageName = time()."_".$studentID."_".$_FILES['imageUpload']['name']; 
     $target =  "../../profileImages/".$newImageName;
     $tmpName =  $_FILES['imageUpload']['tmp_name'];
 
