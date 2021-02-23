@@ -27,7 +27,7 @@ if (isset($_POST['CVSend'])) {
         unlink("../../cv/".$picRef);
     }
 
-    $newFileName = time()."_".$_FILES['CVUpload']['name']; 
+    $newFileName = $studentID."_CV.pdf"; 
     $target =  "../../cv/".$newFileName;
     $tmpName =  $_FILES['CVUpload']['tmp_name'];
 
