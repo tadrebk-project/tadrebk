@@ -112,7 +112,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                     <div class="card-body">
                     <div class="container-fluid p-0 d-flex justify-content-between container-selector">
                             <p style="font-size: 1.2rem;">Info</p>
-                            <button type="button" class="btn btn-outline-primary m-0 hide" id="editButton"
+                            <button type="button" class="btn btn-outline-primary m-0" id="editButton"
                                 onclick="toggleEnable()" style="height: 30px;">
                                 <i class="bi bi-pencil-square d-flex justify-content-center align-items-center"></i>
                             </button>
@@ -175,7 +175,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <div class="col d-flex justify-content-between">
                                     <?php 
                                         if($CVFileRef =="#"){
-                                            echo "Upload your CV...";
+                                            echo "<span class='align-middle'>Upload your CV...</span>";
                                         }
                                         else{
                                             $CVLink = "../cv/".$CVFileRef;
