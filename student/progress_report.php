@@ -70,7 +70,7 @@ else{
                     <p class="text">Progress Report</p>
                     <form action="backend/uploadProgressReport.php" method="post" enctype="multipart/form-data" lang="en">
                         <div class="mb-3">
-                            <label for="inputDescription" class="form-label">Description</label>
+                            <label for="inputDescription" class="form-label">Summary</label>
                             <textarea class="form-control" id="inputDescription" name="inputDescription" rows="4"></textarea>
                         </div>
                         <div class="mb-3">
