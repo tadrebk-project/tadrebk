@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2021 at 08:54 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Feb 24, 2021 at 09:43 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -101,15 +101,16 @@ INSERT INTO `company` (`compID`, `name`, `description`, `location`, `website`, `
 CREATE TABLE `companyrep` (
   `userID` int(11) NOT NULL,
   `repID` int(11) NOT NULL,
-  `compID` int(11) NOT NULL
+  `compID` int(11) NOT NULL,
+  `type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `companyrep`
 --
 
-INSERT INTO `companyrep` (`userID`, `repID`, `compID`) VALUES
-(10, 4, 1);
+INSERT INTO `companyrep` (`userID`, `repID`, `compID`, `type`) VALUES
+(10, 4, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -281,7 +282,8 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (`userID`, `studentID`, `name`, `email`, `phoneNum`, `gpa`, `picRef`, `CVFileRef`, `compID`, `MID`) VALUES
 (2, 15200, 'Mohammad Fahd', 'moh11@gmail.com', 540502442, 3.1, NULL, NULL, 5, 1),
-(9, 16001, 'Ibrahim Rakoon', 'ibrahimRakoon@Flagoon.com', 57281999, 2, NULL, NULL, NULL, 6);
+(9, 16001, 'Ibrahim Rakoon', 'ibrahimRakoon@Flagoon.com', 57281999, 2, NULL, NULL, NULL, 6),
+(12, 201611111, 'Saleh Almaqwashy', 'saleh@gmail.com', 505555555, 3, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -325,7 +327,8 @@ CREATE TABLE `user1` (
 INSERT INTO `user1` (`userID`, `username`, `password`, `type`) VALUES
 (2, 'mohammad1', '123', 'student'),
 (9, 'ibrahim', '123', 'student'),
-(10, 'stc', '123', 'representative');
+(10, 'stc', '123', 'representative'),
+(12, 'Saleh100', 's12345678#', 'student');
 
 --
 -- Indexes for dumped tables
@@ -494,7 +497,7 @@ ALTER TABLE `performancefeedback`
 -- AUTO_INCREMENT for table `progressreport`
 --
 ALTER TABLE `progressreport`
-  MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -506,7 +509,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `user1`
 --
 ALTER TABLE `user1`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
