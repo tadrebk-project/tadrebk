@@ -75,17 +75,22 @@
             <!-- training name -->
             <div class="mb-3">
                 <label for="TrainingName" class="form-label">Training name</label>
-                <input type="text" class="form-control" id="TrainingName" name="TrainingName" placeholder="Name here">
+                <input type="text" class="form-control" id="TrainingName" name="TrainingName" placeholder="Name here" required>
             </div>
             <!-- training type -->
             <div class="mb-3">
                 <label for="TrainingName" class="form-label">Training type</label>
-                <input type="text" class="form-control" id="TrainingType" name="TrainingType" placeholder="Type here">
+                
+                <select id="TrainingType" name="TrainingType" class="form-select" aria-label="Default select example" style="width: 10rem;" required>
+                                <option value="" selected hidden>Select</option>
+                                <option value="summer">Summer Training</option>
+                                <option value="COOP">CO-OP</option>
+                </select>
             </div>
             <!-- training description -->
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Training description</label>
-                <textarea class="form-control" placeholder="Description here" id="TrainingDescription" name="TrainingDescription"></textarea>
+                <textarea class="form-control" placeholder="Description here" id="TrainingDescription" name="TrainingDescription" required></textarea>
             </div>
             <br>
             <!-- Multiple Select -->
@@ -94,7 +99,7 @@
                     Select reqired majors:
                 </label>
                 <div class="col-12 col-lg-9">
-                    <select multiple="multiple" id="Select" name="Select[]">
+                    <select multiple="multiple" id="Select" name="Select[]" required>
                         <?php include "backend/getMajors.php"; ?>
                     </select>
                 </div>
@@ -106,7 +111,7 @@
                 <label for="GPA" class="form-label">Required GPA:</label>
                 </div>
                 <div class="col-3 col-sm-2">
-                <input type="text" class="form-control" id="gpa" name="gpa" placeholder="">
+                <input type="text" class="form-control" id="gpa" name="gpa" placeholder="" required>
                 </div>
             </div>
             <br><br>
@@ -115,18 +120,8 @@
                       <input id="submitApplication" class='btn btn-primary align-self-center' name="submitApplication"  type="Submit"></input>
                 </div>
                 <div class="col-1">
-                    <button class='btn btn-primary align-self-center' name="button" value="ok" type="button" onclick="fun()">Cancle</button>
+                    <button class='btn btn-primary align-self-center' name="button" value="ok" type="button" onclick="window.location.href='trainingApplications.php'">Cancel</button>
 
-                    <script>
-                        function fun(){
-                            document.getElementById("TrainingName").value="";
-                            document.getElementById("TrainingType").value="";
-                            document.getElementById("TrainingDescription").value="";
-                            document.getElementById("gpa").value="";
-                            $('Select').val([]);
-
-                            }
-                    </script>
 
                 </div>
             </div>
