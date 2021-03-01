@@ -39,9 +39,9 @@
         </div>
     </nav>
     <div class="container" style="margin-top: 20px;">
-    <button class='btn btn-primary align-self-center'>Create training application</button>
+    <button class='btn btn-primary align-self-center' onclick="window.location.href='newTrainingApplication.php'">Create training application</button>
     </div>
-    
+
     <!-- application -->
     <div class='container app'>
         <div class='row'>
@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    
+
 
 </body>
 
