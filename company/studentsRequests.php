@@ -45,8 +45,8 @@ else{
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Application</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcement</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
                 </nav>
             </div>

@@ -44,8 +44,8 @@ else{
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Application</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcement</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
                 </nav>
             </div>
@@ -67,37 +67,37 @@ else{
     <div class="container mx-auto my-5" style="width: 75%;">
         <div class="row row-cols-1 row-cols-md-3 g-5">
             <div class="col">
-                <a href="profile.php" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Profile</p>
+                            <p class="text mb-0">Students</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a href="ViewRequestStatus.php" class="text-decoration-none">
+                <a href="trainingApplications.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Requests</p>
+                            <p class="text mb-0">Application</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a href="companies.php" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Companies</p>
+                            <p class="text mb-0">Announcements</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a href="progress_report.php" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Progress Report</p>
+                            <p class="text mb-0">Events</p>
                         </div>
                     </div>
                 </a>
