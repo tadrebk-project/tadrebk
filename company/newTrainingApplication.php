@@ -33,7 +33,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="companyHome.php">
                 <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
