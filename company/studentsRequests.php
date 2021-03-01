@@ -44,10 +44,10 @@ else{
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
-                    <a class="nav-link btn btn-outline-primary active" href="ViewRequestStatus.php">Requests</a>
-                    <a class="nav-link btn btn-outline-primary" aria-current="page" href="#">Companies</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Application</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcement</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
@@ -57,7 +57,7 @@ else{
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
                     </a>
                     -->
-                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
+                    <a class="btn btn-outline-primary mx-2 nav-btn" href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
