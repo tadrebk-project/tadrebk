@@ -1,15 +1,28 @@
-<?php 
+<?php
         // this is how to get the majors
         if(isset($_POST['submit'])){
-            if(!empty($_POST['majors'])) {
-                foreach($_POST['majors'] as $selected){
+            if(!empty($_POST['Select'])) {
+                foreach($_POST['Select'] as $selected){
                   echo '  ' . $selected;
-                }          
+                }
               } else {
                 echo 'Please select the value.';
               }
         }
     ?>
+
+  <?php
+    //to check if the file that includes this code is two level far from the required page or one level.
+    if(file_exists("../general_backend/sessionStart.php")){
+        require "../general_backend/sessionStart.php";
+    }
+    elseif (file_exists("../../general_backend/sessionStart.php")){
+        require "../../general_backend/sessionStart.php";
+    }
+    else{
+        require "general_backend/sessionStart.php";
+    }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,16 +46,17 @@
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
-            <a class="navbar-brand" href="companyHome.php">
-                <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
-            </a>
-            <div class="container d-flex mx-auto flex-column">
-                <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
-                </nav>
+          <a class="navbar-brand" href="companyHome.php">
+              <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
+          </a>
+          <div class="container d-flex mx-auto flex-column">
+              <nav class="nav nav-masthead justify-content-center float-md">
+                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
+                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
+                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
+                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
+              </nav>
+          </div>
             </div>
             <nav class="d-flex mx-auto">
                 <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
@@ -55,32 +69,32 @@
     </nav>
 
     <div class="container con" style="background-color: white;">
-        <form action="" method="post">
+        <form action="backend/getNewApplication.php?compID=<?php echo $_SESSION['compID'] ?>" method="post">
            <p class="text text-center">Create a new application</p>
             <br>
             <!-- training name -->
             <div class="mb-3">
                 <label for="TrainingName" class="form-label">Training name</label>
-                <input type="text" class="form-control" id="TrainingName" placeholder="Name here">
+                <input type="text" class="form-control" id="TrainingName" name="TrainingName" placeholder="Name here">
             </div>
             <!-- training type -->
             <div class="mb-3">
                 <label for="TrainingName" class="form-label">Training type</label>
-                <input type="text" class="form-control" id="TrainingName" placeholder="Type here">
+                <input type="text" class="form-control" id="TrainingType" name="TrainingType" placeholder="Type here">
             </div>
             <!-- training description -->
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Training description</label>
-                <textarea class="form-control" placeholder="Description here" id="TrainingDescription"></textarea>
+                <textarea class="form-control" placeholder="Description here" id="TrainingDescription" name="TrainingDescription"></textarea>
             </div>
             <br>
             <!-- Multiple Select -->
             <div class="form-group row">
                 <label class="col-12 col-lg-3">
-                    Select reqired majors: 
+                    Select reqired majors:
                 </label>
                 <div class="col-12 col-lg-9">
-                    <select multiple="multiple" id="select" name="majors[]">
+                    <select multiple="multiple" id="Select" name="Select[]">
                         <?php include "backend/getMajors.php"; ?>
                     </select>
                 </div>
@@ -92,16 +106,28 @@
                 <label for="GPA" class="form-label">Required GPA:</label>
                 </div>
                 <div class="col-3 col-sm-2">
-                <input type="text" class="form-control" id="TrainingName" placeholder="">
+                <input type="text" class="form-control" id="gpa" name="gpa" placeholder="">
                 </div>
             </div>
             <br><br>
             <div class="row justify-content-evenly" >
                 <div class="col-2">
-                    <input type="submit" name="submit" class='btn btn-primary align-self-center'></input>
+                      <input id="submitApplication" class='btn btn-primary align-self-center' name="submitApplication"  type="Submit"></input>
                 </div>
                 <div class="col-1">
-                    <button class='btn btn-primary align-self-center'>Cancle</button>
+                    <button class='btn btn-primary align-self-center' name="button" value="ok" type="button" onclick="fun()">Cancle</button>
+
+                    <script>
+                        function fun(){
+                            document.getElementById("TrainingName").value="";
+                            document.getElementById("TrainingType").value="";
+                            document.getElementById("TrainingDescription").value="";
+                            document.getElementById("gpa").value="";
+                            $('Select').val([]);
+
+                            }
+                    </script>
+
                 </div>
             </div>
         </form>
