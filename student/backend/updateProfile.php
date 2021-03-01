@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-if (isset($_POST['update_profile'])) {
+if (isset($_POST['saveButton'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);

@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if(file_exists("../general_backend/sessionStart.php")){
     require "../general_backend/sessionStart.php";
 }
@@ -43,7 +43,7 @@ else{
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="studentHome.php">Home</a>
                     <a class="nav-link btn btn-outline-primary" href="profile.php">Profile</a>
                     <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
                     <a class="nav-link btn btn-outline-primary" href="Companies.php">Companies</a>
@@ -67,7 +67,7 @@ else{
     <div class="container mx-auto my-5" style="width: 75%;">
         <div class="row row-cols-1 row-cols-md-3 g-5">
             <div class="col">
-                <a href="#" class="text-decoration-none">
+                <a href="profile.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text">Profile</p>

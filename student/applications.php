@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if(file_exists("../general_backend/sessionStart.php")){
     require "../general_backend/sessionStart.php";
 }
@@ -42,7 +42,7 @@ else{
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
+                    <a class="nav-link btn btn-outline-primary" href="profile.php">Profile</a>
                     <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
                     <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
                 </nav>
@@ -69,7 +69,7 @@ else{
     </div>
     <!-- for each applicaiton -->
     <?php include "backend/getApplications.php"; ?>
-    
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

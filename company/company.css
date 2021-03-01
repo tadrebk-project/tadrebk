@@ -34,11 +34,13 @@ a {
     background-color: #0f5ecd;
 }
 
-.btn-outline-primary{
+.nav-btn{
     margin: 1rem;
+    border-radius: 20px;
+}
+.btn-outline-primary{
     border-color:#172457;
     color: #172457;
-    border-radius: 20px;
 }
 .btn-outline-primary:hover{
     background-color: #172457;
