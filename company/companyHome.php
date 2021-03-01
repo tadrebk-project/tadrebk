@@ -38,14 +38,15 @@ else{
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="companyHome.php">
                 <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="companyHome.php">Home</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="companyHome.php">Home</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="companyHome.php">Home</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Application</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcement</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
