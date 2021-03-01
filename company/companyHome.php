@@ -25,9 +25,8 @@ else{
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
     
-    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="company.css">
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
     <title>Home</title>
@@ -44,7 +43,9 @@ else{
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="companyHome.php">Home</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="companyHome.php">Home</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="companyHome.php">Home</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="companyHome.php">Home</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
@@ -54,7 +55,7 @@ else{
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
                     </a>
                     -->
-                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
+                    <a class="btn btn-outline-primary mx-2 nav-btn" href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
