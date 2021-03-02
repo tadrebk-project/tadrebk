@@ -70,7 +70,7 @@ else{
                 <a href="profile.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Profile</p>
+                            <p class="text mb-0 text-truncate">Profile</p>
                         </div>
                     </div>
                 </a>
@@ -79,7 +79,7 @@ else{
                 <a href="ViewRequestStatus.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Requests</p>
+                            <p class="text mb-0 text-truncate">Requests</p>
                         </div>
                     </div>
                 </a>
@@ -88,7 +88,7 @@ else{
                 <a href="companies.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Companies</p>
+                            <p class="text mb-0 text-truncate">Companies</p>
                         </div>
                     </div>
                 </a>
@@ -97,7 +97,7 @@ else{
                 <a href="progress_report.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Progress Report</p>
+                            <p class="text mb-0 text-truncate">Progress Report</p>
                         </div>
                     </div>
                 </a>
@@ -106,7 +106,7 @@ else{
         </div>
     </div>
 
-
+    <hr class="invisible">
 
 
 
