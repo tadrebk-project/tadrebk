@@ -117,7 +117,7 @@
             <div class="row justify-content-evenly" >
                 <div class="col-2">
                       <!-- <input id="submitApplication" class='btn btn-primary align-self-center' name="submitApplication"  type="Submit"></input> -->
-                      <button type="submit" id="submitApplication" name="submitApplication" class="btn btn-primary align-self-center" >Upload</button>
+                      <button type="submit" id="submitApplication" name="submitApplication" class="btn btn-primary align-self-center" >Create</button>
                 </div>
                 <div class="col-1">
                     <button class='btn btn-primary align-self-center' name="button" value="ok" type="button" onclick="window.location.href='trainingApplications.php'">Cancel</button>
