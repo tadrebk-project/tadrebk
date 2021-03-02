@@ -25,7 +25,7 @@ else{
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    
+
     <link rel="stylesheet" href="company.css">
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
@@ -38,14 +38,15 @@ else{
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="companyHome.php">
                 <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="companyHome.php">Home</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="companyHome.php">Home</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="companyHome.php">Home</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
@@ -66,37 +67,37 @@ else{
     <div class="container mx-auto my-5" style="width: 75%;">
         <div class="row row-cols-1 row-cols-md-3 g-5">
             <div class="col">
-                <a href="profile.php" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Profile</p>
+                            <p class="text mb-0">Students</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a href="ViewRequestStatus.php" class="text-decoration-none">
+                <a href="trainingApplications.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Requests</p>
+                            <p class="text mb-0">Applications</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a href="companies.php" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Companies</p>
+                            <p class="text mb-0">Announcements</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a href="progress_report.php" class="text-decoration-none">
+                <a href="#" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text">Progress Report</p>
+                            <p class="text mb-0">Events</p>
                         </div>
                     </div>
                 </a>

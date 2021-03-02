@@ -18,18 +18,20 @@
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="companyHome.php">
                 <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary" href="#">Home</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
                 <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
-                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
+                    <a class="btn btn-outline-primary mx-2 nav-btn" href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
@@ -37,9 +39,9 @@
         </div>
     </nav>
     <div class="container" style="margin-top: 20px;">
-    <button class='btn btn-primary align-self-center'>Create training application</button>
+    <button class='btn btn-primary align-self-center' onclick="window.location.href='newTrainingApplication.php'">Create training application</button>
     </div>
-    
+
     <!-- application -->
     <div class='container app'>
         <div class='row'>
@@ -66,7 +68,7 @@
             </div>
         </div>
     </div>
-    
+
 
 </body>
 
