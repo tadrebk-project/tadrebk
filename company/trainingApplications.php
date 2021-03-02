@@ -43,31 +43,8 @@
     </div>
 
     <!-- application -->
-    <div class='container app'>
-        <div class='row'>
-            <div class='col-12' style='padding-top: 5px;'>
-                <h4>STC</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At odit et quidem. Magnam eos ea et fugiat molestias ullam! Vel officia fuga omnis minima exercitationem esse illum quia tenetur nemo.</p>
-            </div>
-        </div>
-        <hr>
-        <div class='row'>
-            <div class='col'>
-                <h5>Training Type: Summer training</h5>
-                <h5>Required Majors: SWE,CS,COE</h5>
-                <h5>Required GPA:  3.0</h5>
-            </div>
-        </div>
-        <br>
-        <div class="row justify-content-center" style="padding-bottom: 10px;">
-            <div class="col-4 col-md-2">
-                <button class='btn btn-primary align-self-center'>View requests</button>
-            </div>
-            <div class="col-4 col-md-2">
-                <button class='btn btn-primary align-self-center'>Remove</button>
-            </div>
-        </div>
-    </div>
+    <?php include "backend/getApplications.php"; ?>
+    
 
 
 </body>

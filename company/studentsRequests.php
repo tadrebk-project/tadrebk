@@ -24,6 +24,12 @@ else{
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="company.css">
+
+    <script>
+        function getAppID(){
+            return <?php echo $_GET['appID']; ?>
+        }
+    </script>
     <script src="resources/filterStudents.js"></script>
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
@@ -74,17 +80,17 @@ else{
                 <div class="Container mx-3 my-3 d-flex justify-content-between">
                     <span class="align-middle">Major</span>
                     <select id="majorSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected value="">select</option>
+                        <option selected value="">All majors</option>
                         <?php include "backend/getMajors.php"; ?>
                     </select>
                 </div>
                 <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">GPA</span>
+                    <span class="align-middle">GPA out of 4</span>
                     <select id="gpaSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
-                        <option selected value="0">select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected value="0">Any GPA</option>
+                        <option value="1">1 or more</option>
+                        <option value="2">2 or more</option>
+                        <option value="3">3 or more</option>
                     </select>
                 </div>
             </div>
