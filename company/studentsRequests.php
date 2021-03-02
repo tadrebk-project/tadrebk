@@ -58,11 +58,6 @@ else{
             </div>
             <nav class="d-flex mx-auto">
                 <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
-                    <!--
-                    <a class="btn btn-outline-primary mx-2" href="#">
-                        <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
-                    </a>
-                    -->
                     <a class="btn btn-outline-primary mx-2 nav-btn" href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>

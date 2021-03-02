@@ -80,7 +80,8 @@
             <!-- training type -->
             <div class="mb-3">
                 <label for="TrainingName" class="form-label">Training type</label>
-                <select multiple="multiple" id="Select" name="TrainingType" required>
+                <select id="Select" class="form-select" name="TrainingType" required>
+                    <option selected value="" disabled>select</option>
                     <option value="summer">Summer Training</option>
                     <option value="COOP">CO-OP</option>
                 </select>
@@ -97,7 +98,7 @@
                     Select reqired majors:
                 </label>
                 <div class="col-12 col-lg-9">
-                    <select multiple="multiple" id="Select" name="Select[]" required>
+                    <select class="multiple-select" multiple="multiple" id="Select" name="Select[]" required>
                         <?php include "backend/getMajors.php"; ?>
                     </select>
                 </div>
@@ -116,7 +117,7 @@
             <div class="row justify-content-evenly" >
                 <div class="col-2">
                       <!-- <input id="submitApplication" class='btn btn-primary align-self-center' name="submitApplication"  type="Submit"></input> -->
-                      <button type="submit" id="submitApplication" name="submitApplication" class="btn btn-primary align-self-center" >Upload</button>
+                      <button type="submit" id="submitApplication" name="submitApplication" class="btn btn-primary align-self-center" >Create</button>
                 </div>
                 <div class="col-1">
                     <button class='btn btn-primary align-self-center' name="button" value="ok" type="button" onclick="window.location.href='trainingApplications.php'">Cancel</button>
@@ -129,8 +130,7 @@
     <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
     <script>
         $(function() {
-            $('select').multipleSelect({
-                selectAll: false
+            $('.multiple-select').multipleSelect({
             })
         })
 
