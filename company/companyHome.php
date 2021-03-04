@@ -34,8 +34,6 @@ else{
 
 <body>
 
-
-
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
             <a class="navbar-brand" href="companyHome.php">
@@ -45,8 +43,8 @@ else{
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="announcements.php">Announcements</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="events.php">Events</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">

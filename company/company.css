@@ -75,3 +75,42 @@ a {
 #select{
     width: 80%;
 }
+
+.remove_container{
+    position: relative;
+}
+
+.remove_container:hover .remove_button{
+    visibility: visible;
+    opacity: 1;
+}
+
+.remove_button{
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    z-index: 100;
+    color: inherit;
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .1s, visibility .1s;
+}
+
+.remove_button:focus {
+    outline: none;
+}
+
+.remove_button:hover .icon, .remove_button .icon-fill{
+    display: none;
+}
+
+.remove_button:hover .icon-fill{
+    color: inherit;
+    display: inline;
+}
