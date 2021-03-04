@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if(file_exists("../general_backend/sessionStart.php")){
     require "../general_backend/sessionStart.php";
     require "../general_backend/conn.php";
@@ -62,7 +62,12 @@ else{
                     <div class='col-4 col-md-2'>
                         <form action='backend/removeApplication.php' method='post'>
                         <input type='text' value='".$row['appID']."' name = 'appID' hidden></input>
-                        <input type='submit' class='btn btn-primary align-self-center' id='removeApplication' name='removeApplication' value='Remove'></input>
+                        <input type='submit' class='btn btn-primary align-self-center' id='removeApplication' name='removeApplication' onclick='return checkDelete()' value='Remove'></input>
+                        <script language='JavaScript' type='text/javascript'>
+                        function checkDelete(){
+                          return confirm('Are you sure?');
+                        }
+                        </script>
                         </form>
                     </div>
                 </div>
