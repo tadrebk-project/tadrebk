@@ -142,7 +142,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     </div>
                                     <div class="modal-footer">
                                         <div class="mx-auto">
-                                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                             <button type="submit" id="submitEvent" name="submitEvent" class="btn btn-primary">Submit</button>
                                         </div>
                                     </div>
