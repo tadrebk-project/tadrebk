@@ -24,6 +24,12 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js" integrity="sha512-2xXe2z/uA+2SyT/sTSt9Uq4jDKsT0lV4evd3eoE/oxKih8DSAsOF6LUb+ncafMJPAimWAXdu9W+yMXGrCVOzQA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css" integrity="sha512-/Ae8qSd9X8ajHk6Zty0m8yfnKJPlelk42HTJjOHDWs1Tjr41RfsSkceZ/8yyJGLkxALGMIYd5L2oGemy/x1PLg==" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="company.css">
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
@@ -89,26 +95,46 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="dateInput" class="form-label">Date</label>
-                                                    <div class="input-group">
-                                                        <input type="text" id="dateInput" class="form-control" aria-describedby="button-addon-calendar">
-                                                        <button class="btn btn-outline-secondary" type="button" id="button-addon-calendar">
-                                                            <i class="bi bi-calendar-event"></i>
-                                                        </button>
+                                                    <div class="input_icon">
+                                                        <input type="text" id="dateInput" class="form-control">
+                                                        <i class="bi bi-calendar-event"></i>
                                                     </div>
                                                     <script>
-
+                                                        $('#addEventModal').on('shown.bs.modal', function() {
+                                                            $('input:text:visible:first').focus();
+                                                            // prepare datepicker
+                                                            $('#dateInput').daterangepicker({
+                                                                opens: 'right',
+                                                                singleDatePicker: true,
+                                                                showDropdowns: true,
+                                                                drops: 'up',
+                                                                autoApply: true,
+                                                                parentEl: '#addEventModal',
+                                                                locale: {
+                                                                    format: 'YYYY-MM-DD'
+                                                                }
+                                                            });
+                                                        });
                                                     </script>
                                                 </div>
                                                 <div class="col">
                                                     <label for="timeInput" class="form-label">Time</label>
-                                                    <div class="input-group">
-                                                        <input type="text" id="timeInput" class="form-control" aria-describedby="button-addon-clock">
-                                                        <button class="btn btn-outline-secondary" type="button" id="button-addon-clock">
-                                                            <i class="bi bi-clock"></i>
-                                                        </button>
+                                                    <div class="input_icon">
+                                                        <input type="text" id="timeInput" class="form-control">
+                                                        <i class="bi bi-clock"></i>
                                                     </div>
                                                     <script>
-
+                                                        $('#timeInput').timepicker({
+                                                            minuteStep: 5,
+                                                            showInputs: false,
+                                                            //disableFocus: true,
+                                                            //for 24Hr mode
+                                                            //showMeridian: false,
+                                                            icons: {
+                                                                up: 'bi bi-chevron-up',
+                                                                down: 'bi bi-chevron-down'
+                                                            }
+                                                        });
                                                     </script>
                                                 </div>
                                             </div>
@@ -116,7 +142,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     </div>
                                     <div class="modal-footer">
                                         <div class="mx-auto">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                             <button type="submit" id="submitEvent" name="submitEvent" class="btn btn-primary">Submit</button>
                                         </div>
                                     </div>
@@ -132,7 +158,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <b>
                 title
             </b>
-                details
+            details
             <br>
             <i>
                 date time

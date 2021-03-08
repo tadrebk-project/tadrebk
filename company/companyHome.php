@@ -78,7 +78,7 @@ else{
                 </a>
             </div>
             <div class="col">
-                <a href="#" class="text-decoration-none">
+                <a href="announcements.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text mb-0 text-truncate">Announcements</p>
@@ -87,7 +87,7 @@ else{
                 </a>
             </div>
             <div class="col">
-                <a href="#" class="text-decoration-none">
+                <a href="events.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text mb-0 text-truncate">Events</p>

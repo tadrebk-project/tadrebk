@@ -114,3 +114,13 @@ a {
     color: inherit;
     display: inline;
 }
+
+.input_icon {
+    position: relative;
+}
+.input_icon i{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #000000;
+}
