@@ -181,10 +181,13 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <i>
                 ".$row['date']." ".$row['time']."
             </i>
-            <button type='button' class='remove_button'>
-                <i class='bi bi-x-circle icon'></i>
-                <i class='bi bi-x-circle-fill icon-fill'></i>
-            </button>
+            <form action='backend/removeEvent.php' method='post'>
+                <input type='text' value='".$row['eventID']."' name = 'eventID' hidden></input>
+                <button type='submit' class='remove_button' id='removeEvent' name='removeEvent'>
+                    <i class='bi bi-x-circle icon'></i>
+                    <i class='bi bi-x-circle-fill icon-fill'></i>
+                </button>
+            </form>
         </div>
         <br>
         <!-- end -->

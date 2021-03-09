@@ -123,10 +123,13 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <i>
                             ".$row['date']."
                         </i>
-                        <button type='button' class='remove_button'>
-                            <i class='bi bi-trash icon'></i>
-                            <i class='bi bi-trash-fill icon-fill'></i>
-                        </button>
+                        <form action='backend/removeAnnouncement.php' method='post'>
+                            <input type='text' value='".$row['annID']."' name = 'annID' hidden></input>
+                            <button type='button' class='remove_button' id='removeAnnouncement' name='removeAnnouncement'>
+                                <i class='bi bi-trash icon'></i>
+                                <i class='bi bi-trash-fill icon-fill'></i>
+                            </button>
+                        </form>
                     </div>
                     <br>
                     <!-- end -->
