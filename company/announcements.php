@@ -131,7 +131,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                             <button type='submit' class='remove_button' id='removeAnnouncement' name='removeAnnouncement' onClick='return confirm(\"are you sure you want to delete the announcement!\");'>
                                 <i class='bi bi-trash icon'></i>
                                 <i class='bi bi-trash-fill icon-fill'></i>
-                            </button>
+                            </button>    
                         </form>
                     </div>
                     <br>
