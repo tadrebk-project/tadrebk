@@ -101,15 +101,18 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <b>
                             title
                         </b>
-                            details                        
+                        details
                         <br>
                         <i>
                             date
                         </i>
-                        <button type="button" class="remove_button">
-                            <i class="bi bi-trash icon"></i>
-                            <i class="bi bi-trash-fill icon-fill"></i>
-                        </button>
+                        <form action='#' method='post'>
+                            <input type='text' value='1' name='annID' hidden></input>
+                            <button type='submit' class='remove_button' id='removeAnnouncement' name='removeAnnouncement' onClick='return confirm("are you sure you want to delete the announcement!");'>
+                                <i class="bi bi-trash icon"></i>
+                                <i class="bi bi-trash-fill icon-fill"></i>
+                            </button>
+                        </form>
                     </div>
                     <br>
 
@@ -118,14 +121,14 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <b>
                             ".$row['title']."
                         </b>
-                            ".$row['details']."                        
+                        ".$row['details']."
                         <br>
                         <i>
                             ".$row['date']."
                         </i>
                         <form action='backend/removeAnnouncement.php' method='post'>
-                            <input type='text' value='".$row['annID']."' name = 'annID' hidden></input>
-                            <button type='button' class='remove_button' id='removeAnnouncement' name='removeAnnouncement'>
+                            <input type='text' value='".$row['annID']."' name='annID' hidden></input>
+                            <button type='submit' class='remove_button' id='removeAnnouncement' name='removeAnnouncement' onClick='return confirm(\"are you sure you want to delete the announcement!\");'>
                                 <i class='bi bi-trash icon'></i>
                                 <i class='bi bi-trash-fill icon-fill'></i>
                             </button>
