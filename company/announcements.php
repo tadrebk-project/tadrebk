@@ -125,10 +125,15 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         </i>
                         <form action='backend/removeAnnouncement.php' method='post'>
                             <input type='text' value='".$row['annID']."' name = 'annID' hidden></input>
-                            <button type='button' class='remove_button' id='removeAnnouncement' name='removeAnnouncement'>
+                            <button type='button' class='remove_button' id='removeAnnouncement' name='removeAnnouncement' onclick='return checkDelete()'>
                                 <i class='bi bi-trash icon'></i>
                                 <i class='bi bi-trash-fill icon-fill'></i>
                             </button>
+                            <script language='JavaScript' type='text/javascript'>
+                                function checkDelete(){
+                                    return confirm('Are you sure?');
+                                }
+                            </script>
                         </form>
                     </div>
                     <br>
