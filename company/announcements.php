@@ -75,15 +75,15 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     <h5 class="modal-title w-100" id="addAnnouncementModalLabel">Add a new announcement</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <form action="#">
+                                <form action="backend/addAnnouncement.php" method="post">
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="titleInput" class="form-label">Announcement title</label>
-                                            <input type="text" id="titleInput" class="form-control">
+                                            <input type="text" id="titleInput" name="titleInput" class="form-control">
                                         </div>
                                         <div class="mb-3">
                                             <label for="descriptionInput" class="form-label">Announcement description</label>
-                                            <textarea class="form-control" id="descriptionInput" rows="3"></textarea>
+                                            <textarea class="form-control" id="descriptionInput" name="descriptionInput" rows="3"></textarea>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
