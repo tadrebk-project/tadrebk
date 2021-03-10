@@ -20,10 +20,18 @@ if($result=mysqli_query($conn, $query)){
         //(here table) 
         $str ="";
         while($row=mysqli_fetch_array($result)){
-            //$str .= "<tr><td>".$row['name']."</td><td>".$row['description']."</td><td>".$row['date']."</td><td>".$row['time']."</td></tr>";
+            $time = date("g:i a",strtotime($row['time']));
             $str .= "<div class='card card-body'>
-            ".$row['name']." : ".$row['description']."   ".$row['date']."
-        </div><br>";
+            <b>
+                ".$row['name']."
+            </b>
+            ".$row['description']."
+            <br>
+            <i>
+                ".$row['date']." ".$time."
+            </i>
+        </div>
+        <br>";
         }
         
        echo $str;

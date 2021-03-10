@@ -42,7 +42,8 @@ if($result=mysqli_query($conn, $query)){
         echo $str;
     }
     else {
-        echo "There are no announcements..";
+        echo "<div class='card card-body'>
+        There are no announcements..</div>";
     }
 }
 mysqli_close($conn);

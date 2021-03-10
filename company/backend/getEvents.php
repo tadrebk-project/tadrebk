@@ -43,7 +43,8 @@ if($result=mysqli_query($conn, $query)){
        echo $str;
     }
     else {
-        echo "There are no events..";
+        echo "<div class='card card-body'>
+        There are no events..</div>";
     }
 }
 mysqli_close($conn);

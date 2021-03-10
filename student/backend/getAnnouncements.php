@@ -20,10 +20,17 @@ if($result=mysqli_query($conn, $query)){
         //(here table) //title	details	date	compID
         $str ="";
         while($row=mysqli_fetch_array($result)){
-            //$str .= "<tr><td>".$row['title']."</td><td>".$row['details']."</td><td>".$row['date']."</td></tr>";
             $str .= "<div class='card card-body'>
-            ".$row['title']." : ".$row['details']."   ".$row['date']."
-            </div><br>";
+            <b>
+                ".$row['title']."
+            </b>
+            ".$row['details']."
+            <br>
+            <i>
+                ".$row['date']."
+            </i>
+        </div>
+        <br>";
         }
         $str .="";
         echo $str;
