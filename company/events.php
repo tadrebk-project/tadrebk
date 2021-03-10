@@ -81,22 +81,22 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     <h5 class="modal-title w-100" id="addEventModalLabel">Add a new Event</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <form action="#">
+                                <form action="backend/addEvent.php" method="post">
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="titleInput" class="form-label">Event title</label>
-                                            <input type="text" id="titleInput" class="form-control">
+                                            <input type="text" id="titleInput" name="titleInput" class="form-control">
                                         </div>
                                         <div class="mb-3">
                                             <label for="descriptionInput" class="form-label">Event description</label>
-                                            <textarea class="form-control" id="descriptionInput" rows="3"></textarea>
+                                            <textarea class="form-control" id="descriptionInput" name="descriptionInput" rows="3"></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="dateInput" class="form-label">Date</label>
                                                     <div class="input_icon">
-                                                        <input type="text" id="dateInput" class="form-control">
+                                                        <input type="text" id="dateInput" name="dateInput" class="form-control">
                                                         <i class="bi bi-calendar-event"></i>
                                                     </div>
                                                     <script>
@@ -120,7 +120,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                                 <div class="col">
                                                     <label for="timeInput" class="form-label">Time</label>
                                                     <div class="input_icon">
-                                                        <input type="text" id="timeInput" class="form-control">
+                                                        <input type="text" id="timeInput" name="timeInput" class="form-control">
                                                         <i class="bi bi-clock"></i>
                                                     </div>
                                                     <script>
