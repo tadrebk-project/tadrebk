@@ -97,45 +97,9 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         </div>
                     </div>
 
-                    <div class='card card-body remove_container'>
-                        <b>
-                            title
-                        </b>
-                        details
-                        <br>
-                        <i>
-                            date
-                        </i>
-                        <form action='#' method='post'>
-                            <input type='text' value='1' name='annID' hidden></input>
-                            <button type='submit' class='remove_button' id='removeAnnouncement' name='removeAnnouncement' onClick='return confirm("are you sure you want to delete the announcement!");'>
-                                <i class="bi bi-trash icon"></i>
-                                <i class="bi bi-trash-fill icon-fill"></i>
-                            </button>
-                        </form>
-                    </div>
-                    <br>
+                    
 
-                    <!-- copy this for getAnnouncements.php-->
-                    <div class='card card-body remove_container'>
-                        <b>
-                            ".$row['title']."
-                        </b>
-                        ".$row['details']."
-                        <br>
-                        <i>
-                            ".$row['date']."
-                        </i>
-                        <form action='backend/removeAnnouncement.php' method='post'>
-                            <input type='text' value='".$row['annID']."' name='annID' hidden></input>
-                            <button type='submit' class='remove_button' id='removeAnnouncement' name='removeAnnouncement' onClick='return confirm(\"are you sure you want to delete the announcement!\");'>
-                                <i class='bi bi-trash icon'></i>
-                                <i class='bi bi-trash-fill icon-fill'></i>
-                            </button>    
-                        </form>
-                    </div>
-                    <br>
-                    <!-- end -->
+                    <?php include "backend/getAnnouncements.php"; ?>
 
                 </div>
             </div>

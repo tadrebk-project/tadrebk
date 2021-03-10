@@ -27,15 +27,14 @@ $description = mysqli_real_escape_string($conn, $_POST['descriptionInput']);
 $dateString = mysqli_real_escape_string($conn, $_POST['dateInput']);
 $timeString = mysqli_real_escape_string($conn, $_POST['timeInput']);
 
-$date = DateTime::createFromFormat('YYYY-MM-DD',$dateString);
-
-
-
+//$time = strtotime($timeString);
+$time = date("H:i:s",strtotime($timeString));
 $compID = $_SESSION['compID'];
 
-$query = "INSERT INTO event1 (eventID, name, description, date, time, compID) VALUES('NULL','$name','$description','$date','12:12:12','$compID');";
+$query = "INSERT INTO event1 (eventID, name, description, date, time, compID) VALUES('NULL','$name','$description','$dateString','$time','$compID');";
 mysqli_query($conn, $query);
   
 }
 mysqli_close($conn);
+header('location: ../events.php');
 ?>

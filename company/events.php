@@ -154,47 +154,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
             </div>
         </div>
         <br>
-        <div class='card card-body remove_container'>
-            <b>
-                title
-            </b>
-            details
-            <br>
-            <i>
-                date time
-            </i>
-            <button type="button" class="remove_button">
-                <i class="bi bi-x-circle icon"></i>
-                <i class="bi bi-x-circle-fill icon-fill"></i>
-            </button>
-        </div>
-        <br>
-
-        <!-- copy this for getEvents.php-->
-        <!-- not final-->
-        <div class='card card-body remove_container'>
-            <b>
-                ".$row['title']."
-            </b>
-            ".$row['details']."
-            <br>
-            <i>
-                ".$row['date']." ".$row['time']."
-            </i>
-            <form action='backend/removeEvent.php' method='post'>
-                <input type='text' value='".$row['eventID']."' name = 'eventID' hidden></input>
-                <button type='submit' class='remove_button' id='removeEvent' name='removeEvent' onclick='return checkDelete()'>
-                    <i class='bi bi-x-circle icon'></i>
-                    <i class='bi bi-x-circle-fill icon-fill'></i>
-                </button>
-                <script language='JavaScript' type='text/javascript'>
-                        function checkDelete(){
-                          return confirm('Are you sure?');
-                        }
-                </script>
-            </form>
-        </div>
-        <br>
+        <?php include "backend/getEvents.php"; ?>
         <!-- end -->
 
     </div>

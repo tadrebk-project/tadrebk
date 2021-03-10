@@ -30,4 +30,5 @@ mysqli_query($conn, $query);
   
 }
 mysqli_close($conn);
+header('location: ../announcements.php');
 ?>
