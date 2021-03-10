@@ -19,7 +19,7 @@ if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
         $str ="";
         while($row=mysqli_fetch_array($result)){
-            $time = date("g:i a",strtotime($row['time']));
+            $time = date("g:i A",strtotime($row['time']));
             $str .= "<div class='card card-body remove_container'>
             <b>
                 ".$row['name']."
