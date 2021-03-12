@@ -95,7 +95,7 @@ else{
         <div class="Container mx-5 my-5">
             <div class="Container d-flex justify-content-between">
                 <div>
-                    <p class="text">Approve Student's Training </p>
+                    <p class="text">Students Requests </p>
                 </div>
                 <div class="d-flex align-items-center">
                     <div class="input-group invisible">
@@ -112,7 +112,7 @@ else{
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                StudentName
+                                Name
                             </div>
                             <div class="col">
                                 Major
@@ -122,9 +122,6 @@ else{
                             </div>
                             <div class="col">
                                 CV
-                            </div>
-                            <div class="col">
-                                Type
                             </div>
                             <div class="col">
                                 Request
