@@ -41,7 +41,7 @@ else{
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="studentsList.php">Students</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="announcements.php">Announcements</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="events.php">Events</a>
@@ -60,7 +60,7 @@ else{
     <div class="container mx-auto my-5" style="width: 75%;">
         <div class="row row-cols-1 row-cols-md-3 g-5">
             <div class="col">
-                <a href="#" class="text-decoration-none">
+                <a href="studentsList.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text mb-0 text-truncate">Students</p>

@@ -24,10 +24,16 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js" integrity="sha512-2xXe2z/uA+2SyT/sTSt9Uq4jDKsT0lV4evd3eoE/oxKih8DSAsOF6LUb+ncafMJPAimWAXdu9W+yMXGrCVOzQA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css" integrity="sha512-/Ae8qSd9X8ajHk6Zty0m8yfnKJPlelk42HTJjOHDWs1Tjr41RfsSkceZ/8yyJGLkxALGMIYd5L2oGemy/x1PLg==" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="company.css">
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
-    <title>Announcements</title>
+    <title>Events</title>
 </head>
 
 <body>
@@ -39,9 +45,9 @@ if (file_exists("../general_backend/sessionStart.php")) {
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="studentsList.php">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="studentsList.php">Students</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="announcements.php">Announcements</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="announcements.php">Announcements</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="events.php">Events</a>
                 </nav>
             </div>
@@ -56,54 +62,45 @@ if (file_exists("../general_backend/sessionStart.php")) {
     </nav>
 
     <div class="container mx-auto my-4">
+        <div class="card" style="margin-bottom: 15px;">
+            <div class="card-body">
+                <div class="mx-3">
+                    <div class="d-flex justify-content-between">
+                        <p class="fs-5 fw-bold mb-0">Students</p>
+                        <p class="fs-5 fw-bold mb-0">Write feedback</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
         <div class="card">
             <div class="card-body">
                 <div class="mx-3">
-                    <div class="d-md-flex justify-content-between">
-                        <p class="text">Announcements</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addAnnouncementModal">
-                            Add a new announcement
+                    <!-- list of students # use <hr> between students-->
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 mt-2">abdulrahman khaled</p>
+                        <button type="button" class="btn btn-primary">
+                            Feedback
                         </button>
                     </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="addAnnouncementModal" tabindex="-1" aria-labelledby="addAnnouncementModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header text-center">
-                                    <h5 class="modal-title w-100" id="addAnnouncementModalLabel">Add a new announcement</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <form action="backend/addAnnouncement.php" method="post">
-                                    <div class="modal-body">
-                                        <div class="mb-3">
-                                            <label for="titleInput" class="form-label">Announcement title</label>
-                                            <input type="text" id="titleInput" name="titleInput" class="form-control">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="descriptionInput" class="form-label">Announcement description</label>
-                                            <textarea class="form-control" id="descriptionInput" name="descriptionInput" rows="3"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="mx-auto">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            <button type="submit" id="submitAnnouncement" name="submitAnnouncement" class="btn btn-primary">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 mt-2">abdulrahman khaled</p>
+                        <button type="button" class="btn btn-primary">
+                            Feedback
+                        </button>
                     </div>
-
-                    
-
-                    <?php include "backend/getAnnouncements.php"; ?>
-
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 mt-2">abdulrahman khaled</p>
+                        <button type="button" class="btn btn-primary">
+                            Feedback
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
 
