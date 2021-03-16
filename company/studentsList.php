@@ -77,26 +77,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div class="card-body">
                 <div class="mx-3">
                     <!-- list of students # use <hr> between students-->
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-0 mt-2">abdulrahman khaled</p>
-                        <button type="button" class="btn btn-primary">
-                            Feedback
-                        </button>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-0 mt-2">abdulrahman khaled</p>
-                        <button type="button" class="btn btn-primary">
-                            Feedback
-                        </button>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-0 mt-2">abdulrahman khaled</p>
-                        <button type="button" class="btn btn-primary">
-                            Feedback
-                        </button>
-                    </div>
+                    <?php include "backend/getAssociatedStudents.php"; ?>
                 </div>
             </div>
         </div>
