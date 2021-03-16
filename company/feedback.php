@@ -65,13 +65,14 @@ if (file_exists("../general_backend/sessionStart.php")) {
         <div class="card">
             <div class="card-body">
                 <div class="mx-3">
-                    <p class="text">Feedback</p>
+                    <p class="text">Performence Feedback</p>
                     <form action="" method="post" enctype="multipart/form-data" lang="en">
                         <div class="mb-3">
                             <label for="" class="form-label">Write feedback</label>
                             <textarea class="form-control" id="" name="" rows="4"></textarea>
                         </div>
-                        <button type="submit" id="" name="" class="btn btn-primary" style="float: right;">Submit</button>
+                        <p style="color: red;">Warning: Writing student feedback should be done at the end of the training period. After submiting the feedback, the student will be disassociated from the company.</p>
+                        <button type="submit" id="" name="" class="btn btn-primary" style="float: right;" onClick='return confirm("Do you want to submit feedback and disassociate student?");'>Submit</button>
                     </form>
                 </div>
             </div>
