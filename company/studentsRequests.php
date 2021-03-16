@@ -95,7 +95,7 @@ else{
         <div class="Container mx-5 my-5">
             <div class="Container d-flex justify-content-between">
                 <div>
-                    <p class="text">Students Requests </p>
+                    <p class="text">Pending Students Requests</p>
                 </div>
                 <div class="d-flex align-items-center">
                     <div class="input-group invisible">

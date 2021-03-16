@@ -49,6 +49,6 @@ mysqli_query($conn, $qry2);
 }
 
 mysqli_close($conn);
-header('location: ../studentsRequests.php');
+header("location: ../studentsRequests.php?appID=".$_POST['appID']);
 
 ?>
