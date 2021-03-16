@@ -62,8 +62,8 @@ if($result=mysqli_query($conn, $query)){
                     <button class='btn btn-primary'id='accept' name='accept'>Approve</button>
                     </div>
                     <div class='col'>
-                    <button type='button' class='btn btn-primary mb-3' data-bs-toggle='modal' data-bs-target='#writeReasonModal'>Reject</button>
-                    <div class='modal fade' id='writeReasonModal' tabindex='-1' aria-labelledby='writeReasonModalLabel' aria-hidden='true'>
+                    <button type='button' class='btn btn-primary mb-3' data-bs-toggle='modal' data-bs-target='#writeReasonModal".$row['studentID']."'>Reject</button>
+                    <div class='modal fade' id='writeReasonModal".$row['studentID']."' tabindex='-1' aria-labelledby='writeReasonModalLabel' aria-hidden='true'>
                         <div class='modal-dialog modal-dialog-centered'>
                             <div class='modal-content'>
                                 <div class='modal-header text-center'>
