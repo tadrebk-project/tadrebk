@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if(file_exists("../general_backend/sessionStart.php")){
     require "../general_backend/sessionStart.php";
 }
@@ -50,10 +50,10 @@ else{
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="studentsList.php">Students</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="announcements.php">Announcements</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="events.php">Events</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
@@ -127,11 +127,11 @@ else{
                                 Request
                             </div>
                             <div class="col">
-                                
+
                             </div>
                         </div>
                             <div class="col" id="requestsList">
-                                <?php include "backend/getRequests.php"; ?>     
+                                <?php include "backend/getRequests.php"; ?>
                             </div>
 
                         </div>
