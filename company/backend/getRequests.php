@@ -62,7 +62,29 @@ if($result=mysqli_query($conn, $query)){
                     <button class='btn btn-primary'id='accept' name='accept'>Approve</button>
                     </div>
                     <div class='col'>
-                    <button class='btn btn-primary'id='reject' name='reject'>Reject</button>
+                    <button type='button' class='btn btn-primary mb-3' data-bs-toggle='modal' data-bs-target='#writeReasonModal'>Reject</button>
+                    <div class='modal fade' id='writeReasonModal' tabindex='-1' aria-labelledby='writeReasonModalLabel' aria-hidden='true'>
+                        <div class='modal-dialog modal-dialog-centered'>
+                            <div class='modal-content'>
+                                <div class='modal-header text-center'>
+                                    <h5 class='modal-title w-100' id='writeReasonModalLabel'>Write the reason of rejection</h5>
+                                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                </div>
+                                <div class='modal-body'>
+                                    <div class='mb-3'>
+                                        <label for='reasonInput' class='form-label'>Rejection reason</label>
+                                        <textarea class='form-control' id='reasonInput' name='reasonInput' rows='3'></textarea>
+                                    </div>
+                                </div>
+                                <div class='modal-footer'>
+                                    <div class='mx-auto'>
+                                        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cancel</button>
+                                        <button type='submit' id='reject' name='reject' class='btn btn-primary' onClick='return confirm(\"are you sure you want to reject ".$row['name']."?\");'>Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </form>
                     </div>
 

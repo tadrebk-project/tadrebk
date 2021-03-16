@@ -37,11 +37,13 @@ if (isset($_POST['reject'])) {
 
 $appID = mysqli_real_escape_string($conn, $_POST['appID']);
 $studentID = mysqli_real_escape_string($conn, $_POST['studentID']);
+$rejectionNote = mysqli_real_escape_string($conn, $_POST['reasonInput']);
 $compID = $_SESSION['compID'];
 
 $qry2 = "UPDATE studentrequest
 SET
-    status = '".$text2."'
+    status = '".$text2."',
+    rejectionNote = '".$rejectionNote."'
 WHERE
     studentID = ".$studentID." and appID = ".$appID.";";
 

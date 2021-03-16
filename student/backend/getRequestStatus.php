@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "SELECT studentRequest.appID, studentRequest.studentID, studentRequest.status, Application.name as appName, Company.name as compName, Company.compID  FROM studentRequest INNER JOIN Application ON studentRequest.appID=Application.appID INNER JOIN Company ON Company.compID=Application.compID
+$query = "SELECT studentRequest.appID, studentRequest.studentID, studentRequest.status, studentRequest.rejectionNote, Application.name as appName, Company.name as compName, Company.compID  FROM studentRequest INNER JOIN Application ON studentRequest.appID=Application.appID INNER JOIN Company ON Company.compID=Application.compID
 where studentID =".$_SESSION['studentid'];
 
 if($result=mysqli_query($conn, $query)){
@@ -51,7 +51,7 @@ if($result=mysqli_query($conn, $query)){
                                 $colour = 'red';
                                 $str2 .= "    <div style='color: $colour'>
                                 ".$row['status']."
-                                   </div>  </div>";
+                                   </div>  </div> <span style='color:red'>Reason: ".$row['rejectionNote']."</span>";
                             }
 
                             
