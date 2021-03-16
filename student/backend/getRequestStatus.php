@@ -50,11 +50,10 @@ if($result=mysqli_query($conn, $query)){
                             elseif($row['status'] == 'Rejected'){
                                 $colour = 'red';
                                 $str2 .= "    <div style='color: $colour'>
-                                ".$row['status']."
-                                   </div>  </div> <span style='color:red'>Reason: ".$row['rejectionNote']."</span>";
+                                ".$row['status']." <i class='bi bi-question-circle-fill reasonMark'><span class='reasonText'>".$row['rejectionNote']."</span></i>
+                                   </div>  </div> ";
                             }
 
-                            
                             
             $str .= "<div class='col'>
             <div class='card my-1'>
