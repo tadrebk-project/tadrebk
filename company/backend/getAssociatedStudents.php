@@ -22,9 +22,9 @@ if($result=mysqli_query($conn, $query)){
         while($row=mysqli_fetch_array($result)){
              $str .= "<div class='d-flex justify-content-between'>
 				<p class='mb-0 mt-2'>".$row['name']."</p>
-                <div class='container d-flex justify-content-center'>
-                            <a href='feedback.php?studentID=".$row['studentID']."' class='btn btn-primary py-0'>Write</a>
-                </div>
+                
+                    <a href='feedback.php?studentID=".$row['studentID']."'><button type='button' class='btn btn-primary'>Write</button></a>
+                
              </div>";
 			 
 			 if($count != 1) {
