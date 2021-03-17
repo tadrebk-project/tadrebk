@@ -77,7 +77,11 @@ else{
 
         }
         else {
-            echo "No applications available...";
+            echo "
+            <div class='container-sm app pb-3'>
+            No applications available...
+            </div>
+            ";
         }
     }
 
