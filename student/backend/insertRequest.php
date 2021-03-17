@@ -56,21 +56,23 @@ if (isset($_POST['add_request'])) {
         $query = "INSERT INTO studentrequest (appID, studentID, date, status) VALUES('$appID','$studentID','$date','$status');";
         mysqli_query($conn, $query);
         mysqli_close($conn);
-        header('location: ../applications.php?compID='.$_GET['compID']);
+        echo "<script>alert('Request sent successfully');
+        window.location.href='../applications.php?compID=".$_GET['compID']."';</script>";
+        //header('location: ../applications.php?compID='.$_GET['compID']);
     }
     elseif($HasCompany) {
         echo "<script>alert('You are already associated with a company!');
-        window.location.href='../studentHome.php';</script>";
+        window.location.href='../applications.php?compID=".$_GET['compID']."';</script>";
         //header('location: ../studentHome.php');
     }
     elseif(!$HasCV) {
         echo "<script>alert('Please upload your CV through your profile.');
-        window.location.href='../studentHome.php';</script>";
+        window.location.href='../applications.php?compID=".$_GET['compID']."';</script>";
         //header('location: ../studentHome.php');
     }
     elseif($alreadyRequested) {
         echo "<script>alert('You have already requested this application!');
-        window.location.href='../studentHome.php';</script>";
+        window.location.href='../applications.php?compID=".$_GET['compID']."';</script>";
         //header('location: ../studentHome.php');
     }
     
