@@ -55,6 +55,7 @@
                   <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
                   <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
                   <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
+                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="representatives.php">Representatives</a>
               </nav>
           </div>
             </div>
