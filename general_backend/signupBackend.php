@@ -48,7 +48,7 @@ if (isset($_POST['reg_company'])) {
     mysqli_query($conn, $query);
     $last_compID = mysqli_insert_id($conn);
 
-    $query = "INSERT INTO companyrep (userID, compID, type) VALUES('$last_userID', '$last_compID', 1);";
+    $query = "INSERT INTO companyrep (userID, repID, compID, type) VALUES('$last_userID','NULL', '$last_compID', 1);";
     mysqli_query($conn, $query);
 
   	header('location: ../Login.html');
