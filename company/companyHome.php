@@ -45,6 +45,7 @@ else{
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="announcements.php">Announcements</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="events.php">Events</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="events.php">Representatives</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
@@ -91,6 +92,15 @@ else{
                     <div class="card" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text mb-0 text-truncate">Events</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="backend/representativeTypeDecider.php" class="text-decoration-none">
+                    <div class="card" style="height: 20rem;">
+                        <div class="card-body d-flex align-items-end">
+                            <p class="text mb-0 text-truncate">Representatives</p>
                         </div>
                     </div>
                 </a>
