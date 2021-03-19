@@ -14,9 +14,41 @@ else{
 }
 
 if (isset($_POST['registerByFile'])) {
-    //Read from file...
-    //
-    //
+    $fileName = $_FILES["file"]["tmp_name"];
+    //Data in file format: studentID, name, gpa, MID
+    if ($_FILES["file"]["size"] > 0) {
+        
+        $file = fopen($fileName, "r");
+        
+        while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
+            
+            $studentID = "";
+            if (isset($column[0])) {
+                $studentID = mysqli_real_escape_string($conn, $column[0]);
+            }
+            $name = "";
+            if (isset($column[1])) {
+                $name = mysqli_real_escape_string($conn, $column[1]);
+            }
+            $gpa = "";
+            if (isset($column[2])) {
+                $gpa = mysqli_real_escape_string($conn, $column[2]);
+            }
+            $MID = "";
+            if (isset($column[3])) {
+                $MID = mysqli_real_escape_string($conn, $column[3]);
+            }
+            
+            $username = "s".$studentID;
+            $password = "pass".$studentID;
+            $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$password','student');";
+            mysqli_query($conn, $query);
+            $last_userID = mysqli_insert_id($conn);
+
+            $query = "INSERT INTO student (userID, studentID, name, gpa, MID) VALUES('$last_userID','$studentID','$name','$gpa','$MID');";
+            mysqli_query($conn, $query);     
+        }
+    }
     
 }
 elseif (isset($_POST['registerManually'])) {

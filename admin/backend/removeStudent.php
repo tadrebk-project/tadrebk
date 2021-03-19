@@ -16,11 +16,18 @@ else{
 // initializing variables
 
 if (isset($_POST['removeStudent'])) {
-    $userID = mysqli_real_escape_string($conn, $_POST['userID']);
+    $studentID = mysqli_real_escape_string($conn, $_POST['studentID']);
 
-    $qry1 = "DELETE FROM `user1` where userID = '$userID';";
-    mysqli_query($conn, $qry1);
+    $qry = "UPDATE student
+        SET
+        compID = NULL,
+        status = 'inactive'
+        WHERE studentID = ".$studentID.";";
 
+    mysqli_query($conn, $qry);
+
+    $qry = "DELETE FROM studentrequest where studentID = '$studentID';";
+    mysqli_query($conn, $qry);
 
 }
 

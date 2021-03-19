@@ -2,6 +2,13 @@
 session_start();
 require "conn.php";
 
+function denyAccess($msg){
+  unset($_SESSION['userid']);
+  session_destroy();
+  echo "<script type='text/javascript'>alert('$msg');</script>";
+  echo "<script type='text/javascript'>window.location.href = '../Login.html';</script>";
+}
+
 if (isset($_POST['login-btn'])) {
   $username = mysqli_real_escape_string($conn, $_POST['username']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -17,22 +24,33 @@ if (isset($_POST['login-btn'])) {
         $mysql_qry2 = "select * from student where userID = '$temp_userID'";
         $result2 = mysqli_query($conn ,$mysql_qry2);
         $student = mysqli_fetch_assoc($result2);
-        $_SESSION['studentid'] = $student['studentID'];
-        $_SESSION['userid'] = $user['userID'];
-        $_SESSION['type'] = $user['type'];
-        header('location: ../student/studentHome.php');
-
+        if($student['status']=="active"){
+          $_SESSION['studentid'] = $student['studentID'];
+          $_SESSION['userid'] = $user['userID'];
+          $_SESSION['type'] = $user['type'];
+          header('location: ../student/studentHome.php');
+        }
+        else{
+          denyAccess("You are not authorized to access the website at this period.");
+        }
       } else if ($user['type'] === "representative"){
         $temp_userID = $user['userID'];
-        $mysql_qry2 = "select * from companyrep where userID = '$temp_userID'";
+        $mysql_qry2 = "select * from companyrep r INNER JOIN company c on r.compID = c.compID where userID = '$temp_userID'";
         $result2 = mysqli_query($conn ,$mysql_qry2);
         $rep = mysqli_fetch_assoc($result2);
-        $_SESSION['compID'] = $rep['compID'];
-        $_SESSION['repID'] = $rep['repID'];
-        $_SESSION['userid'] = $user['userID'];
-        $_SESSION['type'] = $user['type'];
-        header('location: ../company/companyHome.php');
-
+        if($rep['status'] === "available"){
+          $_SESSION['compID'] = $rep['compID'];
+          $_SESSION['repID'] = $rep['repID'];
+          $_SESSION['userid'] = $user['userID'];
+          $_SESSION['type'] = $user['type'];
+          header('location: ../company/companyHome.php');
+        }
+        else if($rep['status'] === "pending"){
+          denyAccess("Your request status is still pending.");
+        }
+        else{
+          denyAccess("You are not authorized to access the website.");
+        }
       } else if ($user['type'] === "admin"){
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
@@ -47,9 +65,7 @@ if (isset($_POST['login-btn'])) {
 
   }
   else {
-      $error= "Wrong Credintials! Try Again";
-      echo "<script type='text/javascript'>alert('$error');</script>";
-      echo "<script type='text/javascript'>window.location.href = '../Login.html';</script>";
+      denyAccess("Wrong Credintials! Try Again");
   }
 }
 
