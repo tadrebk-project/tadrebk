@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2021 at 05:27 PM
+-- Generation Time: Mar 19, 2021 at 12:04 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -55,14 +55,15 @@ CREATE TABLE `application` (
 --
 
 INSERT INTO `application` (`appID`, `name`, `description`, `reqGPA`, `compID`, `trainingType`) VALUES
+(1, 'Web Development', 'Train on web development for 8 weeks in the summer. Skills required: HTML, PHP, Bootstrap.', 2.3, 1, 'summer'),
+(2, 'Web Development', 'Train on web development for a term. Skills: PHP, HTML, Bootstrap.', 2, 1, 'COOP'),
 (3, 'Industrial Engineering Opportunity', 'Train on how to control and maintain a product.', 2, 4, 'summer'),
 (4, 'App Development', 'Train on app development throughout the summer', 2.5, 3, 'summer'),
 (5, 'Electrical Engineer Opportunity', 'CO-OP training for electrical engineers.', 2.75, 5, 'COOP'),
 (6, 'Mechanical Engineer Opportunity', 'CO-OP training for mechanical engineers', 2.75, 5, 'COOP'),
 (7, 'Computer Science Opportunity', 'CO-OP training for computer science.', 2.75, 5, 'COOP'),
 (8, 'Accounting', 'Get real experience in accounting by training in the summer.', 2.5, 6, 'summer'),
-(9, 'Summer Training on Networks', 'Train on how to set up networks, and how to make them secure....', 2, 3, 'summer'),
-(18, 'CO-OP Program', '6 months training', 2, 1, 'COOP');
+(9, 'Summer Training on Networks', 'Train on how to set up networks, and how to make them secure....', 2, 3, 'summer');
 
 -- --------------------------------------------------------
 
@@ -100,15 +101,16 @@ INSERT INTO `company` (`compID`, `name`, `description`, `location`, `website`, `
 CREATE TABLE `companyrep` (
   `userID` int(11) NOT NULL,
   `repID` int(11) NOT NULL,
-  `compID` int(11) NOT NULL
+  `compID` int(11) NOT NULL,
+  `type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `companyrep`
 --
 
-INSERT INTO `companyrep` (`userID`, `repID`, `compID`) VALUES
-(10, 4, 1);
+INSERT INTO `companyrep` (`userID`, `repID`, `compID`, `type`) VALUES
+(10, 4, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -135,18 +137,6 @@ CREATE TABLE `instructor` (
   `userID` int(11) NOT NULL,
   `name` varchar(40) NOT NULL,
   `MID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mainrep`
---
-
-CREATE TABLE `mainrep` (
-  `userID` int(11) NOT NULL,
-  `repID` int(11) NOT NULL,
-  `compID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -201,13 +191,6 @@ CREATE TABLE `progressreport` (
   `studentID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `progressreport`
---
-
-INSERT INTO `progressreport` (`RID`, `summary`, `fileRef`, `date`, `studentID`) VALUES
-(5, 'd', '1614759963_Training Letter.pdf', '2021-03-03', 15200);
-
 -- --------------------------------------------------------
 
 --
@@ -224,6 +207,9 @@ CREATE TABLE `requiredmajors` (
 --
 
 INSERT INTO `requiredmajors` (`appID`, `MID`) VALUES
+(1, 1),
+(1, 2),
+(2, 2),
 (3, 6),
 (4, 1),
 (4, 2),
@@ -233,9 +219,7 @@ INSERT INTO `requiredmajors` (`appID`, `MID`) VALUES
 (8, 7),
 (9, 2),
 (9, 4),
-(9, 5),
-(18, 6),
-(18, 7);
+(9, 5);
 
 -- --------------------------------------------------------
 
@@ -277,16 +261,18 @@ CREATE TABLE `student` (
   `picRef` varchar(100) DEFAULT NULL,
   `CVFileRef` varchar(100) DEFAULT NULL,
   `compID` int(11) DEFAULT NULL,
-  `MID` int(11) NOT NULL
+  `MID` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`userID`, `studentID`, `name`, `email`, `phoneNum`, `gpa`, `picRef`, `CVFileRef`, `compID`, `MID`) VALUES
-(2, 15200, 'Mohammad Fahd', 'moh11@gmail.com', 540502442, 3.1, '1614089824_3F6B966D00000578-4428630-image-m-80_1492690622006.jpg', '1614089493_fgfg.pdf', 5, 1),
-(9, 16001, 'Ibrahim Rakoon', 'ibrahimRakoon@Flagoon.com', 57281999, 2, NULL, '16001_Mohammad-Eskandarani-CV-Software-Engineer.pdf', NULL, 6);
+INSERT INTO `student` (`userID`, `studentID`, `name`, `email`, `phoneNum`, `gpa`, `picRef`, `CVFileRef`, `compID`, `MID`, `status`) VALUES
+(2, 15200, 'Mohammad Fahd', 'moh11@gmail.com', 540502442, 3.1, NULL, NULL, 5, 1, 'active'),
+(9, 16001, 'Ibrahim Rakoon', 'ibrahimRakoon@Flagoon.com', 57281999, 2, NULL, NULL, NULL, 6, 'active'),
+(12, 201611111, 'Saleh Almaqwashy', 'saleh@gmail.com', 505555555, 3, NULL, NULL, NULL, 1, 'active');
 
 -- --------------------------------------------------------
 
@@ -307,10 +293,9 @@ CREATE TABLE `studentrequest` (
 --
 
 INSERT INTO `studentrequest` (`appID`, `studentID`, `date`, `status`, `rejectionNote`) VALUES
-(3, 16001, '2021-03-03', 'Pending', ''),
-(6, 16001, '2021-02-18', 'Pending', ''),
-(8, 16001, '2021-02-17', 'Pending', ''),
-(18, 16001, '2021-03-16', 'Rejected', 'Bad skills');
+(1, 16001, '2021-02-18', 'Pending', NULL),
+(6, 16001, '2021-02-18', 'Pending', NULL),
+(8, 16001, '2021-02-17', 'Pending', NULL);
 
 -- --------------------------------------------------------
 
@@ -332,7 +317,8 @@ CREATE TABLE `user1` (
 INSERT INTO `user1` (`userID`, `username`, `password`, `type`) VALUES
 (2, 'mohammad1', '123', 'student'),
 (9, 'ibrahim', '123', 'student'),
-(10, 'stc', '123', 'representative');
+(10, 'stc', '123', 'representative'),
+(12, 'Saleh100', 's12345678#', 'student');
 
 --
 -- Indexes for dumped tables
@@ -379,14 +365,6 @@ ALTER TABLE `event1`
 ALTER TABLE `instructor`
   ADD PRIMARY KEY (`userID`),
   ADD KEY `MID` (`MID`);
-
---
--- Indexes for table `mainrep`
---
-ALTER TABLE `mainrep`
-  ADD PRIMARY KEY (`repID`),
-  ADD KEY `compID` (`compID`),
-  ADD KEY `userID` (`userID`);
 
 --
 -- Indexes for table `major`
@@ -453,13 +431,13 @@ ALTER TABLE `user1`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `annID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `annID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `application`
 --
 ALTER TABLE `application`
-  MODIFY `appID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `appID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `company`
@@ -477,13 +455,7 @@ ALTER TABLE `companyrep`
 -- AUTO_INCREMENT for table `event1`
 --
 ALTER TABLE `event1`
-  MODIFY `eventID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `mainrep`
---
-ALTER TABLE `mainrep`
-  MODIFY `repID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `eventID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `major`
@@ -513,7 +485,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `user1`
 --
 ALTER TABLE `user1`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
@@ -550,13 +522,6 @@ ALTER TABLE `event1`
 ALTER TABLE `instructor`
   ADD CONSTRAINT `instructor_ibfk_1` FOREIGN KEY (`MID`) REFERENCES `major` (`MID`) ON DELETE CASCADE,
   ADD CONSTRAINT `instructor_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `user1` (`userID`) ON DELETE CASCADE;
-
---
--- Constraints for table `mainrep`
---
-ALTER TABLE `mainrep`
-  ADD CONSTRAINT `mainrep_ibfk_1` FOREIGN KEY (`compID`) REFERENCES `company` (`compID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `mainrep_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `user1` (`userID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `performancefeedback`
