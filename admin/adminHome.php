@@ -65,7 +65,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                 </a>
             </div>
             <div class="col">
-                <a href="companies.php" class="text-decoration-none">
+                <a href="manageCompanies.php" class="text-decoration-none">
                     <div class="card blue-background" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
                             <p class="text mb-0 text-truncate">Manage Companies</p>

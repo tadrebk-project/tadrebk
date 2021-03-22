@@ -33,7 +33,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <link rel="stylesheet" href="admin.css">
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
-    <title>Events</title>
+    <title>Companies</title>
 </head>
 
 <body>
@@ -78,31 +78,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div class="card-body">
                 <div class="mx-3">
                     <!-- list of companies # use <hr> between them-->
-                    <div class='d-flex justify-content-between'>
-                        <p class='mb-0 mt-2'>Company 1</p>
-                        <form action='' method='post'>
-                            <input type='text' value='' name='' hidden></input>
-                            <input type='submit' class='btn btn-primary align-self-center' id='' name='' onclick='return checkDelete()' value='Disassociate'></input>
-                            <script language='JavaScript' type='text/javascript'>
-                                function checkDelete() {
-                                    return confirm('Are you sure?');
-                                }
-                            </script>
-                        </form>
-                    </div>
-                    <hr>
-                    <div class='d-flex justify-content-between'>
-                        <p class='mb-0 mt-2'>Company 2</p>
-                        <form action='' method='post'>
-                            <input type='text' value='' name='' hidden></input>
-                            <input type='submit' class='btn btn-primary align-self-center' id='' name='' onclick='return checkDelete()' value='Disassociate'></input>
-                            <script language='JavaScript' type='text/javascript'>
-                                function checkDelete() {
-                                    return confirm('Are you sure?');
-                                }
-                            </script>
-                        </form>
-                    </div>
+                    <?php include "backend/getAssociatedCompanies.php"; ?>
                 </div>
             </div>
         </div>

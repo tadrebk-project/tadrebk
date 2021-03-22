@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
 } elseif (file_exists("../../general_backend/sessionStart.php")) {
@@ -33,7 +33,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <link rel="stylesheet" href="admin.css">
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
-    <title>Events</title>
+    <title>Association Requests</title>
 </head>
 
 <body>
@@ -76,41 +76,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div class="card-body">
                 <div class="mx-3">
                     <!-- list of companies requesting association-->
-                    <div class="company">
-                        <p class="fs-3 fw-bold mb-4">Company name</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quae in voluptas commodi perspiciatis! Ipsum debitis vitae ex soluta ullam consectetur fugiat inventore accusamus eius facere consequuntur hic dicta odio, dolore consequatur placeat, impedit aliquid veniam doloribus. Ea, harum unde cupiditate ducimus iusto mollitia nulla. Atque in alias ad ut?</p>
-                        <hr>
-                        <p class="fs-5 fw-bold">Location: khobar</p>
-                        <p class="fs-5 fw-bold">Website: www.stc.com</p>
-                        <!--  accept and reject buttons-->
-                        <div class='row justify-content-center' style='padding-bottom: 5px;'>
-                            <div class='col-4 col-md-2'>
-                                <form action='' method='post'>
-                                    <input type='text' value='' name='' hidden></input>
-                                    <input type='submit' class='btn btn-primary align-self-center' id='' name='' onclick='return checkDelete()' value='Accept'></input>
-                                    <script language='JavaScript' type='text/javascript'>
-                                        function checkDelete() {
-                                            return confirm('Are you sure?');
-                                        }
-                                    </script>
-                                </form>
-                            </div>
-                            <div class='col-4 col-md-2'>
-                                <form action='' method='post'>
-                                    <input type='text' value='' name='' hidden></input>
-                                    <input type='submit' class='btn btn-primary align-self-center' id='' name='' onclick='return checkDelete()' value='Reject'></input>
-                                    <script language='JavaScript' type='text/javascript'>
-                                        function checkDelete() {
-                                            return confirm('Are you sure?');
-                                        }
-                                    </script>
-                                </form>
-                            </div>
-                        </div>
-
-
-
-                    </div>
+                      <?php include "backend/getAssociationRequests.php"; ?>
 
                 </div>
             </div>

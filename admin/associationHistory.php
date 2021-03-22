@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
 } elseif (file_exists("../../general_backend/sessionStart.php")) {
@@ -33,7 +33,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <link rel="stylesheet" href="admin.css">
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
-    <title>Events</title>
+    <title>Association History</title>
 </head>
 
 <body>
@@ -61,7 +61,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
     </nav>
 
     <div class="container mx-auto my-4">
-        
+
         <div class="card" style="margin-bottom: 15px;">
             <div class="card-body">
                 <div class="mx-3">
@@ -69,20 +69,14 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <p class="fs-5 fw-bold mb-0">Companies History</p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="card">
             <div class="card-body">
                 <div class="mx-3">
                     <!-- list of students # use <hr> between students-->
-                    <div class='d-flex justify-content-between'>
-                        <p class='mb-0 mt-2'>Company 1</p>
-                    </div>
-                    <hr>
-                    <div class='d-flex justify-content-between'>
-                        <p class='mb-0 mt-2'>Company 2</p>
-                    </div>
+                   <?php include "backend/getDisassociatedCompanies.php"; ?>
                 </div>
             </div>
         </div>
