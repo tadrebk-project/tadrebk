@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
 } elseif (file_exists("../../general_backend/sessionStart.php")) {
@@ -71,7 +71,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <p class="fs-5 fw-bold mb-0">Disassociate</p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="card">
