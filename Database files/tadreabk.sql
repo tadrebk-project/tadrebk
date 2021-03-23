@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 12:04 PM
+-- Generation Time: Mar 23, 2021 at 09:31 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -89,8 +89,9 @@ INSERT INTO `company` (`compID`, `name`, `description`, `location`, `website`, `
 (2, 'Mobily', 'Saudi Mobily Company. is a Saudi Arabian telecommunications services company that offers fixed line, mobile telephony, and Internet services under the brand name Mobily. The company was established in', 'Jeddah', 'www.mobile.com', 'available'),
 (3, 'Zain KSA', 'Mobile Telecommunications Company K.S.C.P., doing business as Zain, is a Kuwaiti mobile telecommunications company founded in 1983 in Kuwait as MTC, and later rebranded as Zain in 2007. Zain has a commercial presence in eight countries across the Middle East with 49.5 million active customers as of 31 December 2019.', 'Riyadh', 'www.zain.com', 'available'),
 (4, 'Microsoft KSA', 'Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.', 'Riyadh', 'https://www.microsoft.com/en-sa', 'available'),
-(5, 'Aramco', 'We Believe In The Power Of Energy To Transform Lives And Sustain Our Planet. Find Out More. Were Committed To Driving Energy Efficiency And Addressing The Global Emission Challenge. Explore Our Products. Read News. 87 Years Of Experience.', 'Dhahran', 'www.aramco.com', 'available'),
-(6, 'Elm', 'Elm is a Saudi Joint Stock Company owned by the Public Investment Fund, which is the investment arm of the Saudi Ministry of Finance. Elm services are provided to all forms of beneficiaries, including government, corporate sector and individuals.', 'Riyadh', 'https://www.elm.sa/', 'available');
+(5, 'Aramco', 'We Believe In The Power Of Energy To Transform Lives And Sustain Our Planet. Find Out More. Were Committed To Driving Energy Efficiency And Addressing The Global Emission Challenge. Explore Our Products. Read News. 87 Years Of Experience.', 'Dhahran', 'www.aramco.com', 'dissociated'),
+(6, 'Elm', 'Elm is a Saudi Joint Stock Company owned by the Public Investment Fund, which is the investment arm of the Saudi Ministry of Finance. Elm services are provided to all forms of beneficiaries, including government, corporate sector and individuals.', 'Riyadh', 'https://www.elm.sa/', 'available'),
+(7, 'Remal', 'IT company', 'Khobar', 'www.remal.com', 'available');
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,8 @@ CREATE TABLE `companyrep` (
 --
 
 INSERT INTO `companyrep` (`userID`, `repID`, `compID`, `type`) VALUES
-(10, 4, 1, 1);
+(10, 4, 1, 1),
+(32, 5, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -229,21 +231,18 @@ INSERT INTO `requiredmajors` (`appID`, `MID`) VALUES
 
 CREATE TABLE `review` (
   `RID` int(11) NOT NULL,
-  `text` varchar(400) NOT NULL,
+  `text` varchar(500) NOT NULL,
   `date` date NOT NULL,
   `compID` int(11) NOT NULL,
-  `studentID` int(11) NOT NULL
+  `studentName` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`RID`, `text`, `date`, `compID`, `studentID`) VALUES
-(1, 'I have been working at Mobily full-time for more than 10 years\r\n\r\nPros\r\n\r\nstable income, benefits and commissions\r\n\r\nCons\r\n\r\ncompany became so much demanding and sets intangible goals and no more promotions', '2021-02-16', 2, 15200),
-(2, 'STC is a really bad employer. I, as a KFUPM software engineer, am offended by their incompetence to deliver a valid training program. They caused me to fail the course.', '2021-02-16', 1, 15200),
-(3, 'Hello', '2021-02-18', 4, 15200),
-(4, 'hekkk', '2021-02-19', 1, 15200);
+INSERT INTO `review` (`RID`, `text`, `date`, `compID`, `studentName`) VALUES
+(1, 'Good', '2021-03-23', 1, 'Mohammad Fahd');
 
 -- --------------------------------------------------------
 
@@ -261,18 +260,19 @@ CREATE TABLE `student` (
   `picRef` varchar(100) DEFAULT NULL,
   `CVFileRef` varchar(100) DEFAULT NULL,
   `compID` int(11) DEFAULT NULL,
-  `MID` int(11) NOT NULL,
-  `status` varchar(50) NOT NULL DEFAULT 'active'
+  `MID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`userID`, `studentID`, `name`, `email`, `phoneNum`, `gpa`, `picRef`, `CVFileRef`, `compID`, `MID`, `status`) VALUES
-(2, 15200, 'Mohammad Fahd', 'moh11@gmail.com', 540502442, 3.1, NULL, NULL, 5, 1, 'active'),
-(9, 16001, 'Ibrahim Rakoon', 'ibrahimRakoon@Flagoon.com', 57281999, 2, NULL, NULL, NULL, 6, 'active'),
-(12, 201611111, 'Saleh Almaqwashy', 'saleh@gmail.com', 505555555, 3, NULL, NULL, NULL, 1, 'active');
+INSERT INTO `student` (`userID`, `studentID`, `name`, `email`, `phoneNum`, `gpa`, `picRef`, `CVFileRef`, `compID`, `MID`) VALUES
+(31, 201550500, 'Nasser Ali', NULL, NULL, 2.9, NULL, NULL, NULL, 3),
+(2, 201615200, 'Mohammad Fahd', 'moh11@gmail.com', 540502442, 3.1, NULL, NULL, NULL, 1),
+(9, 201616001, 'Ibrahim Rakoon', 'ibrahimRakoon@Flagoon.com', 57281999, 2, NULL, NULL, NULL, 6),
+(29, 201620444, ' Mahmood Fahd', NULL, NULL, 3.6, NULL, NULL, NULL, 2),
+(12, 2016111111, 'Saleh Almaqwashy', 'saleh@gmail.com', 505555555, 3, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -287,15 +287,6 @@ CREATE TABLE `studentrequest` (
   `status` varchar(100) NOT NULL,
   `rejectionNote` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentrequest`
---
-
-INSERT INTO `studentrequest` (`appID`, `studentID`, `date`, `status`, `rejectionNote`) VALUES
-(1, 16001, '2021-02-18', 'Pending', NULL),
-(6, 16001, '2021-02-18', 'Pending', NULL),
-(8, 16001, '2021-02-17', 'Pending', NULL);
 
 -- --------------------------------------------------------
 
@@ -318,7 +309,11 @@ INSERT INTO `user1` (`userID`, `username`, `password`, `type`) VALUES
 (2, 'mohammad1', '123', 'student'),
 (9, 'ibrahim', '123', 'student'),
 (10, 'stc', '123', 'representative'),
-(12, 'Saleh100', 's12345678#', 'student');
+(12, 'Saleh100', 's12345678#', 'student'),
+(13, 'admin', '123', 'admin'),
+(29, 's201620444', 'Stu#201620444', 'student'),
+(31, 's201550500', 'Stu#201550500', 'student'),
+(32, 'remal', 'Remal123#@', 'representative');
 
 --
 -- Indexes for dumped tables
@@ -397,9 +392,7 @@ ALTER TABLE `requiredmajors`
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
-  ADD PRIMARY KEY (`RID`),
-  ADD KEY `studentID` (`studentID`),
-  ADD KEY `compID` (`compID`);
+  ADD PRIMARY KEY (`RID`);
 
 --
 -- Indexes for table `student`
@@ -443,13 +436,13 @@ ALTER TABLE `application`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `compID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `compID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `companyrep`
 --
 ALTER TABLE `companyrep`
-  MODIFY `repID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `repID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `event1`
@@ -479,13 +472,13 @@ ALTER TABLE `progressreport`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user1`
 --
 ALTER TABLE `user1`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Constraints for dumped tables
@@ -541,13 +534,6 @@ ALTER TABLE `progressreport`
 ALTER TABLE `requiredmajors`
   ADD CONSTRAINT `requiredmajors_ibfk_1` FOREIGN KEY (`MID`) REFERENCES `major` (`MID`) ON DELETE CASCADE,
   ADD CONSTRAINT `requiredmajors_ibfk_2` FOREIGN KEY (`appID`) REFERENCES `application` (`appID`) ON DELETE CASCADE;
-
---
--- Constraints for table `review`
---
-ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`studentID`) REFERENCES `student` (`studentID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`compID`) REFERENCES `company` (`compID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `student`
