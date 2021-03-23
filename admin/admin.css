@@ -54,3 +54,12 @@ a {
     background-color: #172457;
     color: #ffffff;
 }
+.tap-btn:focus {
+    outline: none !important;
+  }
+.dashed-border{
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #dee2e6
+}
