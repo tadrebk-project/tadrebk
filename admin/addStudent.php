@@ -149,7 +149,8 @@ if (file_exists("../general_backend/sessionStart.php")) {
                     <div class="tab-pane fade" id="nav-csv" role="tabpanel" aria-labelledby="nav-csv-tab">
                         <div class="px-3 pt-3">
                             <form action="backend/registerStudents.php" method="post" enctype="multipart/form-data" lang="en">
-                                <label for="inputCSV" class="form-label">Upload CSV file</label>
+                                <label for="inputCSV" class="form-label">Upload CSV file</label><br>
+                                <span>CSV Data format must be in the format: StudentID, Student Name, GPA, Student Major</span><br>
                                 <input class="form-control visually-hidden" type="file" id="inputCSV" name="inputCSV" placeholder="progress report" required="" capture accept=".csv">
                                 <div class="dashed-border p-1 d-flex justify-content-between">
                                     <p id="file-upload-filename" class="text-muted m-0 align-self-center">CSV file</p>
