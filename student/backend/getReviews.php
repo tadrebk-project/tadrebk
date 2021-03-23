@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "select r.*, s.name from review r join student s on r.studentID = s.studentID where r.compID = ".$_GET['compID'];
+$query = "select * from review where compID = ".$_GET['compID'];
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
@@ -26,7 +26,7 @@ if($result=mysqli_query($conn, $query)){
                 <img src='resources/profile-icon.png' alt='' width='70' height='70'>
             </div>
             <div class='col-9 col-md-2 col-lg-3'>
-                <b>".$row['name']."</b> 
+                <b>".$row['studentName']."</b> 
                 <br>
                 <b>".$row['date']."</b>
             </div>  

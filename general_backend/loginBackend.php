@@ -26,6 +26,7 @@ if (isset($_POST['login-btn'])) {
         $student = mysqli_fetch_assoc($result2);
         
         $_SESSION['studentid'] = $student['studentID'];
+        $_SESSION['studentName'] = $student['name'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
         header('location: ../student/studentHome.php');

@@ -21,9 +21,9 @@ if (isset($_POST['add_review'])) {
 $text = mysqli_real_escape_string($conn, $_POST['reviewText']);
 
 $compID = $_GET['compID'];
-$studentID = $_SESSION['studentid'];
+$studentName = $_SESSION['studentName'];
 $date = date("Y-m-d");
-$query = "INSERT INTO Review (text, date, compID, studentID) VALUES('$text','$date','$compID','$studentID');";
+$query = "INSERT INTO Review (text, date, compID, studentName) VALUES('$text','$date','$compID','$studentName');";
 mysqli_query($conn, $query);
   
 }
