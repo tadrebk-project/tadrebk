@@ -19,7 +19,7 @@ $text = "";
 if (isset($_POST['rejectAssociation'])) {
   $compID = mysqli_real_escape_string($conn, $_POST['compID']);
 
-  $qry = "DELETE FROM `company` where compID = '$compID';";
+  $qry = "UPDATE company SET status='rejected' where compID = '$compID';";
   mysqli_query($conn, $qry);
 
 }
