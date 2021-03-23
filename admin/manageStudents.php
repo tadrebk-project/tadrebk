@@ -86,33 +86,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>000000000</td>
-                            <td>Saleh Almaqwashy</td>
-                            <td>
-                                <form action="">
-                                    <button type="submit" class="btn btn-primary py-0 float-end">Remove</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>000000001</td>
-                            <td>Saleh Almaqwashy</td>
-                            <td>
-                                <form action="">
-                                    <button type="submit" class="btn btn-primary py-0 float-end">Remove</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>000000002</td>
-                            <td>Saleh Almaqwashy</td>
-                            <td>
-                                <form action="">
-                                    <button type="submit" class="btn btn-primary py-0 float-end">Remove</button>
-                                </form>
-                            </td>
-                        </tr>
+                        <?php include "backend/getStudents.php"; ?>
                     </tbody>
                 </table>
             </div>

@@ -84,42 +84,45 @@ if (file_exists("../general_backend/sessionStart.php")) {
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
                         <div class="px-3 pt-3">
-                            <form action="#">
+                            <form action="backend/registerStudents.php" method="post">
                                 <div class="mb-3 row">
                                     <label for="inputStudentID" class="col-sm-2 col-form-label">ID</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputStudentID">
+                                        <input type="text" class="form-control" id="inputStudentID" name="inputStudentID">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName">
+                                        <input type="text" class="form-control" id="inputName" name="inputName">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputGPA" class="col-sm-2 col-form-label">GPA</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputGPA">
+                                        <input type="text" class="form-control" id="inputGPA" name="inputGPA">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputMajor" class="col-sm-2 col-form-label">Major</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputMajor">
+                                    <select id="inputMajor" name="inputMajor" class="form-select" aria-label="Default select example" style="width: 10rem;" required>
+                                        <option selected value="">select</option>
+                                        <?php include "backend/getMajors.php" ?>
+                                    </select>
                                     </div>
                                 </div>
                                 <hr style="background-color: #e4e7ef; opacity: 1;">
                                 <div class="mb-3 row">
                                     <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
                                     <div class="col-sm-10">
-                                        <input type="text" disabled class="form-control" id="inputUsername">
+                                        <input type="text" disabled class="form-control" id="inputUsername" name="inputUsername">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" disabled class="form-control" id="inputPassword">
+                                        <input type="text" disabled class="form-control" id="inputPassword" name="inputPassword">
                                     </div>
                                 </div>
                                 <script type="text/javascript">
@@ -139,13 +142,13 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                         };
                                     });
                                 </script>
-                                <button type="submit" class="btn btn-primary float-end">Submit</button>
+                                <button type="submit" class="btn btn-primary float-end" id="registerManually" name="registerManually">Submit</button>
                             </form>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="nav-csv" role="tabpanel" aria-labelledby="nav-csv-tab">
                         <div class="px-3 pt-3">
-                            <form action="#">
+                            <form action="backend/registerStudents.php" method="post" enctype="multipart/form-data" lang="en">
                                 <label for="inputCSV" class="form-label">Upload CSV file</label>
                                 <input class="form-control visually-hidden" type="file" id="inputCSV" name="inputCSV" placeholder="progress report" required="" capture accept=".csv">
                                 <div class="dashed-border p-1 d-flex justify-content-between">
@@ -153,7 +156,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     <button type="button" id="CSVButton" class="btn btn-primary">Browse</button>
                                 </div>
                                 <div class="py-2">
-                                    <button type="submit" class="btn btn-primary float-end">Submit</button>
+                                    <button type="submit" class="btn btn-primary float-end" id="registerByFile" name="registerByFile">Submit</button>
                                 </div>
                                 <script>
                                     $("#CSVButton").click(function(e) {

@@ -13,22 +13,14 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "select * from student;";
+$query = "SELECT * FROM Major;";
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
-        $str ="";
+        //(here table)
+        $str = "";
         while($row=mysqli_fetch_array($result)){
-            $str .= "<tr>
-            <td>".$row['studentID']."</td>
-            <td>".$row['name']."</td>
-            <td>
-                <form action='backend/removeStudent.php' method='post'>
-                    <input type='text' value='".$row['userID']."' name='userID' hidden></input>
-                    <button type='submit' class='btn btn-primary py-0 float-end' id='removeStudent' name='removeStudent' onClick='return confirm(\"are you sure you want to delete ".$row['name']."?\");'>Remove</button>
-                </form>
-            </td>
-        </tr>";
+            $str .= "<option value='".$row['MID']."'>".$row['name']."</option>";
         }
         
         echo $str;

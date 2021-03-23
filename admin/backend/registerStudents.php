@@ -14,9 +14,20 @@ else{
 }
 
 if (isset($_POST['registerByFile'])) {
-    $fileName = $_FILES["file"]["tmp_name"];
+    $majorIndex["temp"] = "";
+    $query = "SELECT * FROM Major;";
+    if($result=mysqli_query($conn, $query)){
+        if(mysqli_num_rows($result)>0){
+            while($row=mysqli_fetch_array($result)){
+                $majorIndex[$row['name']] = $row['MID'];
+            }
+        }
+    }
+
+
+    $fileName = $_FILES["inputCSV"]["tmp_name"];
     //Data in file format: studentID, name, gpa, MID
-    if ($_FILES["file"]["size"] > 0) {
+    if ($_FILES["inputCSV"]["size"] > 0) {
         
         $file = fopen($fileName, "r");
         
@@ -36,11 +47,11 @@ if (isset($_POST['registerByFile'])) {
             }
             $MID = "";
             if (isset($column[3])) {
-                $MID = mysqli_real_escape_string($conn, $column[3]);
+                $MID = mysqli_real_escape_string($conn, $majorIndex[trim($column[3])]);
             }
             
             $username = "s".$studentID;
-            $password = "pass".$studentID;
+            $password = "Stu#".$studentID;
             $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$password','student');";
             mysqli_query($conn, $query);
             $last_userID = mysqli_insert_id($conn);
@@ -49,38 +60,35 @@ if (isset($_POST['registerByFile'])) {
             mysqli_query($conn, $query);     
         }
     }
-    
+    header('location: ../manageStudents.php');
 }
 elseif (isset($_POST['registerManually'])) {
-    $studentID = mysqli_real_escape_string($conn, $_POST['studentID']);
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $gpa = mysqli_real_escape_string($conn, $_POST['gpa']);
-    $MID = mysqli_real_escape_string($conn, $_POST['MID']);
+    $studentID = mysqli_real_escape_string($conn, $_POST['inputStudentID']);
+    $name = mysqli_real_escape_string($conn, $_POST['inputName']);
+    $gpa = mysqli_real_escape_string($conn, $_POST['inputGPA']);
+    $MID = mysqli_real_escape_string($conn, $_POST['inputMajor']);
+    $username = mysqli_real_escape_string($conn, $_POST['inputUsername']);
+    $password = mysqli_real_escape_string($conn, $_POST['inputPassword']);
 
     $student_check_query = "SELECT * FROM student WHERE studentID='$studentID' LIMIT 1";
     $result = mysqli_query($conn, $student_check_query);
     $user = mysqli_fetch_assoc($result);
   
     if ($user) { // if user exists
-      if ($user['studentID'] === $studentID) {
         $error= "Student with same ID already registered!";
-        echo "<script type='text/javascript'>alert('$error');</script>";
-        echo "<script type='text/javascript'>window.location.href = '../students.php';</script>";
-      }
+        echo "<script type='text/javascript'>alert('$error');</script>;
+        <script type='text/javascript'>window.location.href = '../manageStudents.php';</script>";
     }
     else{
-        $username = "s".$studentID;
-        $password = "pass".$studentID;
         $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$password','student');";
         mysqli_query($conn, $query);
         $last_userID = mysqli_insert_id($conn);
 
         $query = "INSERT INTO student (userID, studentID, name, gpa, MID) VALUES('$last_userID','$studentID','$name','$gpa','$MID');";
         mysqli_query($conn, $query);
+        header('location: ../manageStudents.php');
     }
 }
 
 mysqli_close($conn);
-header('location: ../students.php');
-
 ?>

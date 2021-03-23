@@ -24,15 +24,12 @@ if (isset($_POST['login-btn'])) {
         $mysql_qry2 = "select * from student where userID = '$temp_userID'";
         $result2 = mysqli_query($conn ,$mysql_qry2);
         $student = mysqli_fetch_assoc($result2);
-        if($student['status']=="active"){
-          $_SESSION['studentid'] = $student['studentID'];
-          $_SESSION['userid'] = $user['userID'];
-          $_SESSION['type'] = $user['type'];
-          header('location: ../student/studentHome.php');
-        }
-        else{
-          denyAccess("You are not authorized to access the website at this period.");
-        }
+        
+        $_SESSION['studentid'] = $student['studentID'];
+        $_SESSION['userid'] = $user['userID'];
+        $_SESSION['type'] = $user['type'];
+        header('location: ../student/studentHome.php');
+
       } else if ($user['type'] === "representative"){
         $temp_userID = $user['userID'];
         $mysql_qry2 = "select * from companyrep r INNER JOIN company c on r.compID = c.compID where userID = '$temp_userID'";
@@ -48,8 +45,14 @@ if (isset($_POST['login-btn'])) {
         else if($rep['status'] === "pending"){
           denyAccess("Your request status is still pending.");
         }
+        else if($rep['status'] === "rejected"){
+          denyAccess("You cannot login because your request has been rejected.");
+        }
+        else if($rep['status'] === "dissociated"){
+          denyAccess("Your company has been dissociated.");
+        }
         else{
-          denyAccess("You are not authorized to access the website.");
+          denyAccess("You are not authorized to access this website.");
         }
       } else if ($user['type'] === "admin"){
         $_SESSION['userid'] = $user['userID'];

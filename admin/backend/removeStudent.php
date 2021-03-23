@@ -16,22 +16,12 @@ else{
 // initializing variables
 
 if (isset($_POST['removeStudent'])) {
-    $studentID = mysqli_real_escape_string($conn, $_POST['studentID']);
-
-    $qry = "UPDATE student
-        SET
-        compID = NULL,
-        status = 'inactive'
-        WHERE studentID = ".$studentID.";";
-
+    $userID = mysqli_real_escape_string($conn, $_POST['userID']);
+    $qry = "DELETE from user1 WHERE userID = '".$userID."';";
     mysqli_query($conn, $qry);
-
-    $qry = "DELETE FROM studentrequest where studentID = '$studentID';";
-    mysqli_query($conn, $qry);
-
 }
 
 mysqli_close($conn);
-header('location: ../students.php');
+header('location: ../manageStudents.php');
 
 ?>
