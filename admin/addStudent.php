@@ -88,25 +88,25 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <div class="mb-3 row">
                                     <label for="inputStudentID" class="col-sm-2 col-form-label">ID</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputStudentID" name="inputStudentID">
+                                        <input type="text" class="form-control" id="inputStudentID" name="inputStudentID" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName" name="inputName">
+                                        <input type="text" class="form-control" id="inputName" name="inputName" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputGPA" class="col-sm-2 col-form-label">GPA</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputGPA" name="inputGPA">
+                                        <input type="text" class="form-control" id="inputGPA" name="inputGPA" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputMajor" class="col-sm-2 col-form-label">Major</label>
                                     <div class="col-sm-10">
-                                    <select id="inputMajor" name="inputMajor" class="form-select" aria-label="Default select example" style="width: 10rem;" required>
+                                    <select id="inputMajor" name="inputMajor" class="form-select" aria-label="Default select example" required>
                                         <option selected value="">select</option>
                                         <?php include "backend/getMajors.php" ?>
                                     </select>
