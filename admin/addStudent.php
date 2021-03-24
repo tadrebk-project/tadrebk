@@ -40,7 +40,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
-            <a class="navbar-brand" href="companyHome.php">
+            <a class="navbar-brand" href="adminHome.php">
                 <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
