@@ -81,7 +81,6 @@ if (file_exists("../general_backend/sessionStart.php")) {
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">
-                                <div class="text-center">Remove</div>
                             </th>
                         </tr>
                     </thead>
