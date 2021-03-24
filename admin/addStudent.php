@@ -98,31 +98,47 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputGPA" class="col-sm-2 col-form-label">GPA</label>
+                                    <label for="inputGPA" class="col-sm-2 col-form-label"><abbr title="Out of 4.00">GPA</abbr></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputGPA" name="inputGPA" required>
+                                        <input type="text" class="form-control" id="inputGPA" name="inputGPA" pattern="^[0-4]\.\d\d$" title="Of the form X.XX" maxlength="4" onkeypress="return handleKeyUp(event)" required>
                                     </div>
                                 </div>
+                                <script>
+                                    var DECIMAL_REGEXP = /(?<=^.{1}$)/g;
+
+                                    function handleKeyUp(e) {
+                                        var target = e.target;
+                                        var charCode = e.which || e.keyCode;
+
+                                        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                                            return false;
+                                        }
+
+                                        target.value = target.value.replace(DECIMAL_REGEXP, '.');
+
+                                        return true;
+                                    }
+                                </script>
                                 <div class="mb-3 row">
                                     <label for="inputMajor" class="col-sm-2 col-form-label">Major</label>
                                     <div class="col-sm-10">
-                                    <select id="inputMajor" name="inputMajor" class="form-select" aria-label="Default select example" required>
-                                        <option selected value="">select</option>
-                                        <?php include "backend/getMajors.php" ?>
-                                    </select>
+                                        <select id="inputMajor" name="inputMajor" class="form-select" aria-label="Default select example" required>
+                                            <option selected value="">select</option>
+                                            <?php include "backend/getMajors.php" ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <hr style="background-color: #e4e7ef; opacity: 1;">
                                 <div class="mb-3 row">
                                     <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
                                     <div class="col-sm-10">
-                                        <input type="text" disabled class="form-control" id="inputUsername" name="inputUsername">
+                                        <input type="text" disabled class="form-control" id="inputUsername" name="inputUsername" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" disabled class="form-control" id="inputPassword" name="inputPassword">
+                                        <input type="text" disabled class="form-control" id="inputPassword" name="inputPassword" pattern="^(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$" title="Must contain at least one number and one special character, and at least 10 or more characters" required>
                                     </div>
                                 </div>
                                 <script type="text/javascript">
@@ -150,12 +166,12 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <div class="px-3 pt-3">
                             <form action="backend/registerStudents.php" method="post" enctype="multipart/form-data" lang="en">
                                 <label for="inputCSV" class="form-label">Upload CSV file</label><br>
-                                <span>CSV Data format must be in the format: StudentID, Student Name, GPA, Student Major</span><br>
                                 <input class="form-control visually-hidden" type="file" id="inputCSV" name="inputCSV" placeholder="progress report" required="" capture accept=".csv">
                                 <div class="dashed-border p-1 d-flex justify-content-between">
                                     <p id="file-upload-filename" class="text-muted m-0 align-self-center">CSV file</p>
                                     <button type="button" id="CSVButton" class="btn btn-primary">Browse</button>
                                 </div>
+                                <span class="badge bg-secondary">CSV Data format must be in the format: StudentID, Student Name, GPA, Student Major</span><br>
                                 <div class="py-2">
                                     <button type="submit" class="btn btn-primary float-end" id="registerByFile" name="registerByFile">Submit</button>
                                 </div>
