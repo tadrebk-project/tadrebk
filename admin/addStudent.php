@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
 } elseif (file_exists("../../general_backend/sessionStart.php")) {
@@ -40,7 +40,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
-            <a class="navbar-brand" href="companyHome.php">
+            <a class="navbar-brand" href="adminHome.php">
                 <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
             </a>
             <div class="container d-flex mx-auto flex-column">
@@ -170,7 +170,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     input.addEventListener('change', showFileName);
 
                                     function showFileName(event) {
-                                        // the change event gives us the input it occurred in 
+                                        // the change event gives us the input it occurred in
                                         var input = event.srcElement;
                                         var fileName = input.files[0].name;
                                         infoArea.textContent = fileName;

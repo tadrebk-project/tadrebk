@@ -68,7 +68,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                 <div class="mx-3">
                     <div class="d-flex justify-content-between">
                         <p class="fs-5 fw-bold mb-0">Companies</p>
-                        <p class="fs-5 fw-bold mb-0">Disassociate</p>
+                        <p class="fs-5 fw-bold mb-0"></p>
                     </div>
                 </div>
 
