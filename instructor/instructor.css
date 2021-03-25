@@ -1,0 +1,51 @@
+body, html {
+    width: 100%;
+    height:100%;
+    max-width: 100%;
+    color: #172457;
+    background-color: #E6E6E6;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+a {
+    color: #172457;
+}
+
+.text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.textinput {
+    color: #172457;
+    background-color: #e4e7ef;
+    width: 100%;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #172457;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background-color: #0f5ecd;
+}
+
+.nav-btn{
+    margin: 1rem;
+    border-radius: 20px;
+}
+.btn-outline-primary{
+    border-color:#172457;
+    color: #172457;
+}
+.btn-outline-primary:hover{
+    background-color: #172457;
+}
+.btn-outline-primary.active,
+.btn-outline-primary:active {
+    background-color: #172457;
+}
