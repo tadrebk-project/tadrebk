@@ -297,7 +297,7 @@ CREATE TABLE `studentrequest` (
 CREATE TABLE `user1` (
   `userID` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `type` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

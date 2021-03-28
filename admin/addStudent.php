@@ -88,7 +88,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <div class="mb-3 row">
                                     <label for="inputStudentID" class="col-sm-2 col-form-label">ID</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputStudentID" name="inputStudentID" required>
+                                        <input type="text" class="form-control" id="inputStudentID" name="inputStudentID" maxlength="9" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">

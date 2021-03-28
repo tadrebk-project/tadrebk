@@ -13,18 +13,23 @@ if (isset($_POST['login-btn'])) {
   $username = mysqli_real_escape_string($conn, $_POST['username']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-  $mysql_qry = "select * from user1 where username = '$username' and password = '$password'";
+  $mysql_qry = "select * from user1 where username = '$username'";
   $result = mysqli_query($conn ,$mysql_qry);
 
   if(mysqli_num_rows($result) == 1){
+
       $user = mysqli_fetch_assoc($result);
+      $verify_result = password_verify($password, $user['password']);
+      if(!$verify_result){
+      denyAccess("Wrong Credintials! Try Again");
+      }
 
   	  if($user['type'] === "student"){
         $temp_userID = $user['userID'];
         $mysql_qry2 = "select * from student where userID = '$temp_userID'";
         $result2 = mysqli_query($conn ,$mysql_qry2);
         $student = mysqli_fetch_assoc($result2);
-        
+
         $_SESSION['studentid'] = $student['studentID'];
         $_SESSION['studentName'] = $student['name'];
         $_SESSION['userid'] = $user['userID'];
@@ -65,7 +70,7 @@ if (isset($_POST['login-btn'])) {
         $_SESSION['type'] = $user['type'];
         header('location: ../instructor/instructorHome.php');
       }
-    
+
 
   }
   else {

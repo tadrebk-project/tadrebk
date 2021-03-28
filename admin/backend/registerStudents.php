@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if(file_exists("../general_backend/sessionStart.php")){
     require "../general_backend/sessionStart.php";
     require "../general_backend/conn.php";
@@ -41,7 +41,7 @@ if (isset($_POST['registerByFile'])) {
 
     $fileName = $_FILES["inputCSV"]["tmp_name"];
     //Data in file format: studentID, name, gpa, MID
-    if ($_FILES["inputCSV"]["size"] > 0) {   
+    if ($_FILES["inputCSV"]["size"] > 0) {
         $file = fopen($fileName, "r");
         while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
             $numOfStudentsInFile++;
@@ -61,7 +61,7 @@ if (isset($_POST['registerByFile'])) {
             if (isset($column[3])) {
                 $MID = mysqli_real_escape_string($conn, $majorIndex[trim($column[3])]);
             }
-            
+
             $username = "s".$studentID;
             $password = "Stu#".$studentID;
             if(!in_array($studentID,$studentIDList)){
@@ -72,7 +72,7 @@ if (isset($_POST['registerByFile'])) {
                 $query = "INSERT INTO student (userID, studentID, name, gpa, MID) VALUES('$last_userID','$studentID','$name','$gpa','$MID');";
                 mysqli_query($conn, $query);
                 $numOfStudentsAdded++;
-            }     
+            }
         }
     }
     $msg= $numOfStudentsAdded." out of ".$numOfStudentsInFile." students have been registered.";
@@ -90,7 +90,7 @@ elseif (isset($_POST['registerManually'])) {
     $student_check_query = "SELECT * FROM student WHERE studentID='$studentID' LIMIT 1";
     $result = mysqli_query($conn, $student_check_query);
     $user = mysqli_fetch_assoc($result);
-  
+
     if ($user) { // if user exists
         $error= "Student with same ID already registered!";
         echo "<script type='text/javascript'>alert('$error');</script>;
