@@ -64,8 +64,10 @@ if (isset($_POST['registerByFile'])) {
 
             $username = "s".$studentID;
             $password = "Stu#".$studentID;
+            $hash_password = password_hash($password, PASSWORD_DEFAULT);
+
             if(!in_array($studentID,$studentIDList)){
-                $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$password','student');";
+                $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$hash_password','student');";
                 mysqli_query($conn, $query);
                 $last_userID = mysqli_insert_id($conn);
 
@@ -86,6 +88,8 @@ elseif (isset($_POST['registerManually'])) {
     $MID = mysqli_real_escape_string($conn, $_POST['inputMajor']);
     $username = mysqli_real_escape_string($conn, $_POST['inputUsername']);
     $password = mysqli_real_escape_string($conn, $_POST['inputPassword']);
+    $hash_password = password_hash($password, PASSWORD_DEFAULT);
+
 
     $student_check_query = "SELECT * FROM student WHERE studentID='$studentID' LIMIT 1";
     $result = mysqli_query($conn, $student_check_query);
@@ -97,7 +101,7 @@ elseif (isset($_POST['registerManually'])) {
         <script type='text/javascript'>window.location.href = '../manageStudents.php';</script>";
     }
     else{
-        $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$password','student');";
+        $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$hash_password','student');";
         mysqli_query($conn, $query);
         $last_userID = mysqli_insert_id($conn);
 
