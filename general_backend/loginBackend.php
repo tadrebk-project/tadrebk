@@ -21,7 +21,7 @@ if (isset($_POST['login-btn'])) {
       $user = mysqli_fetch_assoc($result);
       $verify_result = password_verify($password, $user['password']);
       if(!$verify_result){
-      denyAccess("Wrong Credintials! Try Again");
+        denyAccess("Wrong Credentials! Try Again");
       }
 
   	  if($user['type'] === "student"){
@@ -74,7 +74,7 @@ if (isset($_POST['login-btn'])) {
 
   }
   else {
-      denyAccess("Wrong Credintials! Try Again");
+      denyAccess("Wrong Credentials! Try Again");
   }
 }
 
