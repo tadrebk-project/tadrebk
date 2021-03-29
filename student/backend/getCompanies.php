@@ -57,13 +57,13 @@ if($result=mysqli_query($conn, $query)){
                         $str3 ="";
                     }
                 }
-            $str .= "<div class='card my-1' data-bs-toggle='collapse' data-bs-target='#collapse".$row['compID']."'>
+            $str .= "<div class='card my-1'>
             <div class='card-body'>
                 <div class='row row-cols-3'>
-                    <div class='col'>
+                    <div class='col' data-bs-toggle='collapse' data-bs-target='#collapse".$row['compID']."'>
                         <h5 class='my-0'>".$row['name']."</h5>
                     </div>
-                    <div class='col'>
+                    <div class='col' data-bs-toggle='collapse' data-bs-target='#collapse".$row['compID']."'>
                         <p class='my-0'>".$row['location']."</p>
                     </div>
                     <div class='col'>
