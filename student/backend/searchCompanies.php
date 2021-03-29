@@ -17,11 +17,11 @@ $output = '';
 if(isset($_POST["query"]))
 {
 	$search = mysqli_real_escape_string($conn, $_POST["query"]);
-    $sql = "SELECT * FROM Company where status = 'available' and name Like '%".$search."%'";
+    $sql = "SELECT * FROM company where status = 'available' and name Like '%".$search."%'";
 }
 else
 {
-	$sql = "SELECT * FROM Company where status = 'available'";
+	$sql = "SELECT * FROM company where status = 'available'";
 }
 $result = mysqli_query($conn, $sql);
 
@@ -32,7 +32,7 @@ if(mysqli_num_rows($result) > 0)
         while($row=mysqli_fetch_array($result)){
             $str2 ="<div>
             <h6>Majors: </h6>";
-            $query2 = "Select distinct m.name from requiredmajors r join major m on m.MID = r.MID join Application a on a.appID = r.appID where a.compID = ".$row['compID'];
+            $query2 = "Select distinct m.name from requiredmajors r join major m on m.MID = r.MID join application a on a.appID = r.appID where a.compID = ".$row['compID'];
             if($result2=mysqli_query($conn, $query2)){
                 if(mysqli_num_rows($result2)>0){
                     while($row2=mysqli_fetch_array($result2)){
@@ -47,7 +47,7 @@ if(mysqli_num_rows($result) > 0)
             }
             $str3 ="<div>
             <h6>Training Type: </h6>";
-            $query3 = "Select distinct trainingType from Application where compID = ".$row['compID'];
+            $query3 = "Select distinct trainingType from application where compID = ".$row['compID'];
             if($result2=mysqli_query($conn, $query3)){
                 if(mysqli_num_rows($result2)>0){
                     while($row3=mysqli_fetch_array($result2)){

@@ -26,7 +26,7 @@ $studentID = $_SESSION['studentid'];
 $qry1 = "DELETE FROM `studentrequest` where studentID = ".$studentID.";";
 mysqli_query($conn, $qry1);
 
-$qry2 = "UPDATE Student
+$qry2 = "UPDATE student
 SET
     compID = ".$compID."
 WHERE

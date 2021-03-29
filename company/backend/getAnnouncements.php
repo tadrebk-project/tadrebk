@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "SELECT * FROM Announcement where compID=".$_SESSION['compID'];
+$query = "SELECT * FROM announcement where compID=".$_SESSION['compID'];
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){

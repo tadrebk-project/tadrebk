@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "SELECT studentRequest.appID, studentRequest.studentID, studentRequest.status, studentRequest.rejectionNote, Application.name as appName, Company.name as compName, Company.compID  FROM studentRequest INNER JOIN Application ON studentRequest.appID=Application.appID INNER JOIN Company ON Company.compID=Application.compID
+$query = "SELECT studentrequest.appID, studentrequest.studentID, studentrequest.status, studentrequest.rejectionNote, application.name as appName, company.name as compName, company.compID  FROM studentrequest INNER JOIN application ON studentrequest.appID=application.appID INNER JOIN company ON company.compID=application.compID
 where studentID =".$_SESSION['studentid'];
 
 if($result=mysqli_query($conn, $query)){
