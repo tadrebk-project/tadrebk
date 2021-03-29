@@ -67,7 +67,7 @@ if (isset($_POST['registerByFile'])) {
             $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
             if(!in_array($studentID,$studentIDList)){
-                $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$hash_password','student');";
+                $query = "INSERT INTO tadreabkuser (username, password, type) VALUES('$username','$hash_password','student');";
                 mysqli_query($conn, $query);
                 $last_userID = mysqli_insert_id($conn);
 
@@ -101,7 +101,7 @@ elseif (isset($_POST['registerManually'])) {
         <script type='text/javascript'>window.location.href = '../manageStudents.php';</script>";
     }
     else{
-        $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$hash_password','student');";
+        $query = "INSERT INTO tadreabkuser (username, password, type) VALUES('$username','$hash_password','student');";
         mysqli_query($conn, $query);
         $last_userID = mysqli_insert_id($conn);
 

@@ -13,7 +13,7 @@ if (isset($_POST['login-btn'])) {
   $username = mysqli_real_escape_string($conn, $_POST['username']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-  $mysql_qry = "select * from user1 where username = '$username'";
+  $mysql_qry = "select * from tadreabkuser where username = '$username'";
   $result = mysqli_query($conn ,$mysql_qry);
 
   if(mysqli_num_rows($result) == 1){

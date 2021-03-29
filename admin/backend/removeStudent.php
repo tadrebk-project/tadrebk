@@ -17,7 +17,7 @@ else{
 
 if (isset($_POST['removeStudent'])) {
     $userID = mysqli_real_escape_string($conn, $_POST['userID']);
-    $qry = "DELETE from user1 WHERE userID = '".$userID."';";
+    $qry = "DELETE from tadreabkuser WHERE userID = '".$userID."';";
     mysqli_query($conn, $qry);
 }
 

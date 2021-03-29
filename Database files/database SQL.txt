@@ -8,7 +8,7 @@ create table Major(
         
          
 
-create table User1(
+create table tadreabkuser(
         userID int NOT NULL AUTO_INCREMENT,
         username varchar(20) NOT NULL,
         password varchar(20) NOT NULL,
@@ -30,7 +30,7 @@ create table CompanyRep(
         compID int NOT NULL,
         primary key(repID),
         foreign key(compID) references Company(compID) ON DELETE CASCADE,
-	foreign key(userID) references User1(userID) ON DELETE CASCADE);
+	foreign key(userID) references tadreabkuser(userID) ON DELETE CASCADE);
 
 create table MainRep(
         userID int NOT NULL,
@@ -38,7 +38,7 @@ create table MainRep(
         compID int NOT NULL,
         primary key(repID),
         foreign key(compID) references Company(compID) ON DELETE CASCADE,
-	foreign key(userID) references User1(userID) ON DELETE CASCADE);
+	foreign key(userID) references tadreabkuser(userID) ON DELETE CASCADE);
 
 create table Student(
         userID int NOT NULL,
@@ -54,7 +54,7 @@ create table Student(
         primary key(studentID),
         foreign key(MID) references Major(MID) ON DELETE CASCADE,
         foreign key(compID) references Company(compID),
-	foreign key(userID) references User1(userID) ON DELETE CASCADE);
+	foreign key(userID) references tadreabkuser(userID) ON DELETE CASCADE);
 
 create table Instructor(
         userID int NOT NULL,
@@ -62,7 +62,7 @@ create table Instructor(
         MID int NOT NULL,
         primary key(userID),
         foreign key(MID) references Major(MID) ON DELETE CASCADE,
-	foreign key(userID) references User1(userID) ON DELETE CASCADE);
+	foreign key(userID) references tadreabkuser(userID) ON DELETE CASCADE);
 
 create table PerformanceFeedback(
         PFID int NOT NULL AUTO_INCREMENT,

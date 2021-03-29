@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "select * from student where MID = ".$_SESSION["MID"];
+$query = "select s.*, m.name as major from student s INNER JOIN major m on s.MID = m.MID where s.MID = ".$_SESSION["MID"];
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){

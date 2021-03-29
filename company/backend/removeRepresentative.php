@@ -15,7 +15,7 @@ else{
 
  $userID = $_GET['userID'];
 
- $qry = "DELETE FROM `user1` WHERE userID = '$userID';";
+ $qry = "DELETE FROM `tadreabkuser` WHERE userID = '$userID';";
  mysqli_query($conn, $qry);
 
 mysqli_close($conn);
