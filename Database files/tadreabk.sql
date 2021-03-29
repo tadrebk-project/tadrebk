@@ -306,11 +306,11 @@ CREATE TABLE `tadreabkuser` (
 --
 
 INSERT INTO `tadreabkuser` (`userID`, `username`, `password`, `type`) VALUES
-(2, 'mohammad1', '123', 'student'),
+(2, 'mohammad1','$2y$10$H7bLBei8ifDT51YeCKDFuOPUYmS9fmieX4nvuOQ2RBQ9BK/0sExFW', 'student'),
 (9, 'ibrahim', '123', 'student'),
 (10, 'stc', '123', 'representative'),
 (12, 'Saleh100', 's12345678#', 'student'),
-(13, 'admin', '123', 'admin'),
+(13, 'admin', '$2y$10$FRoT.V7Qkp6WQnzAUCLfAenVH6oCLqCiQAE9MWoSr28k7KLRVCQgK', 'admin'),
 (29, 's201620444', 'Stu#201620444', 'student'),
 (31, 's201550500', 'Stu#201550500', 'student'),
 (32, 'remal', 'Remal123#@', 'representative');
