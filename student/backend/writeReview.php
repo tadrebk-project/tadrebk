@@ -23,7 +23,7 @@ $text = mysqli_real_escape_string($conn, $_POST['reviewText']);
 $compID = $_GET['compID'];
 $studentName = $_SESSION['studentName'];
 $date = date("Y-m-d");
-$query = "INSERT INTO Review (text, date, compID, studentName) VALUES('$text','$date','$compID','$studentName');";
+$query = "INSERT INTO review (text, date, compID, studentName) VALUES('$text','$date','$compID','$studentName');";
 mysqli_query($conn, $query);
   
 }

@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "SELECT * FROM Event1 where compID=".$_GET['compID'];
+$query = "SELECT * FROM event1 where compID=".$_GET['compID'];
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){

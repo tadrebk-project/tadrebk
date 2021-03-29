@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "SELECT * FROM Company where status = 'available' and compID = ".$_GET['compID'];
+$query = "SELECT * FROM company where status = 'available' and compID = ".$_GET['compID'];
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
