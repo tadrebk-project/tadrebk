@@ -291,10 +291,10 @@ CREATE TABLE `studentrequest` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user1`
+-- Table structure for table `tadreabkuser`
 --
 
-CREATE TABLE `user1` (
+CREATE TABLE `tadreabkuser` (
   `userID` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -302,10 +302,10 @@ CREATE TABLE `user1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user1`
+-- Dumping data for table `tadreabkuser`
 --
 
-INSERT INTO `user1` (`userID`, `username`, `password`, `type`) VALUES
+INSERT INTO `tadreabkuser` (`userID`, `username`, `password`, `type`) VALUES
 (2, 'mohammad1', '123', 'student'),
 (9, 'ibrahim', '123', 'student'),
 (10, 'stc', '123', 'representative'),
@@ -411,9 +411,9 @@ ALTER TABLE `studentrequest`
   ADD KEY `studentID` (`studentID`);
 
 --
--- Indexes for table `user1`
+-- Indexes for table `tadreabkuser`
 --
-ALTER TABLE `user1`
+ALTER TABLE `tadreabkuser`
   ADD PRIMARY KEY (`userID`);
 
 --
@@ -475,9 +475,9 @@ ALTER TABLE `review`
   MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `user1`
+-- AUTO_INCREMENT for table `tadreabkuser`
 --
-ALTER TABLE `user1`
+ALTER TABLE `tadreabkuser`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
@@ -501,7 +501,7 @@ ALTER TABLE `application`
 --
 ALTER TABLE `companyrep`
   ADD CONSTRAINT `companyrep_ibfk_1` FOREIGN KEY (`compID`) REFERENCES `company` (`compID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `companyrep_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `user1` (`userID`) ON DELETE CASCADE;
+  ADD CONSTRAINT `companyrep_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `tadreabkuser` (`userID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `event1`
@@ -514,7 +514,7 @@ ALTER TABLE `event1`
 --
 ALTER TABLE `instructor`
   ADD CONSTRAINT `instructor_ibfk_1` FOREIGN KEY (`MID`) REFERENCES `major` (`MID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `instructor_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `user1` (`userID`) ON DELETE CASCADE;
+  ADD CONSTRAINT `instructor_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `tadreabkuser` (`userID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `performancefeedback`
@@ -541,7 +541,7 @@ ALTER TABLE `requiredmajors`
 ALTER TABLE `student`
   ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`MID`) REFERENCES `major` (`MID`) ON DELETE CASCADE,
   ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`compID`) REFERENCES `company` (`compID`),
-  ADD CONSTRAINT `student_ibfk_3` FOREIGN KEY (`userID`) REFERENCES `user1` (`userID`) ON DELETE CASCADE;
+  ADD CONSTRAINT `student_ibfk_3` FOREIGN KEY (`userID`) REFERENCES `tadreabkuser` (`userID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `studentrequest`
