@@ -57,7 +57,7 @@ if($result=mysqli_query($conn, $query)){
                         $str3 ="";
                     }
                 }
-            $str .= "<div class='card my-1'>
+            $str .= "<div class='card my-1' data-bs-toggle='collapse' data-bs-target='#collapse".$row['compID']."'>
             <div class='card-body'>
                 <div class='row row-cols-3'>
                     <div class='col'>
@@ -72,9 +72,9 @@ if($result=mysqli_query($conn, $query)){
                         </div>
                     </div>
                 </div>
-                
+                <div class='collapse' id='collapse".$row['compID']."'>
                     ".$str3.$str2."
-                
+                </div>
             </div>
         </div>";
         }

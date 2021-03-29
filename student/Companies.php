@@ -1,12 +1,10 @@
 <?php
 //to check if the file that includes this code is two level far from the required page or one level.
-if(file_exists("../general_backend/sessionStart.php")){
+if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
-}
-elseif (file_exists("../../general_backend/sessionStart.php")){
+} elseif (file_exists("../../general_backend/sessionStart.php")) {
     require "../../general_backend/sessionStart.php";
-}
-else{
+} else {
     require "general_backend/sessionStart.php";
 }
 ?>
@@ -69,15 +67,15 @@ else{
                     </div>
                     <div class="my-5">
                         <div class="m-3 d-flex justify-content-between">
-                            <span class="align-middle">Major</span>
-                            <select id="majorSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
+                            <div class="align-self-center mx-1">Major</div>
+                            <select id="majorSelect" class="form-select" style="max-width: 10rem;">
                                 <option selected value="">select</option>
                                 <?php include "backend/getMajors.php" ?>
                             </select>
                         </div>
                         <div class="m-3 d-flex justify-content-between">
-                            <span class="align-middle">Location</span>
-                            <select id="locationSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
+                            <div class="align-self-center mx-1">Location</div>
+                            <select id="locationSelect" class="form-select" style="max-width: 10rem;">
                                 <option selected value="">select</option>
                                 <option value="Riyadh">Riyadh</option>
                                 <option value="Dammam">Dammam</option>
@@ -87,8 +85,8 @@ else{
                             </select>
                         </div>
                         <div class="m-3 d-flex justify-content-between">
-                            <span class="align-middle">Training</span>
-                            <select id="trainingTypeSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
+                            <div class="align-self-center mx-1">Training</div>
+                            <select id="trainingTypeSelect" class="form-select" style="max-width: 10rem;">
                                 <option selected value="">select</option>
                                 <option value="COOP">CO-OP</option>
                                 <option value="summer">Summer Training</option>
@@ -130,7 +128,7 @@ else{
                             </div>
                         </div>
                         <div id="companiesList">
-                            <?php include "backend/getcompanies.php"; ?>
+                            <?php include "backend/getCompanies.php"; ?>
                         </div>
                     </div>
                 </div>

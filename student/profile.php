@@ -175,7 +175,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <div class="col d-flex justify-content-between">
                                     <?php 
                                         if($CVFileRef =="#"){
-                                            echo "<span class='align-middle'>Upload your CV...</span>";
+                                            echo "<div class='align-self-center'>Upload your CV...</div>";
                                         }
                                         else{
                                             $CVLink = "../cv/".$CVFileRef;
