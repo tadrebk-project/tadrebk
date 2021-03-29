@@ -55,7 +55,7 @@ else{
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>
                     </a>
                     -->
-                    <a class="btn btn-outline-primary mx-2 " href="logout.php">
+                    <a class="btn btn-outline-primary mx-2 " href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
                 </div>
