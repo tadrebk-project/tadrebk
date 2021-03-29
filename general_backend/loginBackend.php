@@ -66,6 +66,11 @@ if (isset($_POST['login-btn'])) {
         header('location: ../admin/adminHome.php');
 
       } else if ($user['type'] === "instructor"){
+        $temp_userID = $user['userID'];
+        $mysql_qry2 = "select MID from instructor where userID = '$temp_userID'";
+        $result2 = mysqli_query($conn ,$mysql_qry2);
+        $ins = mysqli_fetch_assoc($result2);
+        $_SESSION['MID'] = $ins['MID'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
         header('location: ../instructor/instructorHome.php');
