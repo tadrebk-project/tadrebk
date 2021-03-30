@@ -3,12 +3,12 @@ session_start();
 require "conn.php";
 $headerString='';
 
-function denyAccess($msg){
+function denyAccess($msg,$conn){
+  mysqli_close($conn);
   unset($_SESSION['userid']);
   session_destroy();
   echo "<script type='text/javascript'>alert('$msg');</script>";
   echo "<script type='text/javascript'>window.location.href = '../Login.html';</script>";
-
 }
 
 if (isset($_POST['login-btn'])) {
@@ -23,7 +23,7 @@ if (isset($_POST['login-btn'])) {
       $user = mysqli_fetch_assoc($result);
       $verify_result = password_verify($password, $user['password']);
       if(!$verify_result){
-        denyAccess("Wrong Credentials! Try Again");
+        denyAccess("Wrong Credentials! Try Again",$conn);
       }
 
   	  else if($user['type'] === "student"){
@@ -51,16 +51,16 @@ if (isset($_POST['login-btn'])) {
           $headerString  = 'location: ../company/companyHome.php';
         }
         else if($rep['status'] === "pending"){
-          denyAccess("Your request status is still pending.");
+          denyAccess("Your request status is still pending.",$conn);
         }
         else if($rep['status'] === "rejected"){
-          denyAccess("You cannot login because your request has been rejected.");
+          denyAccess("You cannot login because your request has been rejected.",$conn);
         }
         else if($rep['status'] === "dissociated"){
-          denyAccess("Your company has been dissociated.");
+          denyAccess("Your company has been dissociated.",$conn);
         }
         else{
-          denyAccess("You are not authorized to access this website.");
+          denyAccess("You are not authorized to access this website.",$conn);
         }
       } else if ($user['type'] === "admin"){
         $_SESSION['userid'] = $user['userID'];
@@ -83,7 +83,7 @@ if (isset($_POST['login-btn'])) {
 
   }
   else {
-      denyAccess("Wrong Credentials! Try Again");
+      denyAccess("Wrong Credentials! Try Again",$conn);
   }
 }
   mysqli_close($conn);

@@ -61,16 +61,19 @@ if (isset($_POST['add_request'])) {
         //header('location: ../applications.php?compID='.$_GET['compID']);
     }
     elseif($HasCompany) {
+        mysqli_close($conn);
         echo "<script>alert('You are already associated with a company!');
         window.location.href='../applications.php?compID=".$_GET['compID']."';</script>";
         //header('location: ../studentHome.php');
     }
     elseif(!$HasCV) {
+        mysqli_close($conn);
         echo "<script>alert('Please upload your CV through your profile.');
         window.location.href='../applications.php?compID=".$_GET['compID']."';</script>";
         //header('location: ../studentHome.php');
     }
     elseif($alreadyRequested) {
+        mysqli_close($conn);
         echo "<script>alert('You have already requested this application!');
         window.location.href='../applications.php?compID=".$_GET['compID']."';</script>";
         //header('location: ../studentHome.php');
