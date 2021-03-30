@@ -49,7 +49,6 @@ if (file_exists("../general_backend/sessionStart.php")) {
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="announcements.php">Announcements</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="events.php">Events</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="representatives.php">Representatives</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">

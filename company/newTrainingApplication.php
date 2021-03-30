@@ -1,28 +1,26 @@
 <?php
-        // this is how to get the majors
-        if(isset($_POST['submit'])){
-            if(!empty($_POST['Select'])) {
-                foreach($_POST['Select'] as $selected){
-                  echo '  ' . $selected;
-                }
-              } else {
-                echo 'Please select the value.';
-              }
+// this is how to get the majors
+if (isset($_POST['submit'])) {
+    if (!empty($_POST['Select'])) {
+        foreach ($_POST['Select'] as $selected) {
+            echo '  ' . $selected;
         }
-    ?>
+    } else {
+        echo 'Please select the value.';
+    }
+}
+?>
 
-  <?php
-    //to check if the file that includes this code is two level far from the required page or one level.
-    if(file_exists("../general_backend/sessionStart.php")){
-        require "../general_backend/sessionStart.php";
-    }
-    elseif (file_exists("../../general_backend/sessionStart.php")){
-        require "../../general_backend/sessionStart.php";
-    }
-    else{
-        require "general_backend/sessionStart.php";
-    }
-  ?>
+<?php
+//to check if the file that includes this code is two level far from the required page or one level.
+if (file_exists("../general_backend/sessionStart.php")) {
+    require "../general_backend/sessionStart.php";
+} elseif (file_exists("../../general_backend/sessionStart.php")) {
+    require "../../general_backend/sessionStart.php";
+} else {
+    require "general_backend/sessionStart.php";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,32 +44,32 @@
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
         <div class="container">
-          <a class="navbar-brand" href="companyHome.php">
-              <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
-          </a>
-          <div class="container d-flex mx-auto flex-column">
-              <nav class="nav nav-masthead justify-content-center float-md">
-                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Students</a>
-                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="trainingApplications.php">Applications</a>
-                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Announcements</a>
-                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="#">Events</a>
-                  <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="representatives.php">Representatives</a>
-              </nav>
-          </div>
+            <a class="navbar-brand" href="companyHome.php">
+                <img src="../general_resources/Tadreabk logo.png" alt="" width="270" height="50">
+            </a>
+            <div class="container d-flex mx-auto flex-column">
+                <nav class="nav nav-masthead justify-content-center float-md">
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="studentsList.php">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="trainingApplications.php">Applications</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="announcements.php">Announcements</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="events.php">Events</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="representatives.php">Representatives</a>
+                </nav>
             </div>
-            <nav class="d-flex mx-auto">
-                <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
-                    <a class="btn btn-outline-primary mx-2 nav-btn" href="../general_backend/logout.php">
-                        <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
-                    </a>
-                </div>
-            </nav>
+        </div>
+        <nav class="d-flex mx-auto">
+            <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
+                <a class="btn btn-outline-primary mx-2 nav-btn" href="../general_backend/logout.php">
+                    <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
+                </a>
+            </div>
+        </nav>
         </div>
     </nav>
 
     <div class="container con" style="background-color: white;">
         <form action="backend/getNewApplication.php?compID=<?php echo $_SESSION['compID'] ?>" method="post">
-           <p class="text text-center">Create a new application</p>
+            <p class="text text-center">Create a new application</p>
             <br>
             <!-- training name -->
             <div class="mb-3">
@@ -108,17 +106,17 @@
             <br>
             <div class="row">
                 <div class="col-4 col-sm-3">
-                <label for="GPA" class="form-label">Required GPA:</label>
+                    <label for="GPA" class="form-label">Required GPA:</label>
                 </div>
                 <div class="col-3 col-sm-2">
-                <input type="text" class="form-control" id="gpa" name="gpa" placeholder="" required>
+                    <input type="text" class="form-control" id="gpa" name="gpa" placeholder="" required>
                 </div>
             </div>
             <br><br>
-            <div class="row justify-content-evenly" >
+            <div class="row justify-content-evenly">
                 <div class="col-2">
-                      <!-- <input id="submitApplication" class='btn btn-primary align-self-center' name="submitApplication"  type="Submit"></input> -->
-                      <button type="submit" id="submitApplication" name="submitApplication" class="btn btn-primary align-self-center" >Create</button>
+                    <!-- <input id="submitApplication" class='btn btn-primary align-self-center' name="submitApplication"  type="Submit"></input> -->
+                    <button type="submit" id="submitApplication" name="submitApplication" class="btn btn-primary align-self-center">Create</button>
                 </div>
                 <div class="col-1">
                     <button class='btn btn-primary align-self-center' name="button" value="ok" type="button" onclick="window.location.href='trainingApplications.php'">Cancel</button>
@@ -131,11 +129,8 @@
     <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
     <script>
         $(function() {
-            $('.multiple-select').multipleSelect({
-            })
+            $('.multiple-select').multipleSelect({})
         })
-
-
     </script>
 </body>
 
