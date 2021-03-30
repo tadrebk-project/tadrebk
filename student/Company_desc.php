@@ -1,12 +1,10 @@
 <?php
 //to check if the file that includes this code is two level far from the required page or one level. 
-if(file_exists("../general_backend/sessionStart.php")){
+if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
-}
-elseif (file_exists("../../general_backend/sessionStart.php")){
+} elseif (file_exists("../../general_backend/sessionStart.php")) {
     require "../../general_backend/sessionStart.php";
-}
-else{
+} else {
     require "general_backend/sessionStart.php";
 }
 ?>
@@ -42,13 +40,13 @@ else{
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
-                    <a class="nav-link btn btn-outline-primary" href="#">Profile</a>
+                    <a class="nav-link btn btn-outline-primary" href="profile.php">Profile</a>
                     <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
-                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
+                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="Companies.php">Companies</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
-            <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
+                <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
                     <!--
                     <a class="btn btn-outline-primary mx-2" href="#">
                         <i class="bi bi-file-earmark-arrow-up d-flex justify-content-center align-items-center"></i>

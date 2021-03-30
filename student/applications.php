@@ -1,12 +1,10 @@
 <?php
 //to check if the file that includes this code is two level far from the required page or one level.
-if(file_exists("../general_backend/sessionStart.php")){
+if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
-}
-elseif (file_exists("../../general_backend/sessionStart.php")){
+} elseif (file_exists("../../general_backend/sessionStart.php")) {
     require "../../general_backend/sessionStart.php";
-}
-else{
+} else {
     require "general_backend/sessionStart.php";
 }
 ?>
@@ -15,15 +13,14 @@ else{
 <html lang="en">
 
 <head>
-     <!-- Required meta tags -->
-     <meta charset="utf-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="project.css">
@@ -44,7 +41,7 @@ else{
                     <a class="nav-link btn btn-outline-primary" href="studentHome.php">Home</a>
                     <a class="nav-link btn btn-outline-primary" href="profile.php">Profile</a>
                     <a class="nav-link btn btn-outline-primary" href="ViewRequestStatus.php">Requests</a>
-                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="#">Companies</a>
+                    <a class="nav-link btn btn-outline-primary active" aria-current="page" href="Companies.php">Companies</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
