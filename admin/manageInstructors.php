@@ -45,9 +45,9 @@ if (file_exists("../general_backend/sessionStart.php")) {
             </a>
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
-                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="manageStudents.php">Students</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="manageStudents.php">Students</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="manageCompanies.php">Companies</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="manageInstructors.php">Instructors</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="manageInstructors.php">Instructors</a>
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
@@ -148,8 +148,8 @@ if (file_exists("../general_backend/sessionStart.php")) {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Major</th>
                             <th scope="col">
                             </th>
                         </tr>
