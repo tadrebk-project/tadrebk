@@ -82,6 +82,8 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <option value="Jeddah">Jeddah</option>
                                 <option value="Makkah">Makkah</option>
                                 <option value="Dhahran">Dhahran</option>
+                                <option value="Khobar">Khobar</option>
+
                             </select>
                         </div>
                         <div class="m-3 d-flex justify-content-between">
