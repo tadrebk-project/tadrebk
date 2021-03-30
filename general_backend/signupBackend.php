@@ -53,7 +53,7 @@ if (isset($_POST['reg_company'])) {
 
     $query = "INSERT INTO companyrep (userID, repID, compID, type) VALUES('$last_userID','NULL', '$last_compID', 1);";
     mysqli_query($conn, $query);
-
+    mysqli_close($conn);
   	header('location: ../Login.html');
   }
 }

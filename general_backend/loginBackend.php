@@ -1,12 +1,14 @@
 <?php
 session_start();
 require "conn.php";
+$headerString='';
 
 function denyAccess($msg){
   unset($_SESSION['userid']);
   session_destroy();
   echo "<script type='text/javascript'>alert('$msg');</script>";
   echo "<script type='text/javascript'>window.location.href = '../Login.html';</script>";
+
 }
 
 if (isset($_POST['login-btn'])) {
@@ -23,7 +25,7 @@ if (isset($_POST['login-btn'])) {
       if(!$verify_result){
         denyAccess("Wrong Credentials! Try Again");
       }
-      
+
   	  else if($user['type'] === "student"){
         $temp_userID = $user['userID'];
         $mysql_qry2 = "select * from student where userID = '$temp_userID'";
@@ -34,7 +36,7 @@ if (isset($_POST['login-btn'])) {
         $_SESSION['studentName'] = $student['name'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: ../student/studentHome.php');
+        $headerString  = 'location: ../student/studentHome.php';
 
       } else if ($user['type'] === "representative"){
         $temp_userID = $user['userID'];
@@ -46,7 +48,7 @@ if (isset($_POST['login-btn'])) {
           $_SESSION['repID'] = $rep['repID'];
           $_SESSION['userid'] = $user['userID'];
           $_SESSION['type'] = $user['type'];
-          header('location: ../company/companyHome.php');
+          $headerString  = 'location: ../company/companyHome.php';
         }
         else if($rep['status'] === "pending"){
           denyAccess("Your request status is still pending.");
@@ -63,7 +65,8 @@ if (isset($_POST['login-btn'])) {
       } else if ($user['type'] === "admin"){
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: ../admin/adminHome.php');
+        $headerString  = 'location: ../admin/adminHome.php';
+
 
       } else if ($user['type'] === "instructor"){
         $temp_userID = $user['userID'];
@@ -73,7 +76,8 @@ if (isset($_POST['login-btn'])) {
         $_SESSION['MID'] = $ins['MID'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
-        header('location: ../instructor/instructorHome.php');
+        $headerString  = 'location: ../instructor/instructorHome.php';
+
       }
 
 
@@ -82,7 +86,6 @@ if (isset($_POST['login-btn'])) {
       denyAccess("Wrong Credentials! Try Again");
   }
 }
-
- mysqli_close($conn);
-
+  mysqli_close($conn);
+  header($headerString);
 ?>
