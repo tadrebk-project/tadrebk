@@ -13,11 +13,28 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "SELECT * FROM company where status = 'available'";
+$searchString = mysqli_real_escape_string($conn, $_POST["searchString"]);
+$majorID = mysqli_real_escape_string($conn, $_POST["majorID"]);
+$location = mysqli_real_escape_string($conn, $_POST["location"]);
+$trainingType = mysqli_real_escape_string($conn, $_POST["trainingType"]);
+
+if($searchString!=""){
+    $searchString = " and c.name like '%".$searchString."%'";
+}
+if($location!=""){
+    $location = " and c.location like '%".$location."%'";
+}
+if($majorID!=""){
+    $majorID = " and m.MID = '".$majorID."'";
+}
+if($trainingType!=""){
+    $trainingType = " and a.trainingType like '%".$trainingType."%'";
+}
+
+$query = "SELECT DISTINCT c.* from company c LEFT JOIN application a on a.compID = c.compID LEFT JOIN requiredmajors r on a.appID = r.appID LEFT JOIN major m on m.MID = r.MID where c.status = 'available'".$searchString.$majorID.$location.$trainingType." ORDER BY c.name";
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
-        //(here table)
         $str = "";
         while($row=mysqli_fetch_array($result)){
                 $str2 ="<div>
@@ -82,7 +99,7 @@ if($result=mysqli_query($conn, $query)){
         echo $str;
     }
     else {
-        echo "There are no companies associated..";
+        echo "No companies found...";
     }
 }
 mysqli_close($conn);
