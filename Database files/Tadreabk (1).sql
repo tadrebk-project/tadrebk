@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2021 at 02:15 PM
+-- Generation Time: Mar 30, 2021 at 06:30 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -90,7 +90,9 @@ INSERT INTO `company` (`compID`, `name`, `description`, `location`, `website`, `
 (3, 'Zain KSA', 'Mobile Telecommunications Company K.S.C.P., doing business as Zain, is a Kuwaiti mobile telecommunications company founded in 1983 in Kuwait as MTC, and later rebranded as Zain in 2007. Zain has a commercial presence in eight countries across the Middle East with 49.5 million active customers as of 31 December 2019.', 'Riyadh', 'www.zain.com', 'available'),
 (4, 'Microsoft KSA', 'Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.', 'Riyadh', 'https://www.microsoft.com/en-sa', 'available'),
 (5, 'Aramco', 'We Believe In The Power Of Energy To Transform Lives And Sustain Our Planet. Find Out More. Were Committed To Driving Energy Efficiency And Addressing The Global Emission Challenge. Explore Our Products. Read News. 87 Years Of Experience.', 'Dhahran', 'www.aramco.com', 'dissociated'),
-(6, 'Elm', 'Elm is a Saudi Joint Stock Company owned by the Public Investment Fund, which is the investment arm of the Saudi Ministry of Finance. Elm services are provided to all forms of beneficiaries, including government, corporate sector and individuals.', 'Riyadh', 'https://www.elm.sa/', 'available');
+(6, 'Elm', 'Elm is a Saudi Joint Stock Company owned by the Public Investment Fund, which is the investment arm of the Saudi Ministry of Finance. Elm services are provided to all forms of beneficiaries, including government, corporate sector and individuals.', 'Riyadh', 'https://www.elm.sa/', 'available'),
+(14, 'g', 'g', 'g', 'g', 'pending'),
+(15, 'stc2222222', 'df', 'dd', 'dd', 'pending');
 
 -- --------------------------------------------------------
 
@@ -144,6 +146,13 @@ CREATE TABLE `instructor` (
   `MID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `instructor`
+--
+
+INSERT INTO `instructor` (`userID`, `name`, `MID`) VALUES
+(76, 'Saleh Ali', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -195,6 +204,13 @@ CREATE TABLE `progressreport` (
   `date` date NOT NULL,
   `studentID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `progressreport`
+--
+
+INSERT INTO `progressreport` (`RID`, `summary`, `fileRef`, `date`, `studentID`) VALUES
+(7, 'test', '1617121493_Implementation Plan.pdf', '2021-03-30', 201615200);
 
 -- --------------------------------------------------------
 
@@ -273,6 +289,8 @@ CREATE TABLE `student` (
 INSERT INTO `student` (`userID`, `studentID`, `name`, `email`, `phoneNum`, `gpa`, `picRef`, `CVFileRef`, `compID`, `MID`) VALUES
 (72, 201363870, 'Mohammad Owaidah', NULL, NULL, 2.13, NULL, NULL, NULL, 1),
 (70, 201599800, ' Mohammad Ali', NULL, NULL, 2.01, NULL, NULL, NULL, 2),
+(2, 201615200, 'mohammad1', NULL, NULL, NULL, '1617121563_201615200_Tadreabk favicon.png', NULL, NULL, 1),
+(73, 201652090, 'Mahmood Alalouni', NULL, NULL, 2.52, NULL, NULL, NULL, 1),
 (69, 201711000, ' Faisel Saleh', NULL, NULL, 3.8, NULL, NULL, NULL, 7),
 (67, 201722300, ' Ibrahim Ali', NULL, NULL, 3.33, NULL, NULL, NULL, 1),
 (68, 201722366, ' Yosif Ali', NULL, NULL, 3.8, NULL, NULL, NULL, 3),
@@ -325,7 +343,9 @@ INSERT INTO `tadreabkuser` (`userID`, `username`, `password`, `type`) VALUES
 (69, 's201711000', '$2y$10$pJG7J4/c3eAMMUoq8HopVOjUO4LazvlcO1odoygbRPnPtTpcYIDD2', 'student'),
 (70, 's201599800', '$2y$10$AiOtAHAwfd2XxHc4Yh5NveBI7tuWLXxvQM9qY24e4ErliavAm9hWm', 'student'),
 (71, 's201830240', '$2y$10$RPwdFsppMfBaSulMWzr6deJHkdnJtiWMjlGZT1mU29aCkYPG93kQm', 'student'),
-(72, 's201363870', '$2y$10$fGbjTe2bY/f.cbbodtc8x.7qXT4mLuVGwb1J0Mt.4kRtwhCQpxiD6', 'student');
+(72, 's201363870', '$2y$10$fGbjTe2bY/f.cbbodtc8x.7qXT4mLuVGwb1J0Mt.4kRtwhCQpxiD6', 'student'),
+(73, 's201652090', '$2y$10$2DsCZ9tmciLkDKOWlq8sX.tTtC1ul0NPZ3w5FlAUrLAl8wCBas.iS', 'student'),
+(76, 'saleh123', '$2y$10$H7bLBei8ifDT51YeCKDFuOPUYmS9fmieX4nvuOQ2RBQ9BK/0sExFW', 'instructor');
 
 --
 -- Indexes for dumped tables
@@ -448,7 +468,7 @@ ALTER TABLE `application`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `compID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `compID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `companyrep`
@@ -478,7 +498,7 @@ ALTER TABLE `performancefeedback`
 -- AUTO_INCREMENT for table `progressreport`
 --
 ALTER TABLE `progressreport`
-  MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -490,7 +510,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `tadreabkuser`
 --
 ALTER TABLE `tadreabkuser`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- Constraints for dumped tables
