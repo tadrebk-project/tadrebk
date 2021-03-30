@@ -46,6 +46,5 @@ if($result=mysqli_query($conn, $query)){
 }
 
 mysqli_close($conn);
-header('location: admin/manageCompanies.php');
 
 ?>
