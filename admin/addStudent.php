@@ -74,9 +74,10 @@ if (file_exists("../general_backend/sessionStart.php")) {
         <br>
         <div class="card">
             <div class="card-body px-0">
+                <div class="d-block d-md-none align-self-center px-3 mb-2">Choose a method:</div>
                 <nav>
                     <div class="nav nav-tabs px-3" id="nav-tab" role="tablist">
-                        <div class="d-flex align-self-center pe-3">Choose a method:</div>
+                        <div class="d-none d-md-flex align-self-center pe-3">Choose a method:</div>
                         <button class="nav-link active tap-btn" id="nav-register-tab" data-bs-toggle="tab" data-bs-target="#nav-register" type="button" role="tab" aria-controls="nav-register" aria-selected="true">Register student</button>
                         <button class="nav-link tap-btn" id="nav-csv-tab" data-bs-toggle="tab" data-bs-target="#nav-csv" type="button" role="tab" aria-controls="nav-csv" aria-selected="false">CSV file</button>
                     </div>
@@ -171,7 +172,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     <p id="file-upload-filename" class="text-muted m-0 align-self-center">CSV file</p>
                                     <button type="button" id="CSVButton" class="btn btn-primary">Browse</button>
                                 </div>
-                                <span class="badge bg-secondary">CSV Data format must be in the format: StudentID, Student Name, GPA, Student Major</span><br>
+                                <span class="badge bg-secondary text-wrap">CSV Data format must be in the format: StudentID, Student Name, GPA, Student Major</span><br>
                                 <div class="py-2">
                                     <button type="submit" class="btn btn-primary float-end" id="registerByFile" name="registerByFile">Submit</button>
                                 </div>
