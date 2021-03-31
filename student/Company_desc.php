@@ -102,79 +102,24 @@ if (file_exists("../general_backend/sessionStart.php")) {
                             </div>
                         </div>
                         <hr>
-                        <?php include "backend/getReviews.php"; 
+                        <?php include "backend/getReviews.php";
                         ?>
                     </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
                 <div class="col">
-                    <?php include "backend/getEvents.php"; 
+                    <?php include "backend/getEvents.php";
                     ?>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-announcement" role="tabpanel" aria-labelledby="pills-announcement-tab">
                 <div class="col">
-                    <?php include "backend/getAnnouncements.php"; 
+                    <?php include "backend/getAnnouncements.php";
                     ?>
                 </div>
             </div>
         </div>
-
-
-        <!--
-        <div class="row">
-            <p>
-                <a class="btn btn-primary" data-bs-toggle="collapse" href="#Reviews" role="button" aria-expanded="false" aria-controls="Reviews">Reviews</a>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Event" aria-expanded="false" aria-controls="Event">Event</button>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Announcment" aria-expanded="false" aria-controls="Announcment">Announcment</button>
-            </p>
-            <div class="row reviews-container">
-                <div class="col">
-                    <div class="collapse multi-collapse" id="Reviews">
-                        <div class="card card-body">
-                            <div class="row">
-                                <div class="col-7 col-md-9 col-lg-9">
-                                    <h3>Reviews</h3>
-                                </div>
-                                <div class="col-5 col-md-3 col-lg-3">
-                                    <button class="btn btn-primary" data-bs-toggle="collapse" href="#writeReview" role="button" aria-expanded="false" aria-controls="writeReview">Write a review</button>
-                                </div>
-                            </div>
-
-                            <div class="collapse multi-collapse" id="writeReview">
-                                <br>
-                                <div class="row">
-                                    <form action="backend/writeReview.php?compID=<?php echo $_GET['compID'] ?>" method="post">
-                                        <textarea class="form-control" id="reviewText" name="reviewText" rows="3"></textarea>
-                                        <div class="col">
-                                            <button type="submit" class="btn btn-primary" id="add_review" name="add_review">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <?php //include "backend/getReviews.php"; 
-                    ?>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="collapse multi-collapse" id="Event">
-            <?php //include "backend/getEvents.php"; 
-            ?>
-        </div>
-    </div>
-    <div class="col">
-        <div class="collapse multi-collapse" id="Announcment">
-            <?php //include "backend/getAnnouncements.php"; 
-            ?>
-        </div>
-    </div>-->
     </div>
 
 
