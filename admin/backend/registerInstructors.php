@@ -32,7 +32,7 @@ if (isset($_POST['registerManually'])) {
         <script type='text/javascript'>window.location.href = '../manageInstructors.php';</script>";
     }
     else{
-        $query = "INSERT INTO user1 (username, password, type) VALUES('$username','$hash_password','instructor');";
+        $query = "INSERT INTO tadreabkuser (username, password, type) VALUES('$username','$hash_password','instructor');";
         mysqli_query($conn, $query);
         $last_userID = mysqli_insert_id($conn);
 
