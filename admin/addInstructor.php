@@ -102,22 +102,22 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <div class="mb-3 row">
                                     <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputUsername" name="inputUsername" required>
+                                        <input type="text" disabled class="form-control" id="inputUsername" name="inputUsername" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputPassword" name="inputPassword" pattern="^(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$" title="Must contain at least one number and one special character, and at least 10 or more characters" required>
+                                        <input type="text" disabled class="form-control" id="inputPassword" name="inputPassword" pattern="^(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$" title="Must contain at least one number and one special character, and at least 10 or more characters" required>
                                     </div>
                                 </div>
                                 <script type="text/javascript">
-                                    inputStudentID.addEventListener('keyup', function() {
-                                        if ($('#inputStudentID').val()) {
+                                    inputName.addEventListener('keyup', function() {
+                                        if ($('#inputName').val()) {
                                             document.getElementById('inputUsername').disabled = !this.value
                                             document.getElementById('inputPassword').disabled = !this.value
-                                            var usernameFormat = "s" + document.getElementById('inputStudentID').value
-                                            var passwordFormat = "Stu#" + document.getElementById('inputStudentID').value
+                                            var usernameFormat = document.getElementById('inputName').value.replace(/ /g, "")
+                                            var passwordFormat = "0@" + document.getElementById('inputName').value.replace(/ /g, "")
                                             $('#inputUsername').val(usernameFormat);
                                             $('#inputPassword').val(passwordFormat);
                                         } else {
