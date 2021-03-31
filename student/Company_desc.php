@@ -64,6 +64,65 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <?php include "backend/getCompanyDesc.php"; ?>
     <!-- reviews container -->
     <div class="container company-reviews">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link tap-btn mx-1 active" id="pills-reviews-tab" data-bs-toggle="pill" data-bs-target="#pills-reviews" type="button" role="tab" aria-controls="pills-reviews" aria-selected="true">Reviews</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link tap-btn mx-1" id="pills-event-tab" data-bs-toggle="pill" data-bs-target="#pills-event" type="button" role="tab" aria-controls="pills-event" aria-selected="false">Event</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link tap-btn mx-1" id="pills-announcement-tab" data-bs-toggle="pill" data-bs-target="#pills-announcement" type="button" role="tab" aria-controls="pills-announcement" aria-selected="false">Announcement</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
+                <div class="row reviews-container">
+                    <div class="col">
+                        <div class="card card-body">
+                            <div class="row">
+                                <div class="col-7 col-md-9 col-lg-9">
+                                    <h3>Reviews</h3>
+                                </div>
+                                <div class="col-5 col-md-3 col-lg-3">
+                                    <button class="btn btn-primary" data-bs-toggle="collapse" href="#writeReview" role="button" aria-expanded="false" aria-controls="writeReview">Write a review</button>
+                                </div>
+                            </div>
+
+                            <div class="collapse multi-collapse" id="writeReview">
+                                <br>
+                                <div class="row">
+                                    <form action="backend/writeReview.php?compID=<?php echo $_GET['compID'] ?>" method="post">
+                                        <textarea class="form-control" id="reviewText" name="reviewText" rows="3"></textarea>
+                                        <div class="col">
+                                            <button type="submit" class="btn btn-primary" id="add_review" name="add_review">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <?php include "backend/getReviews.php"; 
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
+                <div class="col">
+                    <?php include "backend/getEvents.php"; 
+                    ?>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-announcement" role="tabpanel" aria-labelledby="pills-announcement-tab">
+                <div class="col">
+                    <?php include "backend/getAnnouncements.php"; 
+                    ?>
+                </div>
+            </div>
+        </div>
+
+
+        <!--
         <div class="row">
             <p>
                 <a class="btn btn-primary" data-bs-toggle="collapse" href="#Reviews" role="button" aria-expanded="false" aria-controls="Reviews">Reviews</a>
@@ -96,8 +155,8 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         </div>
                     </div>
                     <hr>
-                    <!-- students reivews -->
-                    <?php include "backend/getReviews.php"; ?>
+                    <?php //include "backend/getReviews.php"; 
+                    ?>
 
 
                 </div>
@@ -106,14 +165,16 @@ if (file_exists("../general_backend/sessionStart.php")) {
     </div>
     <div class="col">
         <div class="collapse multi-collapse" id="Event">
-            <?php include "backend/getEvents.php"; ?>
+            <?php //include "backend/getEvents.php"; 
+            ?>
         </div>
     </div>
     <div class="col">
         <div class="collapse multi-collapse" id="Announcment">
-            <?php include "backend/getAnnouncements.php"; ?>
+            <?php //include "backend/getAnnouncements.php"; 
+            ?>
         </div>
-    </div>
+    </div>-->
     </div>
 
 

@@ -162,3 +162,12 @@ a {
   .reasonMark:hover .reasonText {
     visibility: visible;
 }
+.tap-btn {
+    border: 1px solid transparent;
+}
+.tap-btn.active {
+    background-color: #172457 !important;
+}
+.tap-btn:focus {
+    outline: none !important;
+  }
