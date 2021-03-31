@@ -1,12 +1,10 @@
 <?php
 //to check if the file that includes this code is two level far from the required page or one level.
-if(file_exists("../general_backend/sessionStart.php")){
+if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
-}
-elseif (file_exists("../../general_backend/sessionStart.php")){
+} elseif (file_exists("../../general_backend/sessionStart.php")) {
     require "../../general_backend/sessionStart.php";
-}
-else{
+} else {
     require "general_backend/sessionStart.php";
 }
 ?>
@@ -60,45 +58,41 @@ else{
         </div>
     </nav>
 
-    <div class="container mx-auto" style=" width: 80%; height: 100%;">
-        <div class="Container mx-5 my-5 raw ">
-            <div class="Container d-flex justify-content-between">
-                <div>
-                    <p class="text">Request Status</p>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                            <i class="bi bi-search d-flex justify-content-center align-items-center"></i>
-                        </button>
-                    </div>
+    <div class="container mx-auto my-3">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <p class="text">Request Status</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                        <i class="bi bi-search d-flex justify-content-center align-items-center"></i>
+                    </button>
                 </div>
             </div>
-            <div class="container">
+        </div>
+        <div class="container">
 
-                <div class="card my-3">
-                    <div class="card-body">
-                        <div class="row row-cols-5">
-                            <div class="col">
-                                Company
-                            </div>
-                            <div class="col">
-                                Application
-                            </div>
-                            <div class="col">
-                                Status
-                            </div>
-                            <div class="col">
-                                Request
-                            </div>
+            <div class="card my-3">
+                <div class="card-body">
+                    <div class="row row-cols-5 g-1 g-sm-4">
+                        <div class="col">
+                            Company
                         </div>
-
-                            <?php include "backend/getRequestStatus.php"; ?>
-
-                            </div>
+                        <div class="col">
+                            Application
+                        </div>
+                        <div class="col">
+                            Status
+                        </div>
+                        <div class="col">
+                            Request
                         </div>
                     </div>
+
+                    <?php include "backend/getRequestStatus.php"; ?>
+
                 </div>
             </div>
         </div>
