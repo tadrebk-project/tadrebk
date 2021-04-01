@@ -1,9 +1,16 @@
 <?php
+    $errorMSG = "You are not autherized to access this page!";
+    $parentFileName = basename(dirname($_SERVER['PHP_SELF']));
+    if($parentFileName=="backend"||$parentFileName=="general_backend"){
+        if(!isset($_SERVER['HTTP_REFERER'])){
+            die($errorMSG);             
+        }
+    }
+
     if(session_status() == PHP_SESSION_NONE){
         session_start(); 
     }
 
-    
     if (!isset($_SESSION['userid'])) {   
         //to check if the file that includes this code is two level far from the required page or one level.   
         if(file_exists("../Login.html")){
@@ -14,6 +21,14 @@
         }
         else{
             header('location: Login.html');
+        }
+    }
+    else if($parentFileName=="student"||$parentFileName=="admin"||$parentFileName=="instructor"||$parentFileName=="company"){
+        if($parentFileName=="company"){
+            $parentFileName = "representative";
+        }
+        if($_SESSION['type']!=$parentFileName){
+            die($errorMSG); 
         }
     }
 ?>
