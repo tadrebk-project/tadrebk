@@ -25,7 +25,7 @@ if($result=mysqli_query($conn, $query)){
                             </div>";
             }
             else{
-                $fileRef = "<a class='my-0' href='../progressReports/".$row['fileRef']."' target='_blank'>View</a>";
+                $fileRef = "<a class='my-0' href='progressReport.php?studentID=".$row['studentID']."'>View</a>";
             }
 
             if($row['details']==""){
