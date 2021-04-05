@@ -1,8 +1,37 @@
-<?php 
-$db_name = "tadreabk";
-$mysql_username = "root";
-$mysql_password = "";
-$server_name = "localhost";
-$conn = mysqli_connect($server_name, $mysql_username, $mysql_password,$db_name);
- 
+<?php
+    $whitelist = array(
+    '127.0.0.1',
+    '::1'
+    );
+    
+if(in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+            $host = "localhost";
+            $username = "root";
+            $password = "";
+            $db_name = "tadreabk";
+} 
+else {
+            $host = getenv('MYSQLCONNSTR_HOST');
+            $username = getenv('MYSQLCONNSTR_USERNAME');
+            $password = getenv('MYSQLCONNSTR_PASSWORD');
+            $db_name = 'tadreabk';
+}
+
+//Initializes MySQLi
+$conn = mysqli_init();
+
+
+
+// Establish the connection
+mysqli_real_connect($conn, $host, $username, $password , $db_name , 3306, NULL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
+
+
+
+
+//If connection failed, show the error
+if (mysqli_connect_errno($conn))
+{
+die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+
 ?>
