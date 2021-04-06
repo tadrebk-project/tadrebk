@@ -94,13 +94,25 @@ else{
                 </a>
             </div>
             <div class="col">
-                <a href="progress_report.php" class="text-decoration-none">
+                <?php
+                    if($_SESSION["compID"]!=""){
+                        $reportPage_a = "<a href='progress_report.php' class='text-decoration-none'>";
+                        $reportPage_a2 = "</a>";
+                        $alertE = "";
+                    }
+                    else{
+                        $reportPage_a = "";
+                        $reportPage_a2 = "";
+                        $alertE = "onclick='alert(\"You are not associated with a company!\");'";
+                    }
+                ?>
+                    <?php echo $reportPage_a; ?>
                     <div class="card" style="height: 20rem;">
-                        <div class="card-body d-flex align-items-end">
+                        <div class="card-body d-flex align-items-end" <?php echo $alertE; ?>>
                             <p class="text mb-0 text-truncate">Progress Report</p>
                         </div>
                     </div>
-                </a>
+                    <?php echo $reportPage_a2; ?>
             </div>
 
         </div>

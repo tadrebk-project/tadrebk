@@ -36,6 +36,7 @@ if (isset($_POST['login-btn'])) {
         $_SESSION['studentName'] = $student['name'];
         $_SESSION['userid'] = $user['userID'];
         $_SESSION['type'] = $user['type'];
+        $_SESSION['compID'] = $student['compID'];
         $headerString  = 'location: ../student/studentHome.php';
 
       } else if ($user['type'] === "representative"){
