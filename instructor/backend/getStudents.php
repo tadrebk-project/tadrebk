@@ -13,21 +13,12 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "select s.studentID, s.name, m.name as major, p.fileRef, f.details, c.name as company from student s INNER JOIN major m on s.MID = m.MID LEFT join progressreport p on s.studentID = p.studentID LEFT JOIN performancefeedback f on f.studentID = s.studentID LEFT JOIN company c on c.compID = f.compID where s.MID = ".$_SESSION["MID"];
+$query = "select s.studentID, s.name, m.name as major, f.details, c.name as company from student s INNER JOIN major m on s.MID = m.MID LEFT JOIN performancefeedback f on f.studentID = s.studentID LEFT JOIN company c on c.compID = f.compID where s.MID = ".$_SESSION["MID"]." ORDER BY s.name";
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
         $str ="";
         while($row=mysqli_fetch_array($result)){
-            if($row['fileRef']==""){
-                $fileRef = "<div class='col text-center'>
-                                No progress report
-                            </div>";
-            }
-            else{
-                $fileRef = "<a class='my-0' href='progressReport.php?studentID=".$row['studentID']."'>View</a>";
-            }
-
             if($row['details']==""){
                 $details = "<div class='col text-center'>
                                 No company feedback
@@ -58,7 +49,7 @@ if($result=mysqli_query($conn, $query)){
                     ".$row['major']."
                 </div>
                 <div class='col text-center'>
-                    $fileRef
+                    <a class='my-0' href='progressReport.php?studentID=".$row['studentID']."'>View</a>
                 </div>
                     $details
         </div>";

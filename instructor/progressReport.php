@@ -58,11 +58,11 @@ if (file_exists("../general_backend/sessionStart.php")) {
         </div>
     </nav>
 
-    <?php //echo $_GET['studentID']?>
+    <?php include "backend/getProgressReports.php"; ?>
 
     <div class="container mx-auto my-4">
         <div class="card card-body mb-3">
-            <p class="fs-5 fw-bold mb-0">.$row['name'].</p>
+            <p class="fs-5 fw-bold mb-0"><?php echo $studentName; ?></p>
         </div>
         <div class='card card-body my-1'>
             <table class="table table-hover">
@@ -75,32 +75,10 @@ if (file_exists("../general_backend/sessionStart.php")) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td class="text-break">
-                            Summary
-                        </td>
-                        <td>04/04/2021</td>
-                        <td><a href="#">Download</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>
-                            Summary
-                        </td>
-                        <td>04/04/2021</td>
-                        <td><a href="../progressReports/.$row['fileRef'].' target='_blank'">Download</a></td>
-                    </tr>
-                    <tr>
-                        <th scope='row'>3</th>
-                        <td>
-                            .$row['summary'].
-                        </td>
-                        <td>.$row['date'].</td>
-                        <td><a href="../progressReports/.$row['fileRef'].' target='_blank'">Download</a></td>
-                    </tr>
+                    <?php echo $reportsList; ?>
                 </tbody>
             </table>
+            <?php echo $noReports; ?>
         </div>
     </div>
 
