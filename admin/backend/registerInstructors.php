@@ -24,10 +24,19 @@ if (isset($_POST['registerManually'])) {
 
     $instructor_check_query = "SELECT * FROM instructor WHERE MID='$MID' LIMIT 1";
     $result = mysqli_query($conn, $instructor_check_query);
+    $checkmajor = mysqli_fetch_assoc($result);
+
+    $instructor_check_query = "SELECT * FROM tadreabkuser WHERE username='$username' LIMIT 1";
+    $result = mysqli_query($conn, $instructor_check_query);
     $user = mysqli_fetch_assoc($result);
 
-    if ($user) { // if user exists
-        $error= "Instructor with same purpose already registered!";
+    if ($checkmajor) { // if instructor with same major exists
+        $error= "Instructor with same major already registered!";
+        echo "<script type='text/javascript'>alert('$error');</script>;
+        <script type='text/javascript'>window.location.href = '../manageInstructors.php';</script>";
+    }
+    else if ($user) { // if user exists
+        $error= "Instructor with same username already registered!";
         echo "<script type='text/javascript'>alert('$error');</script>;
         <script type='text/javascript'>window.location.href = '../manageInstructors.php';</script>";
     }
