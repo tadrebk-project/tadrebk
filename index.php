@@ -1,6 +1,9 @@
 <?php
-    
+
+    $headerString  = 'location: login.html';
+    header($headerString);
 ?>
+
 <!doctype html>
 <html lang="en">
 
