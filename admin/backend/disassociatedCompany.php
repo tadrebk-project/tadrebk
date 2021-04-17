@@ -19,12 +19,23 @@ $text = "";
 if (isset($_POST['disassociate'])) {
   $compID = mysqli_real_escape_string($conn, $_POST['compID']);
 
-  $qry = "UPDATE company SET status='dissociated' where compID = '$compID';";
-  mysqli_query($conn, $qry);
+  $qry = "select compID from student where compID = '$compID';";
+  $result = mysqli_query($conn, $qry);
+  $studentTraining = mysqli_fetch_assoc($result);
+
+  if ($studentTraining) { 
+        mysqli_close($conn);
+        $error= "There are students training on this company!";
+        echo "<script type='text/javascript'>alert('$error');</script>;
+        <script type='text/javascript'>window.location.href = '../manageCompanies.php';</script>";
+  }
+  else{
+    $qry = "UPDATE company SET status='dissociated' where compID = '$compID';";
+    mysqli_query($conn, $qry);
+    mysqli_close($conn);
+    header('location: ../manageCompanies.php');
+  }
 
 }
-
-mysqli_close($conn);
-header('location: ../manageCompanies.php');
 
 ?>
