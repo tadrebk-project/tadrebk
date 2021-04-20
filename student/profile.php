@@ -128,7 +128,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                             </div>
                             <div class="mb-3">
                                 <label for="InputEmail" class="form-label">Email</label>
-                                <input type="text" name="email" placeholder="email@domain.com" value="<?php echo $email; ?>" class="form-control" id="InputEmail" aria-describedby="emailHelp" disabled required>
+                                <input type="email" name="email" placeholder="email@domain.com" value="<?php echo $email; ?>" class="form-control" id="InputEmail" aria-describedby="emailHelp" disabled required>
                             </div>
                             <script>
                                 var enable = false;
