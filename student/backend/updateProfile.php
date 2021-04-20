@@ -18,19 +18,30 @@ if (isset($_POST['saveButton'])) {
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
 
-    $studentID = $_SESSION['studentid'];
+    $email_check_query = "SELECT * FROM student WHERE email='$email' LIMIT 1";
+    $result = mysqli_query($conn, $email_check_query);
+    $checkemail = mysqli_fetch_assoc($result);
 
-    $query = "UPDATE student
-        SET
-        name = '".$name."',
-        phoneNum = '".$phone."',
-        email = '".$email."'
-        WHERE
-        studentID = ".$studentID.";";
+    if ($checkemail) { 
+        mysqli_close($conn);
+        $error= "Email is already used by another user!";
+        echo "<script type='text/javascript'>alert('$error');</script>;
+        <script type='text/javascript'>window.location.href = '../profile.php';</script>";
+    }
+    else{
+        $studentID = $_SESSION['studentid'];
 
-    mysqli_query($conn, $query);
-  
+        $query = "UPDATE student
+            SET
+            name = '".$name."',
+            phoneNum = '".$phone."',
+            email = '".$email."'
+            WHERE
+            studentID = ".$studentID.";";
+
+        mysqli_query($conn, $query);
+        mysqli_close($conn);
+    }
 }
-mysqli_close($conn);
 header('location: ../profile.php');
 ?>
