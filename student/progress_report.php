@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if(file_exists("../general_backend/sessionStart.php")){
     require "../general_backend/sessionStart.php";
 }
@@ -81,6 +81,7 @@ else{
                                 <p id="file-upload-filename" class="text-muted m-0 align-self-center">Attach file</p>
                                 <button type="button" id="AttachmentButton" class="btn btn-primary">Browse</button>
                             </div>
+                            <div class="form-text">Accepted extentions: .pdf, file size should not exceed 10mb.</div>
                             <script>
                                 $("#AttachmentButton").click(function (e) {
                                     $("#inputAttachment").click();
@@ -92,7 +93,7 @@ else{
                                 input.addEventListener('change', showFileName);
 
                                 function showFileName(event) {
-                                    // the change event gives us the input it occurred in 
+                                    // the change event gives us the input it occurred in
                                     var input = event.srcElement;
                                     var fileName = input.files[0].name;
 
