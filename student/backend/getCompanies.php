@@ -74,6 +74,7 @@ if($result=mysqli_query($conn, $query)){
                         $str3 ="";
                     }
                 }
+                
             $str .= "<div class='card my-1'>
             <div class='card-body'>
                 <div class='row row-cols-3'>
@@ -93,7 +94,77 @@ if($result=mysqli_query($conn, $query)){
                     ".$str3.$str2."
                 </div>
             </div>
-        </div>";
+            </div>";
+/*
+            $str .='
+            <div class="card my-1">
+                <div class="card-body">
+                    <div class="row row-cols-3">
+                        <div class="col" data-bs-toggle="collapse" data-bs-target="#collapse'.$row['compID'].'">
+                            <h5 class="my-0">'.$row['name'].'</h5>
+                        </div>
+                        <div class="col" data-bs-toggle="collapse" data-bs-target="#collapse'.$row['compID'].'">
+                            <p class="my-0">'.$row['location'].'</p>
+                        </div>
+                        <div class="col">
+                            <div class="container d-flex justify-content-center">
+                                <a href="Company_desc.php?compID='.$row['compID'].'" class="btn btn-primary py-0">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="collapse" id="collapse'.$row['compID'].'">
+                    <div class="card ms-4 mb-1">
+                        <div class="card-body p-1">
+                            <div class="row row-cols-4">
+                                <div class="col">
+                                    <p class="my-0">Opportunity name</p>
+                                </div>
+                                <div class="col">
+                                    <p class="my-0">Training type: CO-OP</p>
+                                </div>
+                                <div class="col">
+                                    <p class="my-0">Majors: </p>
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center">
+                                    <a href="#" class="text-decoration-none">
+                                        <i class="d-flex align-items-center bi bi-arrow-right-square-fill me-3"
+                                            style="font-size: 1.5em;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse" id="collapse'.$row['compID'].'">
+                    <div class="card ms-4 mb-1">
+                        <div class="card-body p-1">
+                            <div class="row row-cols-4">
+                                <div class="col">
+                                    <p class="my-0">Opportunity name</p>
+                                </div>
+                                <div class="col">
+                                    <p class="my-0">Training type: '.'</p>
+                                </div>
+                                <div class="col">
+                                    <p class="my-0">Majors: '.'</p>
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center">
+                                    <a href="#" class="text-decoration-none">
+                                        <i class="d-flex align-items-center bi bi-arrow-right-square-fill me-3"
+                                            style="font-size: 1.5em;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----> 
+            ';
+*/
         }
         
         echo $str;
