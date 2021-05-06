@@ -19,7 +19,7 @@ $compID = $_GET['compID'];
 $studentID = $_SESSION['studentID'];
 $result =  $_SESSION['review_comp'];
 
-  echo   $result;
+  echo   $studentID;
 
 if (isset($_POST['add_review'])) {
 
