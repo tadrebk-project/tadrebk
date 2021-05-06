@@ -54,12 +54,12 @@ if (file_exists("../general_backend/sessionStart.php")) {
     </nav>
 
     <div class="container mx-auto my-5" style="width: 75%;">
-        <div class="row row-cols-1 row-cols-md-3 g-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5">
             <div class="col">
                 <a href="manageStudents.php" class="text-decoration-none">
                     <div class="card blue-background" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text mb-0 text-truncate">Manage Students</p>
+                            <p class="text mb-0 text-truncate">Students</p>
                         </div>
                     </div>
                 </a>
@@ -68,7 +68,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                 <a href="manageCompanies.php" class="text-decoration-none">
                     <div class="card blue-background" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text mb-0 text-truncate">Manage Companies</p>
+                            <p class="text mb-0 text-truncate">Companies</p>
                         </div>
                     </div>
                 </a>
@@ -77,7 +77,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                 <a href="manageInstructors.php" class="text-decoration-none">
                     <div class="card blue-background" style="height: 20rem;">
                         <div class="card-body d-flex align-items-end">
-                            <p class="text mb-0 text-truncate">Manage Instructors</p>
+                            <p class="text mb-0 text-truncate">Instructors</p>
                         </div>
                     </div>
                 </a>
