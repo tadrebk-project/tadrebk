@@ -20,10 +20,8 @@ $text = "";
 if (isset($_POST['add_review'])) {
 
   $compID = $_GET['compID'];
-  echo   $compID;
-
   $review_comp = $_SESSION['review_comp'];
-
+  echo     $review_comp;
   if($review_comp == NULL || $review_comp != $compID){
     echo "<script>alert('You can't write a review because you are not associated.');
             window.location.href='../progress_report.php';</script>";
