@@ -28,10 +28,10 @@ $qry1 = "DELETE FROM `studentrequest` where studentID = ".$studentID.";";
 mysqli_query($conn, $qry1);
 
 $qry2 = "UPDATE student
-SET
-    compID = ".$compID.",
-    review_comp = ".$review_comp."
-WHERE
+  SET
+    compID = '".$compID."',
+    review_comp = '".$review_comp."'
+  WHERE
     studentID = ".$studentID.";";
 
 mysqli_query($conn, $qry2);
