@@ -81,7 +81,7 @@ else{
                                 <p id="file-upload-filename" class="text-muted m-0 align-self-center">Attach file</p>
                                 <button type="button" id="AttachmentButton" class="btn btn-primary">Browse</button>
                             </div>
-                            <div class="form-text">Accepted extentions: .pdf, file size should not exceed 10mb.</div>
+                            <div class="form-text">Accepted extentions: .pdf, file size should not exceed 10 MB.</div>
                             <script>
                                 $("#AttachmentButton").click(function (e) {
                                     $("#inputAttachment").click();
