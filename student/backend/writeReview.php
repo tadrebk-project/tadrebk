@@ -20,9 +20,9 @@ $text = "";
 if (isset($_POST['add_review'])) {
 
   $compID = $_GET['compID'];
-  $review_comp = "SELECT review_comp FROM student WHERE studentID = ".$_SESSION['studentid'];
+  $review_comp = "SELECT review_comp FROM student WHERE userID = ".$_SESSION['userID'];
   echo     $review_comp;
-  
+
   if($review_comp == NULL || $review_comp != $compID){
     echo "<script>alert('You can't write a review because you are not associated.');
             window.location.href='../progress_report.php';</script>";
