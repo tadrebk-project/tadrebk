@@ -77,7 +77,7 @@ if($result=mysqli_query($conn, $query)){
                                                 <p class='my-0'>Majors: $strm</p>
                                             </div>
                                             <div class='col d-flex justify-content-end align-items-center'>
-                                                <a href='#' class='text-decoration-none'>
+                                                <a href='applications.php?compID=".$row['compID']."' class='text-decoration-none'>
                                                     <i class='d-flex align-items-center bi bi-arrow-right-square-fill me-3'
                                                         style='font-size: 1.5em;'></i>
                                                 </a>
