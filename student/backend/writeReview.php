@@ -20,7 +20,7 @@ $review_comp = $_SESSION['review_comp'];
 
 if (isset($_POST['add_review'])) {
 
-  if($compID != $review_comp ){
+  if($review_comp == NULL || $review_comp != $compID){
     echo "<script>alert('You can't write a review because you are not associated.');
             window.location.href='../progress_report.php';</script>";
             return;
@@ -33,6 +33,7 @@ if (isset($_POST['add_review'])) {
     mysqli_query($conn, $query);
   }
 }
+
 mysqli_close($conn);
 header('location: ../Company_desc.php?compID='.$_GET['compID']);
 ?>
