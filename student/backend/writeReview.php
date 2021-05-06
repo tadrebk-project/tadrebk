@@ -17,9 +17,7 @@ else{
 $text = "";
 $compID = $_GET['compID'];
 $studentID = $_SESSION['studentID'];
-$query0 = mysql_query("SELECT review_comp FROM student WHERE studentID = '$studentID'");
-mysqli_query($conn, $query0);
-$result = mysql_fetch_assoc($query0);
+$result =  $_SESSION['review_comp'];
 
   echo   $result;
 
