@@ -104,10 +104,10 @@ if (file_exists("../general_backend/sessionStart.php")) {
                 <a href="companies.php" class="text-decoration-none">
                     <div class="card" style="height: 20rem;">
                         <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: clamp(8em, 10vw, 12em); z-index: 100;">
-                            <i class="bi bi-list-ul"></i>
+                            <i class="bi bi-building"></i>
                         </div>
                         <div class="card-body d-flex align-items-end">
-                                <p class="text mb-0 text-truncate">Companies</p>
+                            <p class="text mb-0 text-truncate">Companies</p>
                         </div>
                     </div>
                 </a>
