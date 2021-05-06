@@ -15,6 +15,7 @@ else{
 
 $searchString = mysqli_real_escape_string($conn, $_POST["searchString"]);
 $majorID = mysqli_real_escape_string($conn, $_POST["majorID"]);
+$majorID2 = mysqli_real_escape_string($conn, $_POST["majorID"]);
 $location = mysqli_real_escape_string($conn, $_POST["location"]);
 $trainingType = mysqli_real_escape_string($conn, $_POST["trainingType"]);
 
@@ -25,7 +26,7 @@ if($location!=""){
     $location = " and c.location like '%".$location."%'";
 }
 if($majorID!=""){
-    $majorID = " and m.MID = '".$majorID."'";
+    $majorID = " and r.MID = '".$majorID."'";
 }
 if($trainingType!=""){
     $trainingType = " and a.trainingType like '%".$trainingType."%'";
@@ -39,16 +40,16 @@ if($result=mysqli_query($conn, $query)){
         $stra = "";
         while($row=mysqli_fetch_array($result)){
 
-            $query = "SELECT * FROM application where compID=" . $row['compID'];
+            $query = "SELECT DISTINCT a.* FROM application a LEFT JOIN requiredmajors r on a.appID = r.appID where a.compID=".$row['compID']."$trainingType$majorID";
             if ($resulta = mysqli_query($conn, $query)) {
                 if (mysqli_num_rows($resulta) > 0) {
                     $stra = "";
                     while ($rowa = mysqli_fetch_array($resulta)) {
-                        $trainingType = "";
+                        $trainingType2 = "";
                         if ($rowa['trainingType'] == 'summer') {
-                            $trainingType = "Summer Training";
+                            $trainingType2 = "Summer Training";
                         } elseif ($rowa['trainingType'] == 'COOP') {
-                            $trainingType = "CO-OP";
+                            $trainingType2 = "CO-OP";
                         }
                         $strm = "";
                         $query2 = "SELECT name from major where MID in (SELECT MID from requiredmajors where appID = '" . $rowa['appID'] . "')";
@@ -71,7 +72,7 @@ if($result=mysqli_query($conn, $query)){
                                                 <p class='my-0'>" . $rowa['name'] . "</p>
                                             </div>
                                             <div class='col'>
-                                                <p class='my-0'>Training type: $trainingType</p>
+                                                <p class='my-0'>Training type: $trainingType2</p>
                                             </div>
                                             <div class='col'>
                                                 <p class='my-0'>Majors: $strm</p>
