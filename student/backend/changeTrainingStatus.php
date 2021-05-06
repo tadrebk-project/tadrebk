@@ -22,7 +22,7 @@ if (isset($_POST['acceptTraining'])) {
 
 
 $compID = $_GET['compID'];
-$review_comp = $_GET['compID'];
+$review_comp = $compID;
 $studentID = $_SESSION['studentid'];
 $qry1 = "DELETE FROM `studentrequest` where studentID = ".$studentID.";";
 mysqli_query($conn, $qry1);
