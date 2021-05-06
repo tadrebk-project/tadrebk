@@ -17,10 +17,12 @@ else{
 $text = "";
 $compID = $_GET['compID'];
 $studentID = $_SESSION['studentID'];
-$review_comp = mysql_query("SELECT review_comp FROM student WHERE studentID = '$studentID'");
-$result = mysql_fetch_array($review_comp);
+$query0 = mysql_query("SELECT review_comp FROM student WHERE studentID = '$studentID'");
+mysqli_query($conn, $query0);
+$result = mysql_fetch_assoc($query0);
 
   echo   $result;
+
 if (isset($_POST['add_review'])) {
 
 
@@ -38,6 +40,6 @@ if (isset($_POST['add_review'])) {
   }
 }
 
-mysqli_close($conn);
-header('location: ../Company_desc.php?compID='.$_GET['compID']);
+//mysqli_close($conn);
+//header('location: ../Company_desc.php?compID='.$_GET['compID']);
 ?>
