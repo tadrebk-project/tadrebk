@@ -18,8 +18,10 @@ $text = "";
 
 
 if (isset($_POST['add_review'])) {
-  
+
   $compID = $_GET['compID'];
+  echo   $compID;
+
   $review_comp = $_SESSION['review_comp'];
 
   if($review_comp == NULL || $review_comp != $compID){
@@ -36,6 +38,6 @@ if (isset($_POST['add_review'])) {
   }
 }
 
-mysqli_close($conn);
-header('location: ../Company_desc.php?compID='.$_GET['compID']);
+//mysqli_close($conn);
+//header('location: ../Company_desc.php?compID='.$_GET['compID']);
 ?>
