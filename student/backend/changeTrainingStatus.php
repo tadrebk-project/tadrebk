@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if(file_exists("../general_backend/sessionStart.php")){
     require "../general_backend/sessionStart.php";
     require "../general_backend/conn.php";
@@ -22,13 +22,15 @@ if (isset($_POST['acceptTraining'])) {
 
 
 $compID = $_GET['compID'];
+$review_comp = $_GET['compID'];
 $studentID = $_SESSION['studentid'];
 $qry1 = "DELETE FROM `studentrequest` where studentID = ".$studentID.";";
 mysqli_query($conn, $qry1);
 
 $qry2 = "UPDATE student
 SET
-    compID = ".$compID."
+    compID = ".$compID.",
+    review_comp = ".$review_comp."
 WHERE
     studentID = ".$studentID.";";
 
