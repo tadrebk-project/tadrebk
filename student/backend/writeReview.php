@@ -15,14 +15,14 @@ else{
 
 // initializing variables
 $text = "";
-$studentID = mysqli_real_escape_string($conn, $_POST['studentID']);
+$compID = $_GET['compID'];
+$studentID = $_SESSION['studentID'];
+$review_comp = mysql_query("SELECT review_comp FROM student WHERE studentID = '$studentID'");
+$result = mysql_fetch_array($review_comp);
 
-
+  echo   $result;
 if (isset($_POST['add_review'])) {
 
-  $compID = $_GET['compID'];
-  $review_comp = "SELECT review_comp FROM student WHERE studentID = ".$studentID;
-  echo   $review_comp;
 
   if($review_comp == NULL || $review_comp != $compID){
     echo "<script>alert('You can't write a review because you are not associated.');
@@ -38,6 +38,6 @@ if (isset($_POST['add_review'])) {
   }
 }
 
-//mysqli_close($conn);
-//header('location: ../Company_desc.php?compID='.$_GET['compID']);
+mysqli_close($conn);
+header('location: ../Company_desc.php?compID='.$_GET['compID']);
 ?>
