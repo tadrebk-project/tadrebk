@@ -119,8 +119,8 @@ if (file_exists("../general_backend/sessionStart.php")) {
                     $reportPage_a2 = "</a>";
                     $alertE = "";
                 } else {
-                    $reportPage_a = "";
-                    $reportPage_a2 = "";
+                    $reportPage_a = "<a href='' class='text-decoration-none'>";
+                    $reportPage_a2 = "</a>";
                     $alertE = "onclick='alert(\"You are not associated with a company!\");'";
                 }
                 ?>
