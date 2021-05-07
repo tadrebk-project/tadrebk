@@ -25,10 +25,7 @@ if (isset($_POST['saveButton'])) {
 
     if ($checkemail) {
         mysqli_close($conn);
-        //$error= "Email is already used by another user!";
-        echo "kkk";
         echo "<script>alert('Email is already used by another user!'); window.location.href='../profile.php';</script>";
-        echo"teset";
 
     }
     else{
@@ -43,7 +40,8 @@ if (isset($_POST['saveButton'])) {
 
         mysqli_query($conn, $query);
         mysqli_close($conn);
+        header('location: ../profile.php');
     }
 }
-//header('location: ../profile.php');
+
 ?>
