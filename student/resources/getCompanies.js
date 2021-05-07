@@ -10,6 +10,9 @@ $(document).ready(function(){
 			url:"backend/getCompanies.php",
 			method:"post",
 			data:{majorID:majorID,location:location,trainingType:trainingType,searchString:searchString},
+			beforeSend: function(){
+				$('#companiesList').html("Loading...");
+			},
 			success:function(data)
 			{
 				$('#companiesList').html(data);
