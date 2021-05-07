@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if(file_exists("../general_backend/sessionStart.php")){
     require "../general_backend/sessionStart.php";
     require "../general_backend/conn.php";
@@ -22,11 +22,21 @@ if (isset($_POST['saveButton'])) {
     $result = mysqli_query($conn, $email_check_query);
     $checkemail = mysqli_fetch_assoc($result);
 
-    if ($checkemail) { 
+    if ($checkemail) {
+      $studentID = $_SESSION['studentid'];
+
+      $query = "UPDATE student
+          SET
+          name = '".$name."',
+          phoneNum = '".$phone."'
+          WHERE
+          studentID = ".$studentID.";";
+
+        mysqli_query($conn, $query);
         mysqli_close($conn);
+
         $error= "Email is already used by another user!";
-        echo "<script type='text/javascript'>alert('$error');</script>;
-        <script type='text/javascript'>window.location.href = '../profile.php';</script>";
+        echo "<script>alert('$error'); window.location.href = '../profile.php';</script>";
     }
     else{
         $studentID = $_SESSION['studentid'];
