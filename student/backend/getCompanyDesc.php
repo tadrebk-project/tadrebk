@@ -20,12 +20,14 @@ if($result=mysqli_query($conn, $query)){
         //(here table)
         $str ="";
         while($row=mysqli_fetch_array($result)){
-            $str .= "<div class='container-sm company-container'>
+            $str .= "<div class='container-sm company-container p-sm-3 py-2 my-4'>
             <div class='row'>
-                <div class='col-9 col-md-10'>
-                    <h2>".$row['name']."</h2>
+                <div class='col-8'>
+                    <a href='".$row['website']."' class='text-decoration-none' target='_blank'>
+                        <h2>".$row['name']."</h2>
+                    </a>
                 </div>
-                <div class='col-2 col-md-2'>
+                <div class='col-4 text-center'>
                 <button class='btn btn-primary align-self-center' onclick='window.location.href=".'"applications.php?compID='.$_GET['compID'].'"'."'>View Applications</button>
                 </div>
             </div>

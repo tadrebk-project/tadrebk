@@ -76,7 +76,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <!-- company description -->
     <?php include "backend/getCompanyDesc.php"; ?>
     <!-- reviews container -->
-    <div class="container company-reviews">
+    <div class="container company-reviews p-sm-3 py-2">
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link tap-btn mx-1 active" id="pills-reviews-tab" data-bs-toggle="pill" data-bs-target="#pills-reviews" type="button" role="tab" aria-controls="pills-reviews" aria-selected="true">Reviews</button>
@@ -90,7 +90,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
-                <div class="row reviews-container">
+                <div class="row">
                     <div class="col">
                         <div class="card card-body">
                             <div class="row">
@@ -108,7 +108,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     <form action="backend/writeReview.php?compID=<?php echo $_GET['compID'] ?>" method="post">
                                         <textarea class="form-control" id="reviewText" name="reviewText" rows="3"></textarea>
                                         <div class="col">
-                                            <button type="submit" class="btn btn-primary" id="add_review" name="add_review">Submit</button>
+                                            <button type="submit" class="btn btn-primary float-end my-1" id="add_review" name="add_review">Submit</button>
                                         </div>
                                     </form>
                                 </div>
