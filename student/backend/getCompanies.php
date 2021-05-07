@@ -89,7 +89,7 @@ if($result=mysqli_query($conn, $query)){
                             </div>";
                     }
                 } else {
-                    $stra = "";
+                    $stra = "No applications available";
                 }
             }
             else{
