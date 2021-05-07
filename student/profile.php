@@ -138,7 +138,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <label for="InputPhone" class="form-label">Phone number</label>
                                 <input type="tel" name="phone"  placeholder="05XXXXXXXX" value="<?php if ($phone != 0) {
                                                                                                     echo $phone;
-                                                                                                } ?>" class="form-control" id="InputPhone" pattern="[0][5][0-9].{8}" disabled required>
+                                                                                                } ?>" class="form-control" id="InputPhone" pattern="[0][5][0-9]{8}" disabled required>
                             </div>
                             <div class="mb-3">
                                 <label for="InputEmail" class="form-label">Email</label>
