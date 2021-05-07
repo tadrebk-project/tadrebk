@@ -80,13 +80,13 @@ if (file_exists("../general_backend/sessionStart.php")) {
                     <div class="card-body">
                         <form action="backend/updateProfileImage.php" method="post" enctype="multipart/form-data">
                             <div class="mx-auto d-block" id="profile-container">
-                                <img id="profileImage" src="../profileImages/<?php echo $picRef; ?>" class="rounded-circle" alt="Profile Photo" height="250px" width="250px">
+                                <img id="profileImage" src="../profileImages/<?php echo $picRef; ?>" class="rounded-circle" alt="Profile Photo" height="250" width="250">
                                 <div id="ChangeImageOverlay">
                                     <i class="bi bi-arrow-up-circle"></i>
                                     <div>Change Image</div>
                                 </div>
                             </div>
-                            <input class="visually-hidden" id="imageUpload" type="file" name="imageUpload" placeholder="Photo" required="" capture accept="image/*" />
+                            <input class="visually-hidden" id="imageUpload" type="file" name="imageUpload" required="" capture="user" accept="image/*" />
                             <script>
                                 $("#ChangeImageOverlay").click(function(e) {
                                     $("#imageUpload").click();
@@ -138,11 +138,11 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                 <label for="InputPhone" class="form-label">Phone number</label>
                                 <input type="tel" name="phone" placeholder="05XXXXXXXX" value="<?php if ($phone != 0) {
                                                                                                     echo $phone;
-                                                                                                } ?>" class="form-control" id="InputPhone" pattern="[0][5][0-9]{8}" aria-describedby="phonelHelp" disabled required>
+                                                                                                } ?>" class="form-control" id="InputPhone" pattern="[0][5][0-9]{8}" disabled required>
                             </div>
                             <div class="mb-3">
                                 <label for="InputEmail" class="form-label">Email</label>
-                                <input type="email" name="email" placeholder="email@domain.com" value="<?php echo $email; ?>" class="form-control" id="InputEmail" aria-describedby="emailHelp" disabled required>
+                                <input type="email" name="email" placeholder="email@domain.com" value="<?php echo $email; ?>" class="form-control" id="InputEmail" disabled required>
                             </div>
                             <script>
                                 var enable = false;
@@ -196,7 +196,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     }
                                     ?>
                                     <button type="button" id="CVUploadButton" class="btn btn-primary">Upload</button>
-                                    <input class="visually-hidden" id="CVUpload" type="file" name="CVUpload" placeholder="CV" required="" capture accept=".pdf" />
+                                    <input class="visually-hidden" id="CVUpload" type="file" name="CVUpload" required="" capture="environment" accept=".pdf" />
                                     <script>
                                         $("#CVUploadButton").click(function(e) {
                                             $("#CVUpload").click();

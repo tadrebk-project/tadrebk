@@ -89,7 +89,7 @@ else{
                         <div class="mb-3">
                             <label for="inputAttachment" class="form-label">Attachment</label>
                             <input class="form-control visually-hidden" type="file" id="inputAttachment"
-                                name="inputAttachment" placeholder="progress report" required="" capture accept=".pdf">
+                                name="inputAttachment" required="" capture="environment" accept=".pdf">
                             <div class="dashed-border p-1 d-flex justify-content-between">
                                 <p id="file-upload-filename" class="text-muted m-0 align-self-center">Attach file</p>
                                 <button type="button" id="AttachmentButton" class="btn btn-primary">Browse</button>

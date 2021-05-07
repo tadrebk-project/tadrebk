@@ -155,7 +155,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                         <input type="text" disabled class="form-control" id="inputPassword" name="inputPassword" pattern="^(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$" title="Must contain at least one number and one special character, and at least 10 or more characters" required>
                                     </div>
                                 </div>
-                                <script type="text/javascript">
+                                <script>
                                     inputStudentID.addEventListener('keyup', function() {
                                         if ($('#inputStudentID').val()) {
                                             document.getElementById('inputUsername').disabled = !this.value
@@ -180,7 +180,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <div class="px-3 pt-3">
                             <form action="backend/registerStudents.php" method="post" enctype="multipart/form-data" lang="en">
                                 <label for="inputCSV" class="form-label">Upload CSV file</label><br>
-                                <input class="form-control visually-hidden" type="file" id="inputCSV" name="inputCSV" placeholder="progress report" required="" capture accept=".csv">
+                                <input class="form-control visually-hidden" type="file" id="inputCSV" name="inputCSV" required="" capture="environment" accept=".csv">
                                 <div class="dashed-border p-1 d-flex justify-content-between">
                                     <p id="file-upload-filename" class="text-muted m-0 align-self-center">CSV file</p>
                                     <button type="button" id="CSVButton" class="btn btn-primary">Browse</button>

@@ -37,7 +37,7 @@ if($result=mysqli_query($conn, $query)){
                 ".$row["summary"]."
             </td>
             <td>".str_replace('-','/',$row['date'])."</td>
-            <td><a href='../progressReports/".$row['fileRef']."' target='_blank''>Download</a></td>
+            <td><a href='../progressReports/".$row['fileRef']."' target='_blank'>Download</a></td>
         </tr>";
         $num++;
         }

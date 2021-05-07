@@ -59,7 +59,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div class="container d-flex mx-auto flex-column">
                 <nav class="nav nav-masthead justify-content-center float-md">
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="manageStudents.php">Students</a>
-                    <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="manageCompanies.php">Companies</a>
+                    <a class="nav-link btn btn-outline-primary nav-btn active" aria-current="page" href="manageCompanies.php">Companies</a>
                     <a class="nav-link btn btn-outline-primary nav-btn" aria-current="page" href="manageInstructors.php">Instructors</a>
                 </nav>
             </div>

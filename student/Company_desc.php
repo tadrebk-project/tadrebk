@@ -98,7 +98,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     <h3>Reviews</h3>
                                 </div>
                                 <div class="col-5 col-md-3 col-lg-3">
-                                    <button class="btn btn-primary" data-bs-toggle="collapse" href="#writeReview" role="button" aria-expanded="false" aria-controls="writeReview">Write a review</button>
+                                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#writeReview" aria-expanded="false" aria-controls="writeReview">Write a review</button>
                                 </div>
                             </div>
 

@@ -124,7 +124,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                         <input type="text" disabled class="form-control" id="inputPassword" name="inputPassword" pattern="^(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$" title="Must contain at least one number and one special character, and at least 10 or more characters" required>
                                     </div>
                                 </div>
-                                <script type="text/javascript">
+                                <script>
                                     inputName.addEventListener('keyup', function() {
                                         if ($('#inputName').val()) {
                                             document.getElementById('inputUsername').disabled = !this.value
