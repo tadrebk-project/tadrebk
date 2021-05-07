@@ -25,8 +25,9 @@ if (isset($_POST['saveButton'])) {
 
     if ($checkemail) {
         mysqli_close($conn);
-        $error= "Email is already used by another user!";
-        echo "<script>alert('$error'); window.location.href = '../profile.php';</script>";
+        //$error= "Email is already used by another user!";
+        echo "<script>alert('Email is already used by another user!'); window.location.href='../profile.php';</script>";
+
     }
     else{
 
