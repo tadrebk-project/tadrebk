@@ -191,7 +191,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                         echo "<div class='align-self-center'>Upload your CV...</div>";
                                     } else {
                                         $CVLink = "../cv/" . $CVFileRef;
-                                        $CVLink = "<a id='file-upload-filename' class='align-self-center' href='" . $CVLink . "'>" . $CVFileRef . "</a>";
+                                        $CVLink = "<a id='file-upload-filename' class='align-self-center' href='" . $CVLink . "' target='_blank'>" . $CVFileRef . "</a>";
                                         echo $CVLink;
                                     }
                                     ?>
