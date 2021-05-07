@@ -86,7 +86,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                     <div>Change Image</div>
                                 </div>
                             </div>
-                            <input class="visually-hidden" id="imageUpload" type="file" name="imageUpload" required="" capture="user" accept="image/x-png,image/gif,image/jpeg" />
+                            <input class="visually-hidden" id="imageUpload" type="file" name="imageUpload" required="" capture="user" accept="image/*" />
                             <script>
                                 $("#ChangeImageOverlay").click(function(e) {
                                     $("#imageUpload").click();
