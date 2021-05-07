@@ -18,14 +18,14 @@ if(isset($_POST["filterStudents"])){
     $gpa = mysqli_real_escape_string($conn, $_POST["gpa"]);
     $appID = mysqli_real_escape_string($conn, $_POST["appID"]);
     if($majorID==''){
-        $query = "SELECT r.studentID, r.appID, s.name as name, s.CVFileRef, m.name as major, s.gpa, s.CVFileRef, a.trainingType FROM studentrequest r join application a on r.appID = a.appID join student s on s.studentID = r.studentID join major m on m.MID = s.MID where a.appID = ".$appID." and s.gpa >= ".$gpa." and r.status = 'Pending' and a.compID = ".$_SESSION["compID"];
+        $query = "SELECT r.studentID, r.appID, s.name as name, s.CVFileRef, m.name as major, s.gpa, s.CVFileRef, a.trainingType FROM studentrequest r join application a on r.appID = a.appID join student s on s.studentID = r.studentID join major m on m.MID = s.MID where a.appID = ".$appID." and s.gpa >= ".$gpa." and r.status = 'Pending' and a.compID = ".$_SESSION["compID"]." order by s.name";
     }
     else{
-        $query = "SELECT r.studentID, r.appID, s.name as name, s.CVFileRef, m.name as major, s.gpa, s.CVFileRef, a.trainingType FROM studentrequest r join application a on r.appID = a.appID join student s on s.studentID = r.studentID join major m on m.MID = s.MID where a.appID = ".$appID." and s.MID = ".$majorID." and s.gpa >= ".$gpa." and r.status = 'Pending' and a.compID = ".$_SESSION["compID"];
+        $query = "SELECT r.studentID, r.appID, s.name as name, s.CVFileRef, m.name as major, s.gpa, s.CVFileRef, a.trainingType FROM studentrequest r join application a on r.appID = a.appID join student s on s.studentID = r.studentID join major m on m.MID = s.MID where a.appID = ".$appID." and s.MID = ".$majorID." and s.gpa >= ".$gpa." and r.status = 'Pending' and a.compID = ".$_SESSION["compID"]." order by s.name";
     }
 }
 else{
-    $query = "SELECT r.studentID, r.appID, s.name as name, s.CVFileRef, m.name as major, s.gpa, s.CVFileRef, a.trainingType FROM studentrequest r join application a on r.appID = a.appID join student s on s.studentID = r.studentID join major m on m.MID = s.MID where a.appID = ".$_GET["appID"]." and r.status = 'Pending' and a.compID = ".$_SESSION["compID"];
+    $query = "SELECT r.studentID, r.appID, s.name as name, s.CVFileRef, m.name as major, s.gpa, s.CVFileRef, a.trainingType FROM studentrequest r join application a on r.appID = a.appID join student s on s.studentID = r.studentID join major m on m.MID = s.MID where a.appID = ".$_GET["appID"]." and r.status = 'Pending' and a.compID = ".$_SESSION["compID"]." order by s.name";
 }
 
 if($result=mysqli_query($conn, $query)){
