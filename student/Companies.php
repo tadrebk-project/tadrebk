@@ -105,8 +105,8 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="input-group">
-                                <input id="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                <input id="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="searchComp">
+                                <button class="btn btn-outline-secondary" type="button" id="searchComp">
                                     <i class="bi bi-search d-flex justify-content-center align-items-center"></i>
                                 </button>
                             </div>

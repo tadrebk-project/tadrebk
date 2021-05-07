@@ -16,11 +16,12 @@ $(document).ready(function(){
 			success:function(data)
 			{
 				$('#companiesList').html(data);
+				$('#search').val("");
 			}
 		});
 	}
 
-	$('#search').keyup(function(){
+	$('#searchComp').click(function(){
 		get_data();
 	});
 	$('#majorSelect').change(function(){
