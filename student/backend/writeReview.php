@@ -17,7 +17,6 @@ else{
 $text = "";
 $compID = $_GET['compID'];
 settype($review_comp, "integer");
-//$review_comp = mysqli_real_escape_string($conn, $_POST['review_comp']);;
 
 $query0 = "SELECT review_comp FROM student where studentID= ".$_SESSION['studentid'];
 if($result=mysqli_query($conn, $query0)){
