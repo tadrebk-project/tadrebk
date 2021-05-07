@@ -25,7 +25,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
 
     <link rel="stylesheet" href="project.css">
 
-    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png"/>
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png" />
     <title>Home</title>
 </head>
 
@@ -115,25 +115,23 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div class="col">
                 <?php
                 if ($_SESSION["compID"] != "") {
-                    $reportPage_a = "<a href='progress_report.php' class='text-decoration-none'>";
-                    $reportPage_a2 = "</a>";
+                    $reportPage_href = "progress_report.php";
                     $alertE = "";
                 } else {
-                    $reportPage_a = "<a href='' class='text-decoration-none'>";
-                    $reportPage_a2 = "</a>";
+                    $reportPage_href = "#";
                     $alertE = "onclick='alert(\"You are not associated with a company!\");'";
                 }
                 ?>
-                <?php echo $reportPage_a; ?>
-                <div class="card" style="height: 20rem;" <?php echo $alertE; ?>>
-                    <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: clamp(8em, 10vw, 12em); z-index: 100;">
-                        <i class="bi bi-file-earmark-arrow-up"></i>
+                <a href='<?php echo $reportPage_href ?>' class='text-decoration-none'>
+                    <div class="card" style="height: 20rem;" <?php echo $alertE; ?>>
+                        <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: clamp(8em, 10vw, 12em); z-index: 100;">
+                            <i class="bi bi-file-earmark-arrow-up"></i>
+                        </div>
+                        <div class="card-body d-flex align-items-end">
+                            <p class="text mb-0 text-truncate">Progress Report</p>
+                        </div>
                     </div>
-                    <div class="card-body d-flex align-items-end">
-                        <p class="text mb-0 text-truncate">Progress Report</p>
-                    </div>
-                </div>
-                <?php echo $reportPage_a2; ?>
+                </a>
             </div>
 
         </div>
