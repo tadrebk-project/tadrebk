@@ -36,7 +36,6 @@ if($result=mysqli_query($conn, $query0)){
 
 if (isset($_POST['add_review'])) {
   if($review_comp == 0 || $review_comp != $compID){
-          echo "test";
           echo "<script>alert('You can't write a review because you are not associated.');
                   window.location.href='../Company_desc.php?compID=".$_GET['compID']."';</script>";
   }
@@ -51,6 +50,6 @@ if (isset($_POST['add_review'])) {
 }
 
 mysqli_close($conn);
-//header('location: ../Company_desc.php?compID='.$_GET['compID']);
+header('location: ../Company_desc.php?compID='.$_GET['compID']);
 
 ?>
