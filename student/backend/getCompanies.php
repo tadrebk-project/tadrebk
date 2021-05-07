@@ -89,8 +89,23 @@ if($result=mysqli_query($conn, $query)){
                             </div>";
                     }
                 } else {
-                    $stra = "";
+                    $stra .="<div class='collapse' id='collapse".$row['compID']."'>
+                                <div class='card ms-4 mb-1'>
+                                    <div class='card-body p-1'>
+                                        No applications available
+                                    </div>
+                                </div>
+                            </div>";
                 }
+            }
+            else{
+                $stra .="<div class='collapse' id='collapse".$row['compID']."'>
+                                <div class='card ms-4 mb-1'>
+                                    <div class='card-body p-1'>
+                                        No applications available
+                                    </div>
+                                </div>
+                            </div>";
             }
 
             $str .='
