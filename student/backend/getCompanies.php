@@ -92,6 +92,9 @@ if($result=mysqli_query($conn, $query)){
                     $stra = "";
                 }
             }
+            else{
+                $stra = "No applications available";
+            }
 
             $str .='
             <div class="card my-1">
