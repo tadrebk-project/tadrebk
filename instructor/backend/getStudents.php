@@ -19,6 +19,15 @@ if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
         $str ="";
         while($row=mysqli_fetch_array($result)){
+            $hasPReport = False;
+            $Report = "";
+            $query0 = "SELECT RID FROM progressreport where studentID= ".$row['studentID'];
+            if($result2=mysqli_query($conn, $query0)){
+                if(mysqli_num_rows($result2)>0){
+                    $hasPReport = True;
+                }
+            }
+
             if($row['details']==""){
                 $details = "<div class='col text-center'>
                                 No company feedback
@@ -26,18 +35,25 @@ if($result=mysqli_query($conn, $query)){
             }
             else{
                 $details = "<div class='col text-center'>
-                <a class='my-0' data-bs-toggle='collapse' href='#collapse".$row['studentID']."' role='button'>View</a>
-            </div>
-        </div>
-        <div class='collapse' id='collapse".$row['studentID']."'>
-            <div class='card card-body mt-3'>
-                ".$row['details']."
-                <br>
-                <div class='d-flex justify-content-end'>-
-                    ".$row['company']."
-                </div>
-            </div>
-        </div>";
+                            <a class='my-0' data-bs-toggle='collapse' href='#collapse".$row['studentID']."' role='button'>View</a>
+                        </div>
+                    </div>
+                    <div class='collapse' id='collapse".$row['studentID']."'>
+                        <div class='card card-body mt-3'>
+                            ".$row['details']."
+                            <br>
+                            <div class='d-flex justify-content-end'>-
+                                ".$row['company']."
+                            </div>
+                        </div>
+                    </div>";
+            }
+
+            if($hasPReport){
+                $Report = "<a class='my-0' href='progressReport.php?studentID=".$row['studentID']."'>View</a>";
+            }
+            else{
+                $Report = "No progress reports";
             }
 
             $str .= "<div class='card card-body my-1'>
@@ -49,7 +65,7 @@ if($result=mysqli_query($conn, $query)){
                     ".$row['major']."
                 </div>
                 <div class='col text-center'>
-                    <a class='my-0' href='progressReport.php?studentID=".$row['studentID']."'>View</a>
+                    $Report
                 </div>
                     $details
         </div>";
