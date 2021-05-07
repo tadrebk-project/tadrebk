@@ -25,7 +25,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
 
     <link rel="stylesheet" href="project.css">
 
-    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png"/>
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png" />
     <title>Home</title>
 </head>
 
@@ -78,11 +78,9 @@ if (file_exists("../general_backend/sessionStart.php")) {
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5">
             <div class="col">
                 <a href="profile.php" class="text-decoration-none">
-                    <div class="card" style="height: 20rem;">
-                        <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: clamp(8em, 10vw, 12em); z-index: 100;">
-                            <i class="bi bi-person-circle"></i>
-                        </div>
-                        <div class="card-body d-flex align-items-end">
+                    <div class="card">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-person-circle d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Profile</p>
                         </div>
                     </div>
@@ -90,11 +88,9 @@ if (file_exists("../general_backend/sessionStart.php")) {
             </div>
             <div class="col">
                 <a href="ViewRequestStatus.php" class="text-decoration-none">
-                    <div class="card" style="height: 20rem;">
-                        <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: clamp(8em, 10vw, 12em); z-index: 100;">
-                            <i class="bi bi-arrow-left-right"></i>
-                        </div>
-                        <div class="card-body d-flex align-items-end">
+                    <div class="card">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-arrow-left-right d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Requests</p>
                         </div>
                     </div>
@@ -102,11 +98,9 @@ if (file_exists("../general_backend/sessionStart.php")) {
             </div>
             <div class="col">
                 <a href="companies.php" class="text-decoration-none">
-                    <div class="card" style="height: 20rem;">
-                        <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: clamp(8em, 10vw, 12em); z-index: 100;">
-                            <i class="bi bi-building"></i>
-                        </div>
-                        <div class="card-body d-flex align-items-end">
+                    <div class="card">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-building d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Companies</p>
                         </div>
                     </div>
@@ -123,11 +117,9 @@ if (file_exists("../general_backend/sessionStart.php")) {
                 }
                 ?>
                 <a href='<?php echo $reportPage_href ?>' class='text-decoration-none'>
-                    <div class="card" style="height: 20rem;" <?php echo $alertE; ?>>
-                        <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: clamp(8em, 10vw, 12em); z-index: 100;">
-                            <i class="bi bi-file-earmark-arrow-up"></i>
-                        </div>
-                        <div class="card-body d-flex align-items-end">
+                    <div class="card" <?php echo $alertE; ?>>
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-file-earmark-arrow-up d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Progress Report</p>
                         </div>
                     </div>
