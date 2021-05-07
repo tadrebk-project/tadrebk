@@ -90,7 +90,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
 
             <div class="card my-3">
                 <div class="card-body">
-                    <div class="row row-cols-5 g-1 g-sm-4">
+                    <div class="row row-cols-4 g-1 g-sm-4 px-sm-2">
                         <div class="col">
                             Company
                         </div>
@@ -100,7 +100,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                         <div class="col">
                             Status
                         </div>
-                        <div class="col">
+                        <div class="col text-center">
                             Request
                         </div>
                     </div>

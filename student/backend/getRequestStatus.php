@@ -36,16 +36,13 @@ if($result=mysqli_query($conn, $query)){
                                 ".$row['status']."
                             </div>
                             </div>
-                            <div class='col'>
+                            <div class='col text-center'>
                                 <form action='backend/changeTrainingStatus.php?compID=".$row['compID']."' method='post'>
                                 <textarea name='appID' hidden>".$row['appID']."</textarea>
                                 <textarea name='studentID' hidden>".$row['studentID']."</textarea>
-                                <button class='btn btn-primary' id='acceptTraining' name='acceptTraining'>Accept</button>
-                                </div>
-                                <div class='col'>
-                                <button class='btn btn-primary' name='rejectTraining'>Reject</button>
-                                </form>
-                                </div>  "; 
+                                <button class='btn btn-primary mb-1' id='acceptTraining' name='acceptTraining' style='width: 5rem;'>Accept</button>
+                                <button class='btn btn-primary mb-1' name='rejectTraining' style='width: 5rem;'>Reject</button>
+                                </form>"; 
                             }
                             elseif($row['status'] == 'Rejected'){
                                 $colour = 'red';
@@ -55,10 +52,10 @@ if($result=mysqli_query($conn, $query)){
                             }
 
                             
-            $str .= "<div class='col'>
-            <div class='card my-1'>
-                <div class='card-body'>
-                    <div class='row row-cols-5'>
+            $str .= "
+            <div class='card my-2'>
+                <div class='card-body p-1'>
+                    <div class='row row-cols-4 g-1'>
                         <div class='col'>
                             <p class='my-0'>".$row['compName']."</p>
                         </div>
@@ -72,9 +69,7 @@ if($result=mysqli_query($conn, $query)){
                           ".$str2."
                     </div>
                     
-                </div>
-                
-    </div>";
+                </div>";
         }
 
         echo $str;
