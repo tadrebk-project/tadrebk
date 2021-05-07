@@ -16,19 +16,31 @@ else{
 // initializing variables
 $text = "";
 $compID = $_GET['compID'];
-$studentID = $_SESSION['studentID'];
-$result =  $_SESSION['review_comp'];
+settype($review_comp, "integer");
+//$review_comp = mysqli_real_escape_string($conn, $_POST['review_comp']);;
 
-  echo   $studentID;
+$query0 = "SELECT review_comp FROM student where studentID= ".$_SESSION['studentid'];
+if($result=mysqli_query($conn, $query0)){
+    if(mysqli_num_rows($result)>0){
+        //(here table)
+        while($row=mysqli_fetch_array($result)){
+          if($row['review_comp'] == NULL){
+            $review_comp = 0;
+          }else{
+            $review_comp = $row['review_comp'];
+
+          }
+        }
+    }
+  }
 
 if (isset($_POST['add_review'])) {
-
-
-  if($review_comp == NULL || $review_comp != $compID){
-    echo "<script>alert('You can't write a review because you are not associated.');
-            window.location.href='../progress_report.php';</script>";
-            return;
+  if($review_comp == 0 || $review_comp != $compID){
+          echo "test";
+          echo "<script>alert('You can't write a review because you are not associated.');
+                  window.location.href='../Company_desc.php?compID=".$_GET['compID']."';</script>";
   }
+
   else{
     $text = mysqli_real_escape_string($conn, $_POST['reviewText']);
     $studentName = $_SESSION['studentName'];
@@ -38,6 +50,7 @@ if (isset($_POST['add_review'])) {
   }
 }
 
-//mysqli_close($conn);
+mysqli_close($conn);
 //header('location: ../Company_desc.php?compID='.$_GET['compID']);
+
 ?>

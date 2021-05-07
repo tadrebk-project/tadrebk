@@ -37,6 +37,7 @@ $qry2 = "UPDATE student
 mysqli_query($conn, $qry2);
 $_SESSION["compID"] = $compID;
 }
+
 if(isset($_POST['rejectTraining'])){
     $qry1 = "DELETE FROM `studentrequest` where studentID = ".$studentID." and appID = ".$appID.";";
     mysqli_query($conn, $qry1);
