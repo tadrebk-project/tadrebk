@@ -32,7 +32,7 @@ else{
     </script>
     <script src="resources/filterStudents.js"></script>
 
-    <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png"/>
     <title>Request Status</title>
     <script src="resources/to/jquery.js"></script>
 <script src="resources/to/popper.js"></script>

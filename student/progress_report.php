@@ -28,7 +28,7 @@ else{
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="project.css">
 
-    <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png"/>
     <title>Progress Report</title>
 </head>
 

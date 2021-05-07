@@ -26,7 +26,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
 
     <link rel="stylesheet" href="company.css">
 
-    <link rel="icon" type="image/png" href="../general_resources/Tadreabk favicon.png" />
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png"/>
     <title>Announcements</title>
 </head>
 
