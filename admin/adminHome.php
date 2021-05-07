@@ -26,7 +26,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <script src="https://kit.fontawesome.com/320bfa98c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="admin.css">
 
-    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png"/>
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png" />
     <title>Home</title>
 </head>
 
@@ -71,11 +71,9 @@ if (file_exists("../general_backend/sessionStart.php")) {
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5">
             <div class="col">
                 <a href="manageStudents.php" class="text-decoration-none">
-                    <div class="card blue-background" style="height: 20rem;">
-                    <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: 10em; z-index: 100;">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="card-body d-flex align-items-end">
+                    <div class="card blue-background">
+                        <div class="card-body d-flex flex-column">
+                            <i class="fas fa-user-graduate d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Students</p>
                         </div>
                     </div>
@@ -83,23 +81,23 @@ if (file_exists("../general_backend/sessionStart.php")) {
             </div>
             <div class="col">
                 <a href="manageCompanies.php" class="text-decoration-none">
-                    <div class="card blue-background" style="height: 20rem;">
-                    <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: 10em; z-index: 100;">
-                            <i class="bi bi-building"></i>
-                        </div>
-                        <div class="card-body d-flex align-items-end">
+                    <div class="card blue-background">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-building d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Companies</p>
                         </div>
                     </div>
+
                 </a>
             </div>
             <div class="col">
                 <a href="manageInstructors.php" class="text-decoration-none">
-                    <div class="card blue-background" style="height: 20rem;">
-                    <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: 10em; z-index: 100;">
+                    <div class="card blue-background">
+                        <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: 10em; z-index: 100;">
                             <i class="fas fa-chalkboard-teacher"></i>
-                        </div>	
-                        <div class="card-body d-flex align-items-end">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <i class="fas fa-chalkboard-teacher d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Instructors</p>
                         </div>
                     </div>

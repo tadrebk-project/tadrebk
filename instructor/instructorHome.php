@@ -1,12 +1,10 @@
 <?php
 //to check if the file that includes this code is two level far from the required page or one level.
-if(file_exists("../general_backend/sessionStart.php")){
+if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
-}
-elseif (file_exists("../../general_backend/sessionStart.php")){
+} elseif (file_exists("../../general_backend/sessionStart.php")) {
     require "../../general_backend/sessionStart.php";
-}
-else{
+} else {
     require "general_backend/sessionStart.php";
 }
 ?>
@@ -22,13 +20,12 @@ else{
     <!-- Bootstrap CSS -->
     <script src="https://kit.fontawesome.com/320bfa98c5.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="instructor.css">
 
-    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png"/>
+    <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png" />
     <title>Home</title>
 </head>
 
@@ -58,7 +55,7 @@ else{
                 </nav>
             </div>
             <nav class="d-flex mx-auto">
-            <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
+                <div class="container d-flex justify-content-center" style="width: 270px; margin-left: 0.5rem; margin-right: 0.5rem;">
                     <a class="btn btn-outline-primary mx-2 nav-btn" href="../general_backend/logout.php">
                         <i class="bi bi-box-arrow-right d-flex justify-content-center align-items-center"></i>
                     </a>
@@ -71,11 +68,9 @@ else{
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5">
             <div class="col">
                 <a href="studentsList.php" class="text-decoration-none">
-                    <div class="card" style="height: 20rem;">
-                    <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: 10em; z-index: 100;">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="card-body d-flex align-items-end">
+                    <div class="card">
+                        <div class="card-body d-flex flex-column">
+                            <i class="fas fa-user-graduate d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Students</p>
                         </div>
                     </div>
@@ -86,9 +81,7 @@ else{
 
     <hr class="invisible">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 </body>
 
