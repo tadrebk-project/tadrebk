@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
 } elseif (file_exists("../../general_backend/sessionStart.php")) {
@@ -191,7 +191,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
                                         echo "<div class='align-self-center'>Upload your CV...</div>";
                                     } else {
                                         $CVLink = "../cv/" . $CVFileRef;
-                                        $CVLink = "<a id='file-upload-filename' class='align-self-center' href='" . $CVLink . "' target='_blank'>" . $CVFileRef . "</a>";
+                                        $CVLink = "<a id='file-upload-filename' class='align-self-center' href='" . $CVLink . "'>" . $CVFileRef . "</a>";
                                         echo $CVLink;
                                     }
                                     ?>
