@@ -39,7 +39,7 @@ if($result=mysqli_query($conn, $query)){
         $str = "";
         $stra = "";
         while($row=mysqli_fetch_array($result)){
-
+            $stra = "";
             $query = "SELECT DISTINCT a.* FROM application a LEFT JOIN requiredmajors r on a.appID = r.appID where a.compID=".$row['compID']."$trainingType$majorID";
             if ($resulta = mysqli_query($conn, $query)) {
                 if (mysqli_num_rows($resulta) > 0) {
