@@ -112,7 +112,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
         </div>
     </div>
 
-
+    <hr class="invisible">
 
 
 
