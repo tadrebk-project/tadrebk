@@ -67,7 +67,7 @@ if($result=mysqli_query($conn, $query)){
                     $stra .="<div class='collapse' id='collapse".$row['compID']."'>
                                 <div class='card ms-4 mb-1'>
                                     <div class='card-body p-1'>
-                                        <div class='row row-cols-4'>
+                                        <div class='row row-cols-4 g-1 g-sm-3'>
                                             <div class='col'>
                                                 <p class='my-0'>" . $rowa['name'] . "</p>
                                             </div>
@@ -109,11 +109,19 @@ if($result=mysqli_query($conn, $query)){
                             </div>
                         </div>
                     </div>
+                    <div data-bs-toggle="collapse" data-bs-target="#collapse'.$row['compID'].'"style="position: absolute; z-index: 100; top: 25%; right: 1rem;">
+                        <i id="icon'.$row['compID'].'" class="bi bi-chevron-down"></i>
+                    </div>
                 </div>
             </div>
             <div class="d-flex flex-column">
                 '.$stra.'
             </div>
+            <script>
+                $("#collapse'.$row['compID'].'").on("show.bs.collapse hidden.bs.collapse", function () {
+                    $("#icon'.$row['compID'].'").toggleClass("bi-chevron-down bi-chevron-up");
+                })
+            </script>
             <!----> 
             ';
 
