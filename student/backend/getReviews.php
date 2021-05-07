@@ -24,10 +24,12 @@ if($result=mysqli_query($conn, $query)){
             //$str .= "<tr><td>".$row['text']."</td><td>".$row['date']."</td><td>".$row['studentID']."</td>";
             $queryImg = "select picRef from student where name = '".$row['studentName']."';";
             if($resultImg=mysqli_query($conn, $queryImg)){
+                $userImg = mysqli_fetch_array($resultImg);
                 if($userImg==NULL){
                     $userImg ="abstract-user.svg";
-                }else{
-                    $userImg = mysqli_fetch_array($resultImg)['picRef'];
+                }
+                else{
+                    $userImg = $userImg['picRef'];
                 }
             } else {
                 $userImg = "abstract-user.svg";
