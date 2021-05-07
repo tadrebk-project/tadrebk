@@ -13,7 +13,7 @@ else{
     require "general_backend/conn.php";
 }
 
-$query = "SELECT * FROM student WHERE compID = ".$_SESSION['compID'];
+$query = "SELECT * FROM student WHERE compID = ".$_SESSION['compID']." order by name DESC";
 
 if($result=mysqli_query($conn, $query)){
     if(mysqli_num_rows($result)>0){
