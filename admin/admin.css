@@ -54,10 +54,6 @@ a {
     background-color: #172457;
     color: #ffffff;
 }
-.blue-background:hover {
-    background-color: #ffffff;
-    color: #172457;
-}
 .tap-btn:focus {
     outline: none !important;
   }
