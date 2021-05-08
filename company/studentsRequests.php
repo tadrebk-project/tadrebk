@@ -93,12 +93,12 @@ else{
                     </select>
                 </div>
                 <div class="Container mx-3 my-3 d-flex justify-content-between">
-                    <span class="align-middle">GPA out of 4</span>
+                    <span class="align-middle">Minimum GPA</span>
                     <select id="gpaSelect" class="form-select" aria-label="Default select example" style="width: 10rem;">
                         <option selected value="0">Any GPA</option>
-                        <option value="1">1 or more</option>
-                        <option value="2">2 or more</option>
-                        <option value="3">3 or more</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                     </select>
                 </div>
             </div>
