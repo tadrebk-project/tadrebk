@@ -20,10 +20,14 @@ if($result=mysqli_query($conn, $query)){
         //(here table)
         $str ="";
         while($row=mysqli_fetch_array($result)){
+            $url = $row['website'];
+            if (strpos($url, 'http') === false) {
+                $url = 'http://' .$url;
+            }
             $str .= "<div class='container-sm company-container p-sm-3 py-2 my-4'>
             <div class='row'>
                 <div class='col-8'>
-                    <a href='//".$row['website']."' class='text-decoration-none' target='_blank'>
+                    <a href='".$url."' class='text-decoration-none' target='_blank'>
                         <h2>".$row['name']."</h2>
                     </a>
                 </div>
