@@ -37,8 +37,8 @@ if ($result = mysqli_query($conn, $query)) {
                                 <form action='backend/changeTrainingStatus.php?compID=" . $row['compID'] . "' method='post'>
                                 <textarea name='appID' hidden>" . $row['appID'] . "</textarea>
                                 <textarea name='studentID' hidden>" . $row['studentID'] . "</textarea>
-                                <button class='btn btn-primary mb-1' id='acceptTraining' name='acceptTraining' style='width: max(6vw, 5rem);'>Accept</button>
-                                <button class='btn btn-primary mb-1' name='rejectTraining' style='width: max(6vw, 5rem);'>Reject</button>
+                                <button class='btn btn-primary my-1' id='acceptTraining' name='acceptTraining' style='width: max(6vw, 5rem);'>Accept</button>
+                                <button class='btn btn-primary my-1' name='rejectTraining' style='width: max(6vw, 5rem);'>Reject</button>
                                 </form>
                             </div>
                             ";
@@ -51,9 +51,9 @@ if ($result = mysqli_query($conn, $query)) {
 
 
             $str .= "
-            <div class='card my-2' style='min-height: 3.1rem;'>
+            <div class='card my-2'>
                 <div class='card-body p-1'>
-                    <div class='row row-cols-4 g-1 g-sm-3'>
+                    <div class='row row-cols-4 gx-1 gx-sm-3 align-items-center' style='min-height: 3.1rem;'>
                         <div class='col'>
                             <p class='my-0'>" . $row['compName'] . "</p>
                         </div>
