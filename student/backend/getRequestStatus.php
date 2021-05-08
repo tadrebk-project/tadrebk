@@ -26,12 +26,11 @@ if ($result = mysqli_query($conn, $query)) {
                 $colour = 'orange';
                 $str2 .= "    <div style='color: $colour'>
                                 " . $row['status'] . "
-                                   </div>  </div>";
+                                   </div> ";
             } elseif ($row['status'] == 'Approved') {
                 $colour = 'green';
                 $str2 .= "    <div style='color: $colour'>
                                 " . $row['status'] . "
-                            </div>
                             </div>
                             <div class='col text-center'>
                                 <form action='backend/changeTrainingStatus.php?compID=" . $row['compID'] . "' method='post'>
@@ -39,12 +38,14 @@ if ($result = mysqli_query($conn, $query)) {
                                 <textarea name='studentID' hidden>" . $row['studentID'] . "</textarea>
                                 <button class='btn btn-primary mb-1' id='acceptTraining' name='acceptTraining' style='width: 5rem;'>Accept</button>
                                 <button class='btn btn-primary mb-1' name='rejectTraining' style='width: 5rem;'>Reject</button>
-                                </form>";
+                                </form>
+                            </div>
+                            ";
             } elseif ($row['status'] == 'Rejected') {
                 $colour = 'red';
                 $str2 .= "    <div style='color: $colour'>
                                 " . $row['status'] . " <i class='bi bi-question-circle-fill reasonMark'><span class='reasonText'>" . $row['rejectionNote'] . "</span></i>
-                                   </div>  </div> ";
+                                   </div>";
             }
 
 
