@@ -76,14 +76,6 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div>
                 <p class="text">Request Status</p>
             </div>
-            <div class="d-flex align-items-center">
-                <div class="input-group invisible">
-                    <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                        <i class="bi bi-search d-flex justify-content-center align-items-center"></i>
-                    </button>
-                </div>
-            </div>
         </div>
         <div class="container">
 
