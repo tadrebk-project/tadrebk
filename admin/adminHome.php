@@ -93,9 +93,6 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <div class="col">
                 <a href="manageInstructors.php" class="text-decoration-none">
                     <div class="card blue-background">
-                        <div class="position-absolute top-0 start-50 translate-middle-x" style="font-size: 10em; z-index: 100;">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
                         <div class="card-body d-flex flex-column">
                             <i class="fas fa-chalkboard-teacher d-flex mx-auto my-3" style="font-size: 12rem;"></i>
                             <p class="text mb-0 text-truncate">Instructors</p>
