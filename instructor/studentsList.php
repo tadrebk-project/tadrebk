@@ -76,7 +76,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
             <p class="fs-5 fw-bold mb-0">Students</p>
         </div>
         <div class="card card-body py-2 my-2">
-            <div class="row">
+            <div class="row row-cols-4 g-1 g-sm-3">
                 <div class="col text-muted">
                     Name
                 </div>

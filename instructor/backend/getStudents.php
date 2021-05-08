@@ -57,7 +57,7 @@ if($result=mysqli_query($conn, $query)){
             }
 
             $str .= "<div class='card card-body my-1'>
-            <div class='row'>
+            <div class='row row-cols-4 g-1 g-sm-3'>
                 <div class='col'>
                     ".$row['name']."
                 </div>
