@@ -37,8 +37,8 @@ if ($result = mysqli_query($conn, $query)) {
                                 <form action='backend/changeTrainingStatus.php?compID=" . $row['compID'] . "' method='post'>
                                 <textarea name='appID' hidden>" . $row['appID'] . "</textarea>
                                 <textarea name='studentID' hidden>" . $row['studentID'] . "</textarea>
-                                <button class='btn btn-primary mb-1' id='acceptTraining' name='acceptTraining' style='width: 6rem;'>Accept</button>
-                                <button class='btn btn-primary mb-1' name='rejectTraining' style='width: 6rem;'>Reject</button>
+                                <button class='btn btn-primary mb-1' id='acceptTraining' name='acceptTraining' style='width: max(6vw, 5rem);'>Accept</button>
+                                <button class='btn btn-primary mb-1' name='rejectTraining' style='width: max(6vw, 5rem);'>Reject</button>
                                 </form>
                             </div>
                             ";

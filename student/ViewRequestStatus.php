@@ -82,7 +82,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
 
             <div class="card my-3">
                 <div class="card-body">
-                    <div class="row row-cols-4 g-1 g-sm-4 px-sm-2">
+                    <div class="row row-cols-4 g-1 g-sm-4 px-sm-1">
                         <div class="col">
                             Company
                         </div>
