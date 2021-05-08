@@ -50,7 +50,7 @@ if ($result = mysqli_query($conn, $query)) {
 
             $str .= "
             <div class='card my-2' style='min-height: 3.1rem;'>
-                <div class='card-body'>
+                <div class='card-body p-1'>
                     <div class='row row-cols-4 g-1 g-sm-3'>
                         <div class='col'>
                             <p class='my-0'>" . $row['compName'] . "</p>
