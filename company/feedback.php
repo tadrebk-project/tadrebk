@@ -1,5 +1,5 @@
 <?php
-//to check if the file that includes this code is two level far from the required page or one level. 
+//to check if the file that includes this code is two level far from the required page or one level.
 if (file_exists("../general_backend/sessionStart.php")) {
     require "../general_backend/sessionStart.php";
 } elseif (file_exists("../../general_backend/sessionStart.php")) {
@@ -33,7 +33,7 @@ if (file_exists("../general_backend/sessionStart.php")) {
     <link rel="stylesheet" href="company.css">
 
     <link rel="icon" type="image/png" href="../general_resources/Tadreabk_favicon.png"/>
-    <title>Events</title>
+    <title>Feedback</title>
 </head>
 
 <body>
